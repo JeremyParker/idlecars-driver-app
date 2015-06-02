@@ -3,6 +3,12 @@
   .black-hero
     h1 Success!
 
+  section
+    div.button(ngf-select, ngf-change="upload($files)", ngf-capture="'camera'", ngf-accept="'image/*'") Upload
+
+  section
+    img(ng-src="{{uploadUrl}}", style="width: 100%")
+
   section.please-email
     p Please email us pictures of these documents within <span>24 hours</span>.
     a(href="mailto:support@idlecars") support@idlecars.com

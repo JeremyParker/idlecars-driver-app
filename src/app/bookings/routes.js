@@ -8,6 +8,7 @@ angular.module('idlecars')
     .state('bookingsShow', {
       url: '/bookings/:bookingId',
       templateUrl: 'app/bookings/show.html',
+      controller: 'bookings.showCtrl',
     })
 
 });
