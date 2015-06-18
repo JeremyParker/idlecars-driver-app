@@ -16,8 +16,8 @@
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='cars')
         .column-content
           .pull-left.title-padding {{item.title}}
-          .img-upload
-            .image-wrapper
+          .flex-container-align-center
+            .flex-section
               img(ng-if='item.image', ng-src='{{item.image}}')
               .dashed-box-border(ng-if='!item.image')
                 .box-content
@@ -26,4 +26,4 @@
             p.color-red.next-pointer(ng-if='!item.image') Upload
 
   .terms-of-service
-    a.underline(href='http://www.google.com') Terms of Service
+    a(href='http://www.google.com') Terms of Service
