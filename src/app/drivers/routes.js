@@ -23,4 +23,18 @@ angular.module('idlecars')
       }
     })
 
+    .state('drivers.smsconfirm', {
+      url: '/smsconfirm',
+      views: {
+        'navbar@': {
+          templateUrl: 'components/navbar/navbar_account.html',
+          controller: 'navbarAccount.controller',
+        },
+        'content@': {
+          templateUrl: 'app/drivers/smsConfirm.html',
+          controller: 'smsConfirm.controller',
+        }
+      }
+    })
+
 })
