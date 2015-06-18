@@ -6,7 +6,7 @@ angular.module('idlecars')
   $stateProvider
 
     .state('drivers', {
-      url: '/drivers'
+      url: '/drivers',
     })
 
     .state('drivers.account', {
