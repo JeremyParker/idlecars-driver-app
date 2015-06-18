@@ -28,11 +28,11 @@ angular.module('idlecars')
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_account.html',
-          controller: 'navbar_account.controller',
+          controller: 'navbarAccount.controller',
         },
         'content@': {
-          templateUrl: 'app/drivers/confirm_number.html',
-          controller: 'confirm_number.controller',
+          templateUrl: 'app/drivers/smsConfirm.html',
+          controller: 'smsConfirm.controller',
         }
       }
     })
