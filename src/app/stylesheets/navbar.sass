@@ -1,7 +1,10 @@
 %_arrow
-  font-size: 2em
+  font-size: $em_font_size
   line-height: 0
   vertical-align: sub
+
+.invisible
+  visibility: hidden
 
 .next-pointer::after
   @extend %_arrow
@@ -39,7 +42,7 @@
   .menu-button
     flex: 1
     display: flex
-    font-size: 1.25rem
+    font-size: $big_font_size
     flex-direction: row-reverse
     align-items: center
 

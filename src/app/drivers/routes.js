@@ -14,7 +14,7 @@ angular.module('idlecars')
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_account.html',
-          controller: 'navbar_account.controller',
+          controller: 'navbarAccount.controller',
         },
         'content@': {
           templateUrl: 'app/drivers/account.html',

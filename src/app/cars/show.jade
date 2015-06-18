@@ -5,11 +5,14 @@ h1(hidden) {{car.name}} for rent
 
   section.headline-features
     h2 {{car.name}}
-    p(ng-repeat='subhead in car.headline_features') {{subhead}}
+    .feature-content
+      p(ng-repeat='subhead in car.headline_features', ng-class='{"medium_font_weight": $last}') {{subhead}}
 
   section.certifications
     ul
       li(ng-repeat='cert in car.certifications') {{cert}}
+      .image-certified
+        img(src='/assets/images/idlecars_certified.png')
 
   section.map
     map(address='{{car.zipcode}}', ng-if='car')

@@ -1,0 +1,21 @@
+.settings-wrapper
+
+  .top-interlude
+    p.s-inter-content Your account has been created
+
+  section
+    .section-row
+      p.section-title.medium-gray Driver Documents
+    .section-row(ng-repeat='item in driverDocuments')
+      .row-content(ng-class='{"has-bar": !$last}')
+        .left-flex-title {{item.title}}
+        .img-wrapper
+          img.check-mark(ng-if='item.isUploaded', src='/assets/images/Mark_Check.png')
+          img.check-mark(ng-if='!item.isUploaded', src='/assets/images/Mark_X.png')
+
+  .section-interlude
+    .b-inter-content Driver Documents are required to complete your booking.
+      span.s-inter-content.medium-gray &nbspYou can upload/change your documents in Account Settings page.
+
+  .button-section
+    a.button Go to Account

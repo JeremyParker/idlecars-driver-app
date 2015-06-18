@@ -4,7 +4,7 @@
 .car-detail
 
   section
-    padding: 2rem 3rem
+    padding: 2rem
 
     *:last-child
       margin-bottom: 0
@@ -12,8 +12,22 @@
   li
     margin-bottom: 1rem
 
+  .image-certified
+    padding: 0.5rem 0
+
+    img
+      position: relative
+      left: -1.5rem
+      height: 0.75rem
+
   .headline-features
     text-align: center
+
+    .feature-content
+      padding-top: 0.5rem
+
+      .medium_font_weight
+        font-weight: $medium_font_weight
 
   .flex-row
     margin-bottom: 0.5rem
@@ -23,6 +37,9 @@
 
   .map
     padding: 0
+
+.text-wrapper
+  padding: 0 1rem
 
 .certifications
   @extend %gray_theme

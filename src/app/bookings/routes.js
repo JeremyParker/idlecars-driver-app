@@ -10,10 +10,24 @@ angular.module('idlecars')
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_main.html',
-          controller: 'navbar_main.controller',
+          controller: 'navbarMain.controller',
         },
         'content@': {
-          templateUrl: 'app/bookings/show.html',
+          templateUrl: 'app/bookings/docs_overview.html',
+          controller: 'docsOverview.controller',
+        },
+      },
+    })
+
+    .state('bookingSuccess', {
+      url: '/booking_success',
+      views: {
+        'navbar@': {
+          templateUrl: 'components/navbar/navbar_main.html',
+          controller: 'navbarMain.controller',
+        },
+        'content@': {
+          templateUrl: 'app/bookings/success.html',
         },
       },
     })

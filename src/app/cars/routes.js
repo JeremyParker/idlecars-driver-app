@@ -10,7 +10,7 @@ angular.module('idlecars')
       views: {
         'navbar': {
           templateUrl: 'components/navbar/navbar_main.html',
-          controller: 'navbar_main.controller',
+          controller: 'navbarMain.controller',
         },
         'content': {
           templateUrl: 'app/cars/index.html',
@@ -48,7 +48,7 @@ angular.module('idlecars')
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_field.html',
-          controller: 'navbar_field.controller',
+          controller: 'navbarField.controller',
         },
         'content@': {
           template: '<ui-view />',
