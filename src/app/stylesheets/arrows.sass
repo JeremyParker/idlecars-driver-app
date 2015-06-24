@@ -1,0 +1,14 @@
+%_arrow
+  font-size: 2em
+  line-height: 0
+  vertical-align: sub
+
+.next-pointer::after
+  @extend %_arrow
+  content: "›"
+  margin-left: 0.1em
+
+.prev-pointer::before
+  @extend %_arrow
+  content: "‹"
+  margin-right: 0.1em

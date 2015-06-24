@@ -1,24 +1,10 @@
-%_arrow
-  font-size: $em_font_size
-  line-height: 0
-  vertical-align: sub
-
 .invisible
   visibility: hidden
 
-.next-pointer::after
-  @extend %_arrow
-  content: "›"
-  margin-left: 0.1em
-
-.prev-pointer::before
-  @extend %_arrow
-  content: "‹"
-  margin-right: 0.1em
-
-
 .navbar-wrapper
   @extend %app_width
+
+.navbar
   @extend %black_theme
 
 .bar-wrapper
@@ -37,12 +23,12 @@
     color: $medium_gray
 
   h3
-    margin: 0.5rem 0
+    margin: 0.5rem auto
 
   .menu-button
     flex: 1
     display: flex
-    font-size: $big_font_size
+    font-size: $large_font_size
     flex-direction: row-reverse
     align-items: center
 
@@ -54,7 +40,7 @@
     text-align: right
 
 .menu
-  margin: 0 1.5rem 1rem
+  padding: 0 1.5rem 1rem
   text-align: right
 
   a

@@ -23,9 +23,3 @@ angular.module('idlecars')
 
   $scope.Navbar = NavbarService;
 })
-
-.controller('navbarAccount.controller', function ($scope, NavbarService) {
-  $scope.goBack = function () {
-    NavbarService.popState();
-  }
-})
