@@ -5,6 +5,12 @@
   border-radius: 0
   cursor: pointer
 
+%_general_button
+  @extend %_base_button
+  @extend %flex_centered
+  font-weight: $bold_font_weight
+  width: 100%
+
 .clear-button
   @extend %_base_button
   background: transparent
@@ -23,3 +29,15 @@
 
   span
     flex: 1
+
+.button-login
+  @extend %_general_button
+  @extend %blue_theme
+  padding: 1rem
+
+.button-create-account
+  @extend %_general_button
+  border: 1px solid white
+  background: transparent
+  padding: 1rem
+  margin-top: 1rem

@@ -1,0 +1,34 @@
+%_flex_column_reverse
+  display: flex
+  flex-direction: column-reverse
+
+.log-in
+  @extend %dark_gray_theme
+  height: calc(100vh - 3rem)
+  padding: $big_page_gutter
+  display: flex
+  flex-direction: column
+
+  .input-forgot
+    flex: 2
+    @extend %_flex_column_reverse
+
+  .button-wrapper
+    flex: 3
+    @extend %_flex_column_reverse
+    font-size: 1rem
+
+.forgot-wrapper
+  padding: 0.5rem 0
+  text-align: right
+
+  .forgot-password
+    color: $ic_blue
+    font-weight: $bold_font_weight
+
+.input-form
+  width: 100%
+  height: 2rem
+  padding: 0.5rem
+  color: black
+  margin: 0.5rem 0
