@@ -56,7 +56,7 @@ angular.module('idlecars')
     NewBookingService.createBooking($stateParams.carId);
   }
 
-  self.getLoginParams = function () {
+  var _getLoginParams = function () {
     var loginParams = {
       username: self.user_account.phone_number,
       password: self.user_account.password,
@@ -91,7 +91,7 @@ angular.module('idlecars')
     'cars.detail.booking.enterPassword': {
       fields: enterPasswordFields,
       goNext: function () {
-        AuthService.login(self.getLoginParams()).then(_createBooking);
+        AuthService.login(_getLoginParams()).then(_createBooking);
       },
     }
   }
@@ -103,7 +103,7 @@ angular.module('idlecars')
 
     var newDriver = new DriverService(user_account);
     newDriver.$save().then(function() {
-      return AuthService.login(self.getLoginParams());
+      return AuthService.login(_getLoginParams());
     }).then(_createBooking);
   }
 
