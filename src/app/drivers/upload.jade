@@ -1,0 +1,9 @@
+.upload-wrapper
+  .title
+    div Please upload a photo of your
+    .upload-title {{uploadTitle}}
+
+  ic-upload(field-name="{{fieldName}}")
+
+  .skip-link
+    a(ui-sref="bookingDetail({goRequiredDoc: false})") skip for now

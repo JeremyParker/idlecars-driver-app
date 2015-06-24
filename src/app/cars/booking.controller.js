@@ -1,33 +1,22 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('cars.booking.controller', function ($scope, FieldService) {
-
+.controller('cars.booking.controller', function ($scope, $state, $stateParams, AuthService, HistoryService, FieldService, NewBookingService) {
   FieldService.user_account = {};
   $scope.Field = FieldService;
 
+  if (AuthService.isLoggedIn()) {
+    NewBookingService.createBooking($stateParams.carId);
+  } else {
+    $state.go('.phoneNumber');
+  }
+
+  // NOTE: this state only routes to other states, so users shouldn't return
+  HistoryService.forget();
 })
 
-.controller('booking.email.controller', function ($scope, $timeout, FieldService) {
-  FieldService.index = 0;
-
-  $scope.validateForm = function () {
-    $timeout(function () { FieldService.isValid = $scope.fieldForm.$valid });
-  };
-  $scope.validateForm();
-})
-
-.controller('booking.name.controller', function ($scope, $timeout, FieldService) {
-  FieldService.index = 1;
-
-  $scope.validateForm = function () {
-    $timeout(function () { FieldService.isValid = $scope.fieldForm.$valid });
-  };
-  $scope.validateForm();
-})
-
-.controller('booking.phone_number.controller', function ($scope, $timeout, FieldService) {
-  FieldService.index = 2;
+.controller('booking.form.controller', function ($scope, $state, $timeout, FieldService) {
+  $scope.fields = FieldService.formParts[$state.current.name].fields;
 
   $scope.validateForm = function () {
     $timeout(function () { FieldService.isValid = $scope.fieldForm.$valid });

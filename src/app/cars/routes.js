@@ -23,7 +23,7 @@ angular.module('idlecars')
       url: 'cars/:carId',
       views: {
         'content@': {
-          templateUrl: 'app/cars/show.html',
+          templateUrl: 'app/cars/detail.html',
           params: {car: null},
           controller: 'cars.showCtrl',
         },
@@ -58,19 +58,23 @@ angular.module('idlecars')
       },
     })
 
+    .state('cars.detail.booking.phoneNumber', {
+      templateUrl: 'app/cars/booking_form.html',
+      controller: 'booking.form.controller',
+    })
+
+    .state('cars.detail.booking.createPassword', {
+      templateUrl: 'app/cars/booking_form.html',
+      controller: 'booking.form.controller',
+    })
+
+    .state('cars.detail.booking.enterPassword', {
+      templateUrl: 'app/cars/booking_form.html',
+      controller: 'booking.form.controller',
+    })
+
     .state('cars.detail.booking.email', {
       templateUrl: 'app/cars/booking_form.html',
-      controller: 'booking.email.controller',
+      controller: 'booking.form.controller',
     })
-
-    .state('cars.detail.booking.name', {
-      templateUrl: 'app/cars/booking_form.html',
-      controller: 'booking.name.controller',
-    })
-
-    .state('cars.detail.booking.phone_number', {
-      templateUrl: 'app/cars/booking_form.html',
-      controller: 'booking.phone_number.controller',
-    })
-
 });

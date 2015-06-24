@@ -5,8 +5,9 @@ angular.module('idlecars')
 
   $stateProvider
 
-    .state('cars.bookingsShow', {
-      url: 'bookings/:bookingId',
+    .state('bookingDetail', {
+      url: '/bookings/:bookingId',
+      params: {goRequiredDoc: true},
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_main.html',

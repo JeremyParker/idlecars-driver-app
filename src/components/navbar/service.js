@@ -5,7 +5,11 @@ angular.module('idlecars')
   var factory = {};
 
   var navbarInfo = {
-    'cars.bookingsShow': {title: 'Driver Documents', enableBack: false, enableNext: true}
+    'bookingDetail': {title: 'Driver Documents', enableBack: false, enableNext: true},
+    'driverAccount.uploadDriverLicense': {title: 'Driver Documents', enableBack: false, enableNext: false},
+    'driverAccount.uploadFhvLicense': {title: 'Driver Documents', enableBack: false, enableNext: false},
+    'driverAccount.uploadAddressProof': {title: 'Driver Documents', enableBack: false, enableNext: false},
+    'driverAccount.uploadDefensiveCert': {title: 'Driver Documents', enableBack: false, enableNext: false}
   };
 
   factory.popState = function() {
