@@ -1,0 +1,36 @@
+.log-in
+  @extend %dark_gray_theme
+  @extend %flex_column
+  height: $screen_height_without_navbar
+  padding: $page_gutter
+
+  input
+    width: 100%
+    height: 2rem
+    padding: 0.5rem
+    color: black
+    margin: 0.5rem 0
+
+  .upper-section
+    flex: 2
+    @extend %flex_column_reverse
+
+  .lower-section
+    flex: 3
+    @extend %flex_column_reverse
+    font-size: 1rem
+
+  .forgot-wrapper
+    padding: 0.5rem 0
+    text-align: right
+
+    a
+      color: $ic_blue
+      font-weight: $bold_font_weight
+
+  .button
+    padding: 1rem
+    text-transform: none
+
+  .white-boarder-button
+    margin-top: 1rem

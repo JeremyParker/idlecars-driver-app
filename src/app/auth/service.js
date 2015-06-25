@@ -11,8 +11,18 @@ angular.module('idlecars')
     }
   }
 
+  var _cleanParams = function(params) {
+    var clean = angular.copy(params);
+    if (clean.username) {
+      // NOTE: usernames are always phonenumbers
+      // sending usernames with non digits isn't supported
+      clean.username = clean.username.replace(/[^\d]/g, '');
+    }
+    return clean;
+  }
+
   service.login = function(params) {
-    var newToken = new TokenService(params);
+    var newToken = new TokenService(_cleanParams(params));
     return newToken.$save()
     .then(function(data) {
       service.token = data.token;

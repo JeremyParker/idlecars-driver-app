@@ -5,9 +5,18 @@
   border-radius: 0
   cursor: pointer
 
+%_general_button
+  @extend %_base_button
+  @extend %flex_centered
+  font-weight: $bold_font_weight
+  width: 100%
+
 .clear-button
   @extend %_base_button
   background: transparent
+
+.disabled-button
+  background: $medium_gray
 
 .button
   @extend %blue_theme
@@ -21,6 +30,13 @@
   text-transform: uppercase
   font-weight: $bold_font_weight
 
-  span
+  > *
     text-align: center
     flex: 1
+
+.white-boarder-button
+  @extend %_general_button
+  border: 1px solid white
+  background: transparent
+  padding: 1rem
+
