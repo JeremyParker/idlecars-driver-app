@@ -6,6 +6,7 @@ angular.module('idlecars')
 
   var navbarInfo = {
     'bookingDetail': {title: 'Driver Documents', enableBack: false, enableNext: true},
+    'login': {title: 'Log in', enableBack: true, enableNext: false},
     'driverAccount.uploadDriverLicense': {title: 'Driver Documents', enableBack: false, enableNext: false},
     'driverAccount.uploadFhvLicense': {title: 'Driver Documents', enableBack: false, enableNext: false},
     'driverAccount.uploadAddressProof': {title: 'Driver Documents', enableBack: false, enableNext: false},

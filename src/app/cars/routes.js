@@ -68,11 +68,6 @@ angular.module('idlecars')
       controller: 'booking.form.controller',
     })
 
-    .state('cars.detail.booking.enterPassword', {
-      templateUrl: 'app/cars/booking_form.html',
-      controller: 'booking.form.controller',
-    })
-
     .state('cars.detail.booking.email', {
       templateUrl: 'app/cars/booking_form.html',
       controller: 'booking.form.controller',

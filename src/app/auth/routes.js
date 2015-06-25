@@ -8,9 +8,13 @@ angular.module('idlecars')
     .state('login', {
       url: '/login',
       views: {
+        'navbar@': {
+          templateUrl: 'components/navbar/navbar_main.html',
+          controller: 'navbarMain.controller',
+        },
         'content@': {
-          templateUrl: 'app/auth/new.html',
-          controller: 'auth.new.controller'
+          templateUrl: 'app/auth/login.html',
+          controller: 'auth.login.controller'
         }
       }
     })

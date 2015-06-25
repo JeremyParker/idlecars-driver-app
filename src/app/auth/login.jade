@@ -1,0 +1,31 @@
+.log-in
+  .upper-section
+    .input-wrapper
+      form(name='userForm', novalidate)
+        input(
+          type='tel',
+          name='phone',
+          placeholder='(222)-555-1234',
+          auto-focus='true',
+          ng-model='user.username',
+          pattern='[^\\d]*\\d{3}[^\\d]*\\d{3}[^\\d]*\\d{4}$',
+          maxlength='14',
+          autocomplete='off',
+          required)
+
+        input(
+          type='password',
+          name='password',
+          placeholder='Password',
+          ng-model='user.password',
+          minlength='6',
+          autocomplete='off',
+          required)
+
+      .forgot-wrapper
+        a(href="mailto:support@idlecars.com?subject=Forgot My Password&body=Please send me my password.") Forgot my Password
+
+  .lower-section
+    .button-wrapper
+      button.button(ng-click='login()', ng-disabled='userForm.$invalid', ng-class='{"disabled-button": userForm.$invalid}') Log in
+      button.white-boarder-button(ui-sref='cars.detail.booking.phoneNumber') Create an account

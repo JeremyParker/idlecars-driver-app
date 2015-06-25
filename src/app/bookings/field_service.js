@@ -34,15 +34,6 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  var enterPasswordFields = [{
-    label: 'Enter Your password',
-    placeholder: '',
-    name: 'password',
-    type: 'password',
-    minlength: '6',
-    autoFocus: true,
-  }];
-
   var emailFields = [{
     label: 'Enter your email address',
     placeholder: 'email@address.com',
@@ -52,8 +43,12 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  var _createBooking = function() {
+  var _createBooking = function () {
     NewBookingService.createBooking($stateParams.carId);
+  }
+
+  self.login = function (user) {
+    AuthService.login(user).then(_createBooking);
   }
 
   self.getLoginParams = function () {
@@ -70,7 +65,7 @@ angular.module('idlecars')
       goNext: function () {
         var phoneNumber = Restangular.one('phone_numbers', self.user_account.phone_number);
         phoneNumber.get().then(function (response) {
-          $state.go('^.enterPassword');
+          $state.go('login');
         }, function (error) {
           $state.go('^.createPassword');
         })
@@ -88,12 +83,6 @@ angular.module('idlecars')
         self.saveEmail();
       },
     },
-    'cars.detail.booking.enterPassword': {
-      fields: enterPasswordFields,
-      goNext: function () {
-        AuthService.login(self.getLoginParams()).then(_createBooking);
-      },
-    }
   }
 
   self.isValid = false;
