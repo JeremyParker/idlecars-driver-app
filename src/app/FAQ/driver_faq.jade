@@ -24,9 +24,10 @@
   section
     a.faq-title(ng-click='show_4=!show_4') How much does a rental cost?
     div(ng-show='show_4')
-      p It depends on which car you choose to rent. Take a look at our listings&nbsp
+      p
+        | It depends on which car you choose to rent. Take a look at our listings&nbsp
         a(ui-sref='cars') here.
-        span &nbspAll rental prices include the cost of insurance and maintenance.
+        |  All rental prices include the cost of insurance and maintenance.
 
   section
     a.faq-title(ng-click='show_5=!show_5') What are my terms?
@@ -56,10 +57,11 @@
   section
     a.faq-title(ng-click='show_10=!show_10') How do I contact idlecars?
     div(ng-show='show_10')
-      p You can always call us at 1-844-IDLECAR(&nbsp
+      p
+        | You can always call us at 1-844-IDLECAR(
         a(href='tel:1-844-4353227') 1-844-435-3227
-        span )&nbspor email us at&nbsp
+        | ) or email us at&nbsp
         a(href='mailto: support@idlecars.com') support@idlecars.com
-        span .
+        | .
 
   a.button(href='tel:1-844-4353227') Call us: 1-844-IDLECAR
