@@ -1,7 +1,8 @@
 .faq-container
   h2 Questions
   section
-    <a><h3 ng-click='show_1=!show_1'>How do I rent a car?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_1=!show_1') How do I rent a car?
     div(ng-show='show_1')
       p 4 Simple Steps:
       ul
@@ -11,50 +12,59 @@
         li Pay the deposit and first rental fee, pick up your car, and drive!
 
   section
-    <a><h3 ng-click='show_2=!show_2'>How do I sign up?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_2=!show_2') How do I sign up?
     div(ng-show='show_2')
       p It’s easy. Find the car you want to rent, then tap "Rent this car". Follow the steps to create an account and upload the 4 required documents.
       p Once your account is complete we’ll get you on the insurance (usually takes 24-48 hours) and you’ll be ready to drive.
 
   section
-    <a><h3 ng-click='show_3=!show_3'>What about insurance?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_3=!show_3') What about insurance?
     div(ng-show='show_3')
       p All vehicles on idlecars maintain commercial insurance coverage compliant with state and local regulatory requirements. Each driver is added to the existing commercial insurance policy and removed at the end of the rental.
 
   section
-    <a><h3 ng-click='show_4=!show_4'>How much does a rental cost?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_4=!show_4') How much does a rental cost?
     div(ng-show='show_4')
       p It depends on which car you choose to rent. Take a look at our listings&nbsp
         a(ui-sref='cars') here.
         span &nbspAll rental prices include the cost of insurance and maintenance.
 
   section
-    <a><h3 ng-click='show_5=!show_5'>What are my terms?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_5=!show_5') What are my terms?
     div(ng-show='show_5')
       p No membership fee or weekly fee. You pay for what you use.
 
   section
-    <a><h3 ng-click='show_6=!show_6'>Are the cars registered with TLC/TCP/Other for-hire-vehicle regulators?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_6=!show_6') Are the cars registered with TLC/TCP/Other for-hire-vehicle regulators?
     div(ng-show='show_6')
       p Yes. Every car on our marketplace is ready to drive for professional for-hire drivers.
 
   section
-    <a><h3 ng-click='show_7=!show_7'>What is the minimum rental period?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_7=!show_7') What is the minimum rental period?
     div(ng-show='show_7')
       p Each owner sets their own minimum rental, but most are 1 week to 4 weeks (maximum). Browse our listings and choose what works for you.
 
   section
-    <a><h3 ng-click='show_8=!show_8'>Is this a lease or rental?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_8=!show_8') Is this a lease or rental?
     div(ng-show='show_8')
       p They are rentals, they are not leases.
 
   section
-    <a><h3 ng-click='show_9=!show_9'>What are the requirements to drive?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_9=!show_9') What are the requirements to drive?
     div(ng-show='show_9')
       p We verify every driver has appropriate documents to ensure safety and security. Drivers are required to provide the following documents: a Driver License, Professional (FHV) License, Defensive Driving Certificate, and a Proof of Address. We also conduct a review of the motor vehicle history.
 
   section
-    <a><h3 ng-click='show_10=!show_10'>How do I contact idlecars?</h3></a>
+    span &#9758
+    a.faq-title(ng-click='show_10=!show_10') How do I contact idlecars?
     div(ng-show='show_10')
       p You can always call us at 1-844-IDLECAR(&nbsp
         a(href='tel:1-844-4353227') 1-844-435-3227
