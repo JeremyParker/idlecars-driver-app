@@ -2,7 +2,8 @@
   button.clear-button.prev-pointer(ng-click='goBack()', ng-class="{'invisible': !navbarInfo.enableBack}")
   h3 {{navbarInfo.title}}
   .menu-button(ng-click='menuOpen = !menuOpen', ng-class="{'invisible': !navbarInfo.enableNext}")
-    img(src='/assets/images/burger_button.png', ng-class="{'menu-open': menuOpen }")
+    img(src='/assets/images/burger_button.png', ng-show='!menuOpen')
+    img(src='/assets/images/burger_button_blue.png', ng-show='menuOpen')
 
 .menu(ng-show="menuOpen")
   a(ui-sref='cars', ng-click='menuOpen = false') Home
