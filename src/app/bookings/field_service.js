@@ -61,10 +61,6 @@ angular.module('idlecars')
     return self.user_account.password === self.user_account.re_password
   }
 
-  self.login = function (user) {
-    return AuthService.login(user).then(_createBooking);
-  }
-
   self.getLoginParams = function () {
     var loginParams = {
       username: self.user_account.phone_number,

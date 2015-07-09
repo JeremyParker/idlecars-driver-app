@@ -25,9 +25,14 @@ angular.module('idlecars')
         'content@': {
           templateUrl: 'app/cars/detail.html',
           params: {car: null},
-          controller: 'cars.showCtrl',
+          controller: 'cars.detail.controller',
         },
       },
+    })
+
+    .state('cars.detail.newBooking', {
+      controller: 'cars.newBooking.controller',
+      data: {requireAuth: true},
     })
 
     .state('cars.detail.renewal', {

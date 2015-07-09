@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('cars.showCtrl', function ($scope, $state, $stateParams, CarService, AuthService, NewBookingService) {
+.controller('cars.detail.controller', function ($scope, $state, $stateParams, CarService, AuthService, NewBookingService) {
 
   if (!$stateParams.car) {
     CarService.get({carId: $stateParams.carId}).$promise.then(
