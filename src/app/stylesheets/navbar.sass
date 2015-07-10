@@ -8,32 +8,36 @@
   @extend %black_theme
 
 .bar-wrapper
-  padding: 0.5rem 0.75rem
   display: flex
-  height: 3rem
+  height: $navbar_height
 
   .prev-pointer
     flex: 1
     text-align: left
+    padding-left: 0.75rem
 
   .next-pointer
     flex: 1
     text-align: right
+    padding-right: 0.75rem
 
   button[disabled]
     color: $medium_gray
 
   h3
-    margin: 0.5rem auto
-
-  .menu-button
-    @extend %flex_content
-    font-size: $large_font_size
-    flex-direction: row-reverse
+    margin-bottom: 0
+    display: flex
     align-items: center
 
-    &.menu-open
-      color: $ic_blue
+  .menu-button
+    flex: 1
+    display: flex
+    flex-direction: row-reverse
+    align-items: center
+    padding-right: 0.75rem
+
+    img
+      height: 0.75rem
 
   .logout-button
     flex: 1

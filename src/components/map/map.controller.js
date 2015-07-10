@@ -97,7 +97,6 @@ angular.module('idlecars')
     };
 
     // initiate the map
-    mapService.address = $scope.address
     $scope.map = mapService.map;
     $scope.marker = mapService.marker;
     $scope.circle = mapService.circle;

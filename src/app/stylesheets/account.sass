@@ -14,11 +14,13 @@
   text-align: left
 
 .column-content
-  @extend %flex_content
+  flex: 1
+  display: flex
   flex-direction: column
 
 .img-upload
-  @extend %flex_content
+  flex: 1
+  display: flex
   align-items: center
 
   .image-wrapper
@@ -41,7 +43,6 @@
 
 .settings-wrapper
   @extend %gray_theme
-  @extend %flex_scrollable
   padding: 1rem $page_gutter
   text-align: center
   font-weight: 500

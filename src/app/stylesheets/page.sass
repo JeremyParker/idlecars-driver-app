@@ -12,8 +12,17 @@ body
   justify-content: center
   overflow: hidden
 
+.main-wrapper
+  flex: 1
+  display: flex
+  width: 100%
+
+.main-scroller
+  flex: 1
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+
 .main-content
-  @extend %flex_content
   @extend %app_width
   margin: 0 auto
   background: white

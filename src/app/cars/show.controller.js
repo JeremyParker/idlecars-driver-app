@@ -7,7 +7,6 @@ angular.module('idlecars')
     CarService.get({carId: $stateParams.carId}).$promise.then(
       function(car) {
         $scope.car = car;
-        heap.track('carDetail', {carId: car.id});
       },
       function(response) {
         $state.go('cars');
