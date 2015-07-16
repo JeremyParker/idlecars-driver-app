@@ -1,8 +1,8 @@
 .listing-wrapper(save-scroll)
   h1(hidden) Rent cars for rideshare
 
-  rzslider(ng-init="costBucket = 0", rz-slider-model="costBucket", rz-slider-ceil="3")
-  {{costBucket}}
+  rzslider(ng-init="costBucket = 0", rz-slider-model="costBucket", rz-slider-ceil="4")
+  {{costFilterLabel}}
 
   a.car(ng-repeat="car in cars", ui-sref=".detail({carId: car.id, car: car})")
     car-image
