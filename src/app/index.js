@@ -13,6 +13,7 @@ angular.module('idlecars',
     'uiGmapgoogle-maps',
     'ct.ui.router.extras.previous',
     'ngStorage',
+    'rzModule',
     'icFilters',
   ]
 )
