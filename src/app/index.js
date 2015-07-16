@@ -1,5 +1,7 @@
 'use strict';
 
+angular.module('icFilters', []);
+
 angular.module('idlecars',
   [
     'ngAnimate',
@@ -11,6 +13,7 @@ angular.module('idlecars',
     'uiGmapgoogle-maps',
     'ct.ui.router.extras.previous',
     'ngStorage',
+    'icFilters',
   ]
 )
 

@@ -1,0 +1,13 @@
+.listing-wrapper(save-scroll, ng-init="min = 0; max = 9999")
+  h1(hidden) Rent cars for rideshare
+
+  .button(ng-click="togglePriceFilter(0,50)") under $50
+  .button(ng-click="togglePriceFilter(50,75)") $50 - 75
+  .button(ng-click="togglePriceFilter(75,100)") $75 - 100
+  .button(ng-click="togglePriceFilter(100,9999)") $100+
+
+  a.car(ng-repeat="car in cars | attrInRange:'cost':min:max", ui-sref=".detail({carId: car.id, car: car})")
+    car-image
+    .info
+      h3 {{car.name}}
+      p {{car.listing_features}}
