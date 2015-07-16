@@ -1,0 +1,12 @@
+.listing-wrapper(save-scroll)
+  h1(hidden) Rent cars for rideshare
+
+  div(style="display:flex")
+    div(style="flex:1") {{costFilterLabel}}
+    rzslider(ng-init="costBucket = 0", rz-slider-model="costBucket", rz-slider-ceil="4", style="flex:2")
+
+  a.car(ng-repeat="car in cars", ui-sref=".detail({carId: car.id, car: car})")
+    car-image
+    .info
+      h3 {{car.name}}
+      p {{car.listing_features}}

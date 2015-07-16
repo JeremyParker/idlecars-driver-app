@@ -13,8 +13,8 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content': {
-          templateUrl: 'app/cars/index.html',
-          controller: 'cars.indexCtrl',
+          templateUrl: 'app/cars/list.html',
+          controller: 'cars.list.controller',
         },
       },
     })
