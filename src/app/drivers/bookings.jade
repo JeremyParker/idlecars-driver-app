@@ -4,29 +4,4 @@
     button.clear-button(ui-sref='driverAccount') Edit Account Settings
 
   .bookings-container
-    h4 MY RENTAL
-
-    div(ng-repeat='booking in bookings')
-      hr
-      .booking-content
-        car-image(car='booking.car')
-
-        .content-wording
-          section
-            h2 {{booking.car.name}}
-            .light {{booking.car.booked_features}}
-            .bold {{booking.car.headline_features[2]}}
-
-          section
-            .bold
-              | Status:
-              span(ng-style='{color: booking.state_details.color}') &nbsp{{booking.state_details.status}}
-            .light {{booking.state_details.content}}
-
-          section(ng-if='booking.state_details.cancelable')
-            button.clear-button(ng-click='cancelBooking(booking.id)') Cancel booking
-
-    .no-booking(ng-if='!bookings.length')
-      hr
-      h3 You have no rentals.
-      a.button(ui-sref='cars') Find your car
+    ng-include(ng-if='booking', src='"app/bookings/step"+booking.step+".html"')

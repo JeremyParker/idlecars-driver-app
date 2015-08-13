@@ -1,0 +1,11 @@
+.time-container
+  .row
+    .bold.label Rental Starts
+    .light.content {{booking.start_time_display}} #[span.tiny.warning(ng-if='booking.start_time_estimated', style='padding: 0') estimated]
+  .row
+    .bold.label Rental Ends
+    .light.content {{booking.end_time_display}}
+  .row
+    button.clear-button.bold.label Change End Date
+    .tiny.warning.content {{booking.end_time_limit_display}}
+

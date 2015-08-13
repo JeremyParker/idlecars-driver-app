@@ -4,16 +4,54 @@
   text-align: center
 
   hr
-    margin: 1rem 0
     border: none
     height: 1px
-    background: $medium_gray
+    background: $light_gray
+
+  .tiny
+    font-size: $tiny_font_size
+    font-weight: $light_font_weight
 
   .light
     font-size: $small_font_size
+    font-weight: $light_font_weight
 
   .bold
     font-weight: $bold_font_weight
+    font-size: $small_font_size
+
+  .unpaid
+    font-weight: $bold_font_weight
+    color: $dark_orange
+
+  .due
+    color: $medium_green
+
+  .warning
+    color: $medium_gray
+    padding: 0 0.75rem
+
+  .row
+    display: flex
+    margin: 0.25rem 0
+    text-align: left
+    padding: 0 1rem
+
+    .label
+      flex: 4
+
+    .content
+      flex: 3
+
+    button
+      text-align: left
+
+  .time-container
+    @extend %flex_container_column
+
+    button
+      color: $ic_blue
+      margin-top: 0
 
   .user-info
     background: white
@@ -29,25 +67,33 @@
   .bookings-container
     padding: 1rem $page_gutter
 
-    h4
-      margin: 0
-
   .booking-content
     background: white
+    margin-bottom: 0.75rem
 
   .content-wording
-    padding: 1.5rem 0.5rem 1rem
+    padding: 1.5rem $page_gutter 1rem
 
     section
-      margin-bottom: 1.5rem
+      margin-bottom: 1rem
 
-      button
-        font-size: $small_font_size
-        color: $medium_gray
+      a
+        color: $ic_blue
 
-    section:last-child
+    section:last-of-type
       margin-bottom: 0
 
+  button
+    text-transform: none
+    margin-top: 0.75rem
+
+  .cancel
+    background: $medium_gray
+
   .no-booking
-    h3
-      margin: 2rem
+    p
+      margin: 6rem 0
+      color: $medium_gray
+
+  .cancel-container
+    padding: 0 $page_gutter
