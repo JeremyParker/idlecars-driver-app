@@ -4,14 +4,14 @@ angular.module('idlecars')
 .directive('popup', function () {
   return {
     link: function(scope, elem, attr) {
-      var flag = false;
+      var isPopupOpen = false;
       var popupHtml = '<div class="modal-background" id="popup-modal"><div class="modal-container"><div class="popup-container"><div class="title">Confirm Cancel</div><div class="sub-title">Are you sure you want to cancel this booking?</div><button class="button" id="cancel-button">No, keep this booking</button><button class="button confirm" id="confirm-button">Yes, cancel this booking</button></div></div></div>'
       var holder = angular.element(document.querySelector('#main-content'));
       var cancelButton, confirmButton, cancelModal;
 
       elem.on('click', function(event){
-        if (flag) { return }
-        flag = true;
+        if (isPopupOpen) { return }
+        isPopupOpen = true;
         event.preventDefault();
         event.stopImmediatePropagation();
         holder.append(popupHtml);
@@ -22,12 +22,12 @@ angular.module('idlecars')
 
         cancelButton.on('click', function() {
           cancelModal.remove();
-          flag = false;
+          isPopupOpen = false;
         })
 
         confirmButton.on('click', function() {
           elem[0].click();
-          flag = false;
+          isPopupOpen = false;
           cancelModal.remove();
         })
       });
