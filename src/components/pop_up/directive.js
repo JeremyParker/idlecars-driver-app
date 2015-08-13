@@ -1,16 +1,18 @@
 'use strict';
 
 angular.module('idlecars')
-.directive('popup', function () {
+.directive('popup', function ($http) {
   return {
     link: function(scope, elem, attr) {
       var isPopupOpen = false;
-      var popupHtml = '<div class="modal-background" id="popup-modal"><div class="modal-container"><div class="popup-container"><div class="title">Confirm Cancel</div><div class="sub-title">Are you sure you want to cancel this booking?</div><button class="button" id="cancel-button">No, keep this booking</button><button class="button confirm" id="confirm-button">Yes, cancel this booking</button></div></div></div>'
+      var popupHtml;
       var holder = angular.element(document.querySelector('#main-content'));
       var cancelButton, confirmButton, cancelModal;
+      var template = 'components/pop_up/' + attr.popup + '.html';
+      $http.get(template).success(function (templateString) { popupHtml = templateString })
 
       elem.on('click', function(event){
-        if (isPopupOpen) { return }
+        if (isPopupOpen || !popupHtml) { return }
         isPopupOpen = true;
         event.preventDefault();
         event.stopImmediatePropagation();
@@ -30,7 +32,7 @@ angular.module('idlecars')
           isPopupOpen = false;
           cancelModal.remove();
         })
-      });
+      })
     }
   }
 })
