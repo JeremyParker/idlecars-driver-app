@@ -2,7 +2,7 @@
 
 angular.module('idlecars')
 .controller('bookings.controller', function ($scope, BookingService, MyDriverService) {
-  var bookingId;
+
   var initScope = function (me) {
     $scope.username = me.client_display;
   }
