@@ -24,7 +24,7 @@
             .light {{booking.state_details.content}}
 
           section(ng-if='booking.state_details.cancelable')
-            button.clear-button(ng-click='cancelBooking(booking.id)') Cancel booking
+            button.clear-button(popup='cancel_confirm', ng-click='cancelBooking(booking.id)') Cancel booking
 
     .no-booking(ng-if='!bookings.length')
       hr
