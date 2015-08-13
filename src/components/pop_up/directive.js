@@ -5,7 +5,7 @@ angular.module('idlecars')
   return {
     link: function(scope, elem, attr) {
       var flag = false;
-      var popupHtml = '<div class="modal-background" id="cancel-modal"><div class="modal-container"><div class="popup-container"><div class="title">Confirm Cancel</div><div class="sub-title">Are you sure you want to cancel this booking?</div><button class="button" id="cancel-button">No, keep this booking</button><button class="button confirm" id="confirm-button">Yes, cancel this booking</button></div></div></div>'
+      var popupHtml = '<div class="modal-background" id="popup-modal"><div class="modal-container"><div class="popup-container"><div class="title">Confirm Cancel</div><div class="sub-title">Are you sure you want to cancel this booking?</div><button class="button" id="cancel-button">No, keep this booking</button><button class="button confirm" id="confirm-button">Yes, cancel this booking</button></div></div></div>'
       var holder = angular.element(document.querySelector('#main-content'));
       var cancelButton, confirmButton, cancelModal;
 
@@ -18,7 +18,7 @@ angular.module('idlecars')
 
         cancelButton = angular.element(document.querySelector('#cancel-button'));
         confirmButton = angular.element(document.querySelector('#confirm-button'));
-        cancelModal = angular.element(document.querySelector('#cancel-modal'));
+        cancelModal = angular.element(document.querySelector('#popup-modal'));
 
         cancelButton.on('click', function() {
           cancelModal.remove();
