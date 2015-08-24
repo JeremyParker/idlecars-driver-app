@@ -1,0 +1,35 @@
+.circle-steps-wrapper
+  .circle-steps-content
+    @extend %flex_container_center
+    margin-bottom: 0.5rem
+
+  .circle-container
+    flex: 1
+    margin: 0 0.5rem
+    max-width: 2.5rem
+    min-width: 2.5rem
+
+  .circle
+    position: relative
+    background: $light_gray
+    border-radius: 50%
+    padding: 50% 0
+    color: white
+
+    div
+      position: absolute
+      left: 0
+      right: 0
+      transform: translateY(-50%)
+      font-weight: $bold_font_weight
+
+  .active
+    background: $medium_gray
+    color: black
+
+  .content
+    padding: 0 1rem
+
+    .light
+      margin-top: 0.25rem
+      color: $medium_gray

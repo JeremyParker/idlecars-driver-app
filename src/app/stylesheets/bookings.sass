@@ -4,20 +4,43 @@
   text-align: center
 
   hr
-    margin: 1rem 0
     border: none
     height: 1px
-    background: $medium_gray
+    background: $light_gray
 
-  .light
+  .tiny
+    font-weight: $light_font_weight
+
+  .light, .bold
     font-size: $small_font_size
 
-  .bold
-    font-weight: $bold_font_weight
+  .warning
+    @extend .m-gray
+    padding: 0 0.75rem
 
-  .user-info
+  .flex-row
+    margin: 0.25rem 0
+    text-align: left
+    padding: 0 1rem
+
+    .label
+      flex: 4
+
+    .content
+      flex: 3
+
+    button
+      text-align: left
+
+  .time-container
+    @extend %flex_container_column
+
+    button
+      margin-top: 0
+
+  .booking-header
     background: white
-    padding: 2rem 0
+    padding: 1rem 0
 
     h2
       padding: 0 $page_gutter
@@ -26,28 +49,33 @@
       color: $ic-blue
       font-weight: $bold_font_weight
 
-  .bookings-container
-    padding: 1rem $page_gutter
+    img
+      height: 10rem
+      margin: 1rem auto 0
 
-    h4
-      margin: 0
+  .booking-container
+    padding: 1rem $page_gutter
 
   .booking-content
     background: white
+    margin-bottom: 0.75rem
 
   .content-wording
-    padding: 1.5rem 0.5rem 1rem
+    padding: 1.5rem $page_gutter 1rem
 
     section
-      margin-bottom: 1.5rem
+      margin-bottom: 1rem
 
-      button
-        font-size: $small_font_size
-        color: $medium_gray
-
-    section:last-child
+    section:last-of-type
       margin-bottom: 0
 
+  button
+    margin-top: 0.75rem
+
   .no-booking
-    h3
-      margin: 2rem
+    p
+      margin: 3.5rem 0
+      color: $medium_gray
+
+  .cancel-container
+    padding: 0 $page_gutter

@@ -1,0 +1,7 @@
+.circle-steps-wrapper
+  .circle-steps-content
+    .circle-container(ng-repeat='i in stepsArray')
+      .circle(ng-class='{active: step == i+1}')
+        div {{i + 1}}
+
+  .content(ng-transclude)

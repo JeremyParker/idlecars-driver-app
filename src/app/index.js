@@ -4,7 +4,6 @@ angular.module('icFilters', []);
 
 angular.module('idlecars',
   [
-    'ngAnimate',
     // TODO: remove ngResource
     'ngResource',
     'restangular',

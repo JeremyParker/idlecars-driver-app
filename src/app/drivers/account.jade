@@ -8,11 +8,11 @@
 
   .section-interlude(ng-if='!me.all_docs_uploaded')
     .b-inter-content All driver documents are required
-    .s-inter-content.medium-gray to complete a rental
+    .s-inter-content.m-gray to complete a rental
 
   section
     .section-row
-      .section-title.medium-gray Driver Documents
+      .section-title.m-gray Driver Documents
     .section-row(ng-repeat='item in driverDocuments')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
         .column-content
@@ -22,7 +22,7 @@
               img(ng-if='me[item.image]', ng-src='{{me[item.image]}}')
               .dashed-box-border(ng-if='!me[item.image]')
                 .box-content
-                  .box-text.medium-gray Upload now
+                  .box-text.m-gray Upload now
             p.ic-blue.next-pointer(ng-if='me[item.image]') Change
             p.color-red.next-pointer(ng-if='!me[item.image]') Upload
 

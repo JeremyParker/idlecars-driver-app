@@ -1,0 +1,28 @@
+.bookings-wrapper
+  .booking-header(style='padding: 1rem')
+    .bold PICK UP YOUR CAR
+    .light Please contact the owner to arrange pick up.
+    .flex-row
+      .label.bold {{booking.car.owner.name}}
+      //- TODO: phone number should be interactive
+      a.content.bold.ic-blue(ng-href='tel:1-9173768864') {{booking.car.owner.phone_number}}
+    .flex-row
+      .bold {{booking.car.owner.address}}
+
+  map(address='{{booking.car.zipcode}}', ng-if='booking.car')
+
+  .booking-container(style='padding-top: 0')
+    .booking-content
+      .content-wording
+        section.light
+          check-mark(checked='isChecked0') I have confirmed that the license plate is {{booking.car.plate}}
+          check-mark(checked='isChecked1') I have Inspected the car and it meets my expectations
+          check-mark(checked='isChecked2') I have noted any prior damage
+          check-mark(checked='isChecked3') The owner has the registration, and the insurance endorsement
+          check-mark(checked='isChecked4') I am ready to pay $425 for first week’s rent and take possesion of the car
+
+        section
+          .tiny.m-gray Do NOT pay cash
+          button.button(ng-click='pickUp()') Pay and drive
+
+    .tiny.warning(style='margin-bottom: 1rem') If you don’t like the car, call 1 (844) IDLE CARS to cancel with no cancelation fee.

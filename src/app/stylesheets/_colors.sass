@@ -3,6 +3,8 @@ $alpha_black: rgba(34,34,34,0.95)
 $light_gray: rgb(230,230,230)
 $medium_gray: rgb(120,120,120)
 $light_red: rgb(240,0,16)
+$dark_orange: rgb(255,128,0)
+$medium_green: rgb(0,153,0)
 
 $placeholder_gray: rgb(45,45,45)
 
@@ -35,7 +37,10 @@ $gray_gradient: linear-gradient(rgb(231, 231, 231) 15%, rgb(191, 191, 191) 95%)
   background: $dark_gray
   color: white
 
-.medium-gray
+%medium_gray_theme
+  background: $medium_gray
+
+.m-gray
   color: $medium_gray
 
 .ic-blue
@@ -43,3 +48,9 @@ $gray_gradient: linear-gradient(rgb(231, 231, 231) 15%, rgb(191, 191, 191) 95%)
 
 .color-red
   color: red
+
+.m-green
+  color: $medium_green
+
+.d-orange
+  color: $dark_orange
