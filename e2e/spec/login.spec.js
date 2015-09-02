@@ -19,8 +19,8 @@ describe('log in page', function () {
     expect(listing.carEls.count()).toBe(4);
   });
 
-  it('can go to sign up page', function() {
-    login.signupButton.click();
-    expect(navbar.title.getText()).toEqual('Sign up');
-  })
+  // it('can go to sign up page', function() {
+  //   login.signupButton.click();
+  //   expect(navbar.title.getText()).toEqual('Sign up');
+  // })
 });

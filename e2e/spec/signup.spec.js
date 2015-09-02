@@ -7,21 +7,21 @@ describe('sign up page', function () {
   var listing = require('../cars/list.po');
   var helpers = require('../spec_helper');
 
-  describe('from menu button', function() {
+  // describe('from menu button', function() {
 
-    beforeEach(function () {
-      helpers.startTest();
-      browser.get('http://localhost:3000/index.html');
-      navbar.menuButton.click();
-      navbar.signupButton.click();
-    });
+  //   beforeEach(function () {
+  //     helpers.startTest();
+  //     browser.get('http://localhost:3000/index.html');
+  //     navbar.menuButton.click();
+  //     navbar.signupButton.click();
+  //   });
 
-    it('should create an account', function() {
-      signup.signupProcess();
-      expect(listing.carEls.count()).toBe(4);
-    });
+  //   it('should create an account', function() {
+  //     signup.signupProcess();
+  //     expect(listing.carEls.count()).toBe(4);
+  //   });
 
-  })
+  // })
 
   describe('from a car', function () {
 

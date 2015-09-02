@@ -12,7 +12,7 @@ describe('listing page', function () {
   it('has a menu button', function() {
     navbar.menuButton.click();
     expect(navbar.homeButton.isDisplayed()).toBe(true);
-    expect(navbar.signupButton.isDisplayed()).toBe(true);
+    // expect(navbar.signupButton.isDisplayed()).toBe(true);
     expect(navbar.loginButton.isDisplayed()).toBe(true);
     expect(navbar.questionsButton.isDisplayed()).toBe(true);
   });

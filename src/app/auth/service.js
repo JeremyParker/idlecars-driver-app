@@ -34,7 +34,7 @@ angular.module('idlecars')
       service.saveToken(data.token);
     })
     .catch(function(error) {
-      AppNotificationService.push("Sorry, that didn't work. Please double-check your password.");
+      AppNotificationService.push("Sorry, that didn't work. Please double-check your phone number and password.");
       return $q.reject(error);
     });
   }
