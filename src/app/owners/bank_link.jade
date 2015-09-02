@@ -27,6 +27,14 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
+  label(for="date_of_birth") Date of Birth
+  input(
+    type='date',
+    name='date_of_birth',
+    ng-model='params.individual.date_of_birth',
+    required,
+    autocomplete='off')
+
   label(for="street_address") Street address
   input(
     type='text',
@@ -126,6 +134,9 @@ ng-form.form-page(name="bankLinkForm")
       name="tos",
       required,
       ng-model="params.tos_accepted")
-    label(for="tos") I accept the #[a(ui-sref='terms' style='text-decoration: underline') Terms of Service]
+    label(for="tos") I accept the #[a(ui-sref='terms' style='text-decoration: underline', ng-click='saveForm()') Terms of Service]
 
   button.button(type="submit", ng-disabled="bankLinkForm.$invalid", ng-click="linkBankAccount()") Submit
+
+//- TODO: put ic-loading under <body> tag. use rootScope.isBusy
+ic-loading(ng-if='isBusy')

@@ -1,31 +1,43 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('owners.bankLink.controller', function ($scope, Restangular, $state) {
+.controller('owners.bankLink.controller', function ($scope, $state, OwnerBankService, AppNotificationService) {
 
-  $scope.params = {}
-  $scope.params.individual = {}
-  $scope.params.individual.first_name = 'taco'
-  $scope.params.individual.last_name = 'taco'
-  $scope.params.individual.email = 'taco@taco.com'
+  var empty = OwnerBankService.ownerBankInfo.individual === undefined;
 
-  $scope.params.individual.address = {}
-  $scope.params.individual.address.street_address = '123 taco street'
-  $scope.params.individual.address.locality = 'taco'
-  $scope.params.individual.address.region = 'tx'
-  $scope.params.individual.address.postal_code = '74305'
+  if(empty) {
+    OwnerBankService.get().then(function (owner) {
+      $scope.params = { individual: owner.auth_users[0] };
+    })
+  }
+  else {
+    $scope.params = OwnerBankService.ownerBankInfo;
+    OwnerBankService.ownerBankInfo = {};
+  }
 
-  $scope.params.funding = {}
-  $scope.params.funding.routing_number = 123123123
-  $scope.params.funding.account_number = 1231231231
-
-  $scope.params.tos_accepted = true
+  $scope.saveForm = function () { OwnerBankService.ownerBankInfo = $scope.params }
 
   $scope.linkBankAccount = function() {
-    // TODO: replace `1` with the real owner id
     // TODO: a real solution for TOS
-    Restangular.one('owners', 1).all('bank_link').post($scope.params).then(function () {
-      $state.go('bankSuccess')
+    $scope.isBusy = true;
+
+    var postParams = angular.copy($scope.params);
+    postParams.individual.date_of_birth = _dateFormat($scope.params.individual.date_of_birth)
+
+    OwnerBankService.post(postParams).then(function () {
+      $scope.isBusy = false;
+      $state.go('bankSuccess');
+    }).catch(function () {
+      $scope.isBusy = false;
+      if (!AppNotificationService.messages) {
+        AppNotificationService.push('Sorry, there was an error. Please try again.');
+      }
     })
+  }
+
+  var _dateFormat = function (date) {
+    var day = ("0" + date.getDate()).slice(-2);
+    var month = ("0" + (date.getMonth() + 1)).slice(-2);
+    return date.getFullYear().toString() + month + day;
   }
 });
