@@ -1,0 +1,4 @@
+.check-mark-wrapper(ng-init='checked=false', ng-click='checked=!checked')
+  .check-mark-image
+    img(ng-src='/assets/images/check_mark_{{checked}}.png')
+  .check-mark-content(ng-transclude)

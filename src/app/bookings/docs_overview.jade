@@ -1,11 +1,11 @@
-.settings-wrapper
+.settings-wrapper.docs-overview-wrapper
 
   .top-interlude
     .b-inter-content You must submit all documents to complete your rental.
 
   section
     .section-row
-      p.section-title.medium-gray Your Driver Documents
+      title Your Driver Documents
     .section-row(ng-repeat='item in driverDocuments')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref="{{item.sref}}")
         .left-flex-title {{item.title}}

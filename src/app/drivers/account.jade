@@ -2,28 +2,40 @@
   section
     .section-row(ng-repeat='item in accountInfo')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
-        .content-title {{item.title}}
+        label.m-gray {{item.title}}
         .content-main {{me[item.content]}}
         .next-pointer
 
   .section-interlude(ng-if='!me.all_docs_uploaded')
     .b-inter-content All driver documents are required
-    .s-inter-content.medium-gray to complete a rental
+    .s-inter-content.m-gray to complete a rental
+
+  section(ng-if='me.payment_method')
+    .section-row
+      title Payment
+    .section-row
+      a.row-content(ui-sref='.paymentMethod')
+        .flex-column
+          label Card ending in {{me.payment_method.suffix}}
+          .flex
+            .flex-cell
+              img.small-image(ng-src='{{me.payment_method.card_logo}}')
+            .ic-blue.next-pointer Replace
 
   section
     .section-row
-      .section-title.medium-gray Driver Documents
+      title Driver Documents
     .section-row(ng-repeat='item in driverDocuments')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
-        .column-content
-          .title-padding {{item.title}}
-          .img-upload
-            .image-wrapper
-              img(ng-if='me[item.image]', ng-src='{{me[item.image]}}')
+        .flex-column
+          label {{item.title}}
+          .flex
+            .flex-cell
+              img.big-image(ng-if='me[item.image]', ng-src='{{me[item.image]}}')
               .dashed-box-border(ng-if='!me[item.image]')
                 .box-content
-                  .box-text.medium-gray Upload now
+                  .box-text Upload now
             p.ic-blue.next-pointer(ng-if='me[item.image]') Change
             p.color-red.next-pointer(ng-if='!me[item.image]') Upload
 
-  button.button.logout(ng-click='logout()') Log out
+  button.alert-button(ng-click='logout()') Log out

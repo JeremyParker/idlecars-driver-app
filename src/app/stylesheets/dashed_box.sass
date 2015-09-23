@@ -1,14 +1,15 @@
 .dashed-box-border
-  @extend %flex_center
+  @extend %flex_container_center
   border: 0.1rem dashed $medium_gray
   height: 4rem
   width: 7rem
 
   .box-content
     @extend %gray_theme
-    @extend %flex_center
+    @extend %flex_container_center
     height: 3.5rem
     width: 6.5rem
 
     .box-text
       font-size: $small_font_size
+      color: $medium-gray

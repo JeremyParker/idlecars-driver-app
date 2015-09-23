@@ -15,7 +15,7 @@ describe('log in page', function () {
   });
 
   it('can log in', function() {
-    login.loginProcess();
+    login.loginProcess('1234567892');
     expect(listing.carEls.count()).toBe(4);
   });
 

@@ -1,0 +1,8 @@
+.modal-background(ng-show='showModal')
+  .modal-container
+    .popup-container
+      h3 Confirm Cancel
+      .sub-title Are you sure you want to cancel this booking?
+
+      button.button(ng-click='showModal = false') No, keep this booking
+      button.alert-button(ng-click='result() ;showModal = false') Yes, cancel this booking

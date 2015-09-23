@@ -1,0 +1,21 @@
+.booking-content
+  .content-wording
+    section
+      .bold RENTAL IN PROGRESS...
+    section
+      .tiny.warning If you have any trouble with your car, please contact IdleCars
+    section
+      a.bold.ic-blue(href='tel:1-844-4353227') 1 (844) IDLE-CARS
+
+  car-image(car='booking.car')
+
+  .content-wording
+    section
+      car-features
+    section
+      booking-date
+    hr
+    .flex-row.bold
+      .label Next Payment
+      //- TODO: August 8th should be from server
+      .content(style='flex: 5') ${{booking.car.cost * 7}} #[span.light &nbspon August 8th]

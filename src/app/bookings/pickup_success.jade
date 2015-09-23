@@ -1,0 +1,31 @@
+.bookings-wrapper
+  .booking-container
+    .booking-content
+      .content-wording
+        section
+          h3 Success!
+        section
+          .flex-row.bold
+            .label First week payment
+            //- TODO: let server send weekly cost
+            .content ${{booking.car.cost * 7}} #[span.m-green &nbspPaid]
+        section
+          .light
+            | Your credit card has been charged ${{booking.car.cost * 7}}.
+            |  The owner has been emailed to confirm the funds have been transferred.
+            |  You should now get the keys and start driving.
+        hr
+        section
+          .flex-row.bold
+            .label Next Payment
+            //- TODO: August 8th should come from server
+            .content(style='flex: 5') ${{booking.car.cost * 7}} #[span.light &nbspon August 8th]
+
+      car-image(car='booking.car')
+
+      .content-wording
+        section
+          car-features
+
+        section
+          button.button(ui-sref='^') OK
