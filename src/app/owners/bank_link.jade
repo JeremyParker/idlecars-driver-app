@@ -95,8 +95,8 @@ ng-form.form-page(name="bankLinkForm")
   input(
     type='text',
     name='account_number',
-    placeholder="10-12 digits",
-    ng-pattern="/^[\\d]{10,12}$/",
+    placeholder="9-12 digits",
+    ng-pattern="/^[\\d]{9,12}$/",
     ng-model='params.funding.account_number',
     required,
     autocomplete='off')
