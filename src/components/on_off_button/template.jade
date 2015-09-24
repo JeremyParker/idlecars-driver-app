@@ -1,0 +1,12 @@
+.on-off-container(ng-click='action()')
+  .on-container(ng-if='!!status')
+    .flex-cell
+      .status-container
+        .status On
+      .switch-block
+
+  .off-container(ng-if='!status')
+    .flex-cell
+      .switch-block
+      .status-container
+        .status Off

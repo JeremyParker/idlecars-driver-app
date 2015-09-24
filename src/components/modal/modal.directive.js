@@ -6,7 +6,8 @@ angular.module('idlecars')
     templateUrl: 'components/modal/modal.html',
     controller: 'modal.controller',
     scope: {
-      actionSref: '@actionSref'
+      actionSref: '@actionSref',
+      actionClick: '&',
     },
     transclude: true,
   };

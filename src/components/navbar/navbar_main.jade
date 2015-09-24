@@ -4,8 +4,8 @@
   h3 {{navbarInfo.title}}
   section
     .right-button(ng-show='navbarInfo.enableMenu', ng-click='menuOpen = !menuOpen')
-      img(src='/assets/images/burger_button.png', ng-show='!menuOpen')
-      img(src='/assets/images/burger_button_blue.png', ng-show='menuOpen')
+      .burger-button-container
+        .burger-button(ng-class='{active: menuOpen}')
 
     button.clear-button.right-button(ng-show='navbarInfo.enableSave', ng-click='save()', ng-disabled="!navNextEnabled") Save
     button.clear-button.next-pointer(ng-show='navbarInfo.enableNext', ng-click="navGoNext()", ng-disabled="!navNextEnabled") Next

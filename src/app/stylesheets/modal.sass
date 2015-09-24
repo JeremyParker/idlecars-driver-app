@@ -14,12 +14,11 @@
 
 .modal-container
   max-width: $page_max_width
-  max-height: $page_max_width
-  height: 100%
+  height: 85%
   @extend %flex_content
   flex-direction: column
 
-  padding: 0 2rem
+  padding: 0 $page_gutter
 
   .close
     align-self: flex-end
@@ -29,7 +28,6 @@
 
 .modal-content
   flex: 1
-  margin: 3rem 0 1rem
   overflow-y: auto
   color: white
 

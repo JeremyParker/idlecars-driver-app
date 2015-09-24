@@ -36,12 +36,8 @@
     padding-right: 0.75rem
     cursor: pointer
 
-    img
-      height: 0.75rem
-
-  .logout-button
-    flex: 1
-    text-align: right
+    .active, .active:before, .active:after
+      background: blue
 
 .menu
   padding: 0 1.5rem 1rem
@@ -51,3 +47,26 @@
     display: block
     padding: 0.5rem 0
     font-size: $large_font_size
+
+.burger-button-container
+  position: relative
+  width: 20px
+  height: 15px
+
+.burger-button, .burger-button:before, .burger-button:after
+  height: 3px
+  width: 20px
+  background: white
+  display: block
+  content: ''
+  position: absolute
+
+.burger-button
+  top: 6px
+  right: 0
+
+.burger-button:before
+  top: -6px
+
+.burger-button:after
+  bottom: -6px

@@ -1,9 +1,9 @@
 h1(hidden) Rent cars for rideshare
 
 .listing-filters
-  .box(ng-click="didFilter('cost_bucket', 'cheap')", ng-class="{active: filters.cost_bucket.cheap}") $
-  .box(ng-click="didFilter('cost_bucket', 'medium')", ng-class="{active: filters.cost_bucket.medium}") $$
-  .box(ng-click="didFilter('cost_bucket', 'pricey')", ng-class="{active: filters.cost_bucket.pricey}") $$$
+  .box(ng-click="addOrFilter('cost_bucket', 'cheap'); filter()", ng-class="{active: orFilters.cost_bucket.cheap}") $
+  .box(ng-click="addOrFilter('cost_bucket', 'medium'); filter()", ng-class="{active: orFilters.cost_bucket.medium}") $$
+  .box(ng-click="addOrFilter('cost_bucket', 'pricey'); filter()", ng-class="{active: orFilters.cost_bucket.pricey}") $$$
 
   a.add-filters(ui-sref=".search") add filters
 

@@ -1,0 +1,31 @@
+%base_on_off_container
+  display: flex
+  width: 3.5rem
+  height: 1.5rem
+  color: $dark_gray
+  padding: 0.125rem
+
+
+.on-off-container
+  .status
+    font-weight: $bold_font_weight
+    text-align: center
+
+  .on-container
+    @extend %base_on_off_container
+    @extend %blue_theme
+
+  .off-container
+    @extend %base_on_off_container
+    @extend %medium_gray_theme
+
+  .flex-cell
+    @extend %flex_container_center
+
+  .status-container
+    flex: 3
+
+  .switch-block
+    @extend %white_theme
+    min-height: 1.25rem
+    flex: 2

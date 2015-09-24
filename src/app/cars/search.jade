@@ -1,15 +1,50 @@
-modal.search-modal(action-sref="^")
+modal.search-modal(action-sref='^', action-click='filter()')
 
   h3 Cost per day
   .listing-filters
-    .box(ng-click="didFilter('cost_bucket', 'cheap', $event)", ng-class="{active: filters.cost_bucket.cheap}") < $60
-    .box(ng-click="didFilter('cost_bucket', 'medium', $event)", ng-class="{active: filters.cost_bucket.medium}") $60 - 80
-    .box(ng-click="didFilter('cost_bucket', 'pricey', $event)", ng-class="{active: filters.cost_bucket.pricey}") $80+
+    .box(ng-click="addOrFilter('cost_bucket', 'cheap', $event)", ng-class="{active: orFilters.cost_bucket.cheap}") < $60
+    .box(ng-click="addOrFilter('cost_bucket', 'medium', $event)", ng-class="{active: orFilters.cost_bucket.medium}") $60 - 80
+    .box(ng-click="addOrFilter('cost_bucket', 'pricey', $event)", ng-class="{active: orFilters.cost_bucket.pricey}") $80 >
 
-  h3 Type of car
-  .listing-filters
-    .box(ng-click="didFilter('body_type', 'Sedan', $event)", ng-class="{active: filters.body_type.Sedan}") Sedan
-    .box(ng-click="didFilter('body_type', 'SUV', $event)", ng-class="{active: filters.body_type.SUV}") SUV
-
-  .listing-filters
-    .box(ng-click="didFilter('lux_level', 'Luxury', $event)", ng-class="{active: filters.lux_level.Luxury}") Luxury
+  h3 Ride share service
+  .filter-container
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Uber X
+        on-off-button(status='andFilters.work_with.UberX', action="addAndFilter('work_with', 'UberX', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Uber XL
+        on-off-button(status='andFilters.work_with.UberXL', action="addAndFilter('work_with', 'UberXL', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Uber SUV
+        on-off-button(status='andFilters.work_with.UberSUV', action="addAndFilter('work_with', 'UberSUV', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Uber Black
+        on-off-button(status='andFilters.work_with.UberBlack', action="addAndFilter('work_with', 'UberBlack', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Lyft
+        on-off-button(status='andFilters.work_with.Lyft', action="addAndFilter('work_with', 'Lyft', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Lyft Plus
+        on-off-button(status='andFilters.work_with.LyftPlus', action="addAndFilter('work_with', 'LyftPlus', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Gett
+        on-off-button(status='andFilters.work_with.Gett', action="addAndFilter('work_with', 'Gett', $event)")
+    .filter-row
+      .flex-row
+        .filter-label
+          label Via
+        on-off-button(status='andFilters.work_with.Via', action="addAndFilter('work_with', 'Via', $event)")

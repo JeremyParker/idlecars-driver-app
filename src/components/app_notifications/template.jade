@@ -1,3 +1,5 @@
 .wrapper(ng-repeat="message in messages")
-  img(src='/assets/images/error_icon.png')
-  .message {{message}}
+  img(src='/assets/images/error.png', ng-if='!(message.success || message.warning)')
+  img(src='/assets/images/success.png', ng-if='message.success')
+  img(src='/assets/images/warning.png', ng-if='message.warning')
+  .message {{message.success || message.warning || message.error || message}}

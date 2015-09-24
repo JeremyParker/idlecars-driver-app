@@ -4,48 +4,70 @@ angular.module('idlecars')
 .factory('CarFilterService', function() {
   var service = {
     allCars: [],
-    filters: {},
+    orFilters: {},
+    andFilters: {},
   };
 
-  service.filter = function(feature, setting) {
-    if (!service.filters[feature]) { service.filters[feature] = {}; }
+  service.orFilter = function(feature, setting) {
+    if (!service.orFilters[feature]) { service.orFilters[feature] = {}; }
 
-    service.filters[feature][setting] = !service.filters[feature][setting];
-    _toggleBodyType(feature, setting);
-    return service.filterCars();
+    service.orFilters[feature][setting] = !service.orFilters[feature][setting];
+  }
+
+  service.andFilter = function(feature, setting) {
+    if (!service.andFilters[feature]) { service.andFilters[feature] = {}; }
+
+    service.andFilters[feature][setting] = !service.andFilters[feature][setting];
   }
 
   service.filterCars = function() {
-    return service.allCars.filter(_doesMatchFilter);
+    var filteredCars = service.allCars.filter(_doesMatchOrFilter);
+    return filteredCars.filter(_doesMatchAndFilter)
   }
 
-  var _doesMatchFilter = function(car) {
-    for (var feature in service.filters) {
-      if (!_doesMatchFeature(car, feature)) { return false; }
+  var _doesMatchOrFilter = function(car) {
+    for (var feature in service.orFilters) {
+      if (!_doesMatchOrFeature(car, feature)) { return false; }
     }
     return true;
   }
 
-  var _doesMatchFeature = function(car, feature) {
+  var _doesMatchAndFilter = function(car) {
+    for (var feature in service.andFilters) {
+      for (var setting in service.andFilters[feature]) {
+        if (!service.andFilters[feature][setting]) { continue; }
+        if (!_doesMatchAndFeature(car, feature, setting)) { return false; }
+      }
+    }
+    return true;
+  }
+
+  var _doesMatchOrFeature = function(car, feature) {
     if (_isAllBlank(feature)) { return true; }
-    return service.filters[feature][car.searchable[feature]];
+
+    for (var i=0; i<car.searchable[feature].length; i++) {
+      if (service.orFilters[feature][car.searchable[feature][i]]) { return true; }
+    }
+    return false;
+  }
+
+  var _doesMatchAndFeature = function(car, feature, setting) {
+    if (_isAllBlank(feature)) { return true; }
+
+    for (var i=0; i<car.searchable[feature].length; i++) {
+      if (car.searchable[feature][i] === setting) { return true; }
+    }
+    return false;
   }
 
   var _isAllBlank = function(feature) {
-    for (var setting in service.filters[feature]) {
-      if (service.filters[feature][setting]) { return false; }
+    for (var setting in service.orFilters[feature]) {
+      if (service.orFilters[feature][setting]) { return false; }
+    }
+    for (var setting in service.andFilters[feature]) {
+      if (service.andFilters[feature][setting]) { return false; }
     }
     return true;
-  }
-
-  var _toggleBodyType = function(feature, bodyType) {
-    if (feature !== 'body_type') { return }
-    if (bodyType === 'Sedan') {
-      service.filters.body_type.SUV = false
-    }
-    if (bodyType === 'SUV') {
-      service.filters.body_type.Sedan = false
-    }
   }
 
   return service;
