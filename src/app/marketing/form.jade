@@ -1,0 +1,22 @@
+.form-container.listing-background
+  .text-wrapper
+    ng-form(name='fieldForm', novalidate)
+      div(ng-repeat='field in fields')
+        label(for="{{field.name}}") {{field.label}}
+        input.no-box(
+          format-tel='{{field.formatTel}}',
+          type='{{field.type}}',
+          name='{{field.name}}',
+          placeholder='{{field.placeholder}}',
+          maxlength='{{field.maxlength}}',
+          ng-minlength='{{field.minlength}}',
+          ng-pattern='field.pattern',
+          ng-model='user[field.name]',
+          ng-change='validateForm()',
+          ng-keypress='navKeyPressed($event)',
+          auto-focus='{{field.autoFocus}}',
+          required,
+          autocomplete='off')
+
+        .login-link(ng-if='field.showLogin')
+          | Already have an account? #[a(ui-sref='login') Log in]
