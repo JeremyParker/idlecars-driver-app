@@ -1,5 +1,15 @@
 ng-form.form-page(name="bankLinkForm")
 
+  a(
+    href="https://www.braintreegateway.com/merchants/f5d9mhqcfxncy7nv/verified"
+    target="_blank",
+    style="margin-bottom: 1rem; display: block")
+    img(src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png",
+      width="280px",
+      height ="44px",
+      border="0",
+      style="margin: 0 auto")
+
   label(for="first_name") First name
   input(
     type='text',
@@ -24,14 +34,6 @@ ng-form.form-page(name="bankLinkForm")
     name='email',
     maxlength=50,
     ng-model='params.individual.email',
-    required,
-    autocomplete='off')
-
-  label(for="date_of_birth") Date of Birth
-  input(
-    type='date',
-    name='date_of_birth',
-    ng-model='params.individual.date_of_birth',
     required,
     autocomplete='off')
 
@@ -68,6 +70,14 @@ ng-form.form-page(name="bankLinkForm")
     name='postal_code',
     ng-pattern="/^[\\d]{5}$/",
     ng-model='params.individual.address.postal_code',
+    required,
+    autocomplete='off')
+
+  label(for="date_of_birth") Date of Birth
+  input(
+    type='date',
+    name='date_of_birth',
+    ng-model='params.individual.date_of_birth',
     required,
     autocomplete='off')
 
