@@ -43,6 +43,7 @@ angular.module('idlecars')
     delete $localStorage.authToken;
     service.token = $localStorage.authToken;
     MyDriverService.driver = null;
+    delete $http.defaults.headers.common['Authorization'];
   }
 
   service.isLoggedIn = function() {
