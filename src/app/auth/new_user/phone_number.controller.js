@@ -19,7 +19,7 @@ angular.module('idlecars')
     phoneNumber.get()
     .then(function() {
       $state.go('login', {username: $scope.user.phone_number}).then(function() {
-        AppNotificationService.push("Great, you already have an account. Enter your password.");
+        AppNotificationService.push({success: "Great, you already have an account. Enter your password."});
       });
     })
     .catch(function() {
