@@ -1,0 +1,5 @@
+//- TODO: tabs should be a directive
+.tabs
+  .tab(ng-class='{"inactive": !driverView, "curve-right": !driverView}', ui-sref='faq.driver') Driver
+  .tab(ng-class='{"inactive": !ownerView, "curve-left": !ownerView}', ui-sref='faq.owner') Owner
+ui-view.faq-view

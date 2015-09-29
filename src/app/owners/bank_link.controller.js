@@ -18,6 +18,8 @@ angular.module('idlecars')
   $scope.saveForm = function () { OwnerBankService.ownerBankInfo = $scope.params }
 
   $scope.linkBankAccount = function() {
+    if ($scope.bankLinkForm.$invalid) { return $scope.showError = true };
+
     // TODO: a real solution for TOS
     $scope.isBusy = true;
 

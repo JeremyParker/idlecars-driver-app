@@ -15,7 +15,7 @@ angular.module('idlecars')
         return $state.go('driverAccount');
       })
       .then(function() {
-        AppNotificationService.push('An email has been sent to your address. Please check your email.');
+        AppNotificationService.push({success: 'An email has been sent to your address. Please check your email.'});
       });
     })
   }

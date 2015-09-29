@@ -1,0 +1,20 @@
+.tabs
+  @extend %gray_theme
+  display: flex
+
+  .tab
+    flex: 1
+    margin-bottom: 0.5rem
+    padding: 0.5rem
+    text-align: center
+    font-weight: $bold_font_weight
+
+    &.inactive
+      @extend %alpha_blue_theme
+      color: black
+
+    &.curve-left
+      border-bottom-left-radius: 5px
+
+    &.curve-right
+      border-bottom-right-radius: 5px

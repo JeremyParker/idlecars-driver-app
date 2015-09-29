@@ -10,7 +10,7 @@ ng-form.form-page(name="bankLinkForm")
       border="0",
       style="margin: 0 auto")
 
-  label(for="first_name") First name
+  label(for="first_name", ng-class="{invalid: bankLinkForm.first_name.$invalid && showError}") First name
   input(
     type='text',
     name='first_name',
@@ -19,7 +19,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="last_name") Last name
+  label(for="last_name", ng-class="{invalid: bankLinkForm.last_name.$invalid && showError}") Last name
   input(
     type='text',
     name='last_name',
@@ -28,7 +28,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="email") Email
+  label(for="email", ng-class="{invalid: bankLinkForm.email.$invalid && showError}") Email
   input(
     type='email',
     name='email',
@@ -37,7 +37,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="street_address") Street address
+  label(for="street_address", ng-class="{invalid: bankLinkForm.street_address.$invalid && showError}") Street address
   input(
     type='text',
     name='street_address',
@@ -46,7 +46,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="locality") City
+  label(for="locality", ng-class="{invalid: bankLinkForm.locality.$invalid && showError}") City
   input(
     type='text',
     name='locality',
@@ -55,7 +55,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="region") State
+  label(for="region", ng-class="{invalid: bankLinkForm.region.$invalid && showError}") State
   input(
     type='text',
     name='region',
@@ -64,16 +64,17 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="postal_code") Postal code
+  label(for="postal_code", ng-class="{invalid: bankLinkForm.postal_code.$invalid && showError}") Postal code
   input(
     type='text',
     name='postal_code',
     ng-pattern="/^[\\d]{5}$/",
+    maxlength=5,
     ng-model='params.individual.address.postal_code',
     required,
     autocomplete='off')
 
-  label(for="date_of_birth") Date of Birth
+  label(for="date_of_birth", ng-class="{invalid: bankLinkForm.date_of_birth.$invalid && showError}") Date of Birth
   input(
     type='date',
     name='date_of_birth',
@@ -81,7 +82,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="routing_number") Routing number
+  label(for="routing_number", ng-class="{invalid: bankLinkForm.routing_number.$invalid && showError}") Routing number
   input(
     type='text',
     name='routing_number',
@@ -91,7 +92,7 @@ ng-form.form-page(name="bankLinkForm")
     required,
     autocomplete='off')
 
-  label(for="account_number") Account number
+  label(for="account_number", ng-class="{invalid: bankLinkForm.account_number.$invalid && showError}") Account number
   input(
     type='text',
     name='account_number',
@@ -120,7 +121,7 @@ ng-form.form-page(name="bankLinkForm")
     label(for="account_type_business") Business Account
 
   div(ng-if="account_type == 'business'")
-    label(for="legal_name") Business legal name
+    label(for="legal_name", ng-class="{invalid: bankLinkForm.legal_name.$invalid && showError}") Business legal name
     input(
       type='text',
       name='legal_name',
@@ -128,7 +129,7 @@ ng-form.form-page(name="bankLinkForm")
       required,
       autocomplete='off')
 
-    label(for="tax_id") Business tax ID
+    label(for="tax_id", ng-class="{invalid: bankLinkForm.tax_id.$invalid && showError}") Business tax ID
     input(
       type='text',
       name='tax_id',
@@ -144,9 +145,10 @@ ng-form.form-page(name="bankLinkForm")
       name="tos",
       required,
       ng-model="params.tos_accepted")
-    label(for="tos") I accept the #[a(ui-sref='terms' style='text-decoration: underline', ng-click='saveForm()') Terms of Service]
+    label(for="tos", ng-class="{invalid: bankLinkForm.tos.$invalid && showError}")
+      | I accept the #[a(ui-sref='terms' style='text-decoration: underline', ng-click='saveForm()') Terms of Service]
 
-  button.button(type="submit", ng-disabled="bankLinkForm.$invalid", ng-click="linkBankAccount()") Submit
+  button.button(type="submit", ng-click="linkBankAccount()") Submit
 
 //- TODO: put ic-loading under <body> tag. use rootScope.isBusy
 ic-loading(ng-if='isBusy')

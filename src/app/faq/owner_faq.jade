@@ -1,35 +1,64 @@
-.faq-container
-  h2 OWNER FAQ
+.faq-container(ng-init='$parent.driverView=false;$parent.ownerView=true')
+  h2 Owner questions
   section
-    h3 Why Idlecars?
-    p It’s the easiest way to rent your car. We are the top marketplace for professional drivers and vehicle owners to connect. We strive to ensure the transactions are safe and secure. Through idlecars, you’ll be confident and at ease renting to a community of reliable and trustworthy drivers.
+    h3 How do I rent out my car?
+    p 4 Simple Steps:
+    ul
+      li List your car on our easy to use registration form #[a(href='http://goo.gl/forms/4s26I6GUQY') here]
+      li We’ll confirm your cars are registered with the TLC
+      li We’ll send you a request for you to register your bank details
+      li We will send you the information to add the driver to the insurance - then they will come pick it up and drive
+    br
+    p Future Payments will be processed automatically at the beginning of each week while your vehicle is rented, until it is returned.
 
   section
-    h3 What about insurance?
-    p All vehicles on idlecars maintain commercial insurance coverage compliant with state and local regulatory requirements. Each driver is added to the existing commercial insurance policy and removed at the end of the rental.
+    h3 Can I rent out my personal car?
+    p
+      | Unfortunately, not at this time. Due to strict registration and insurance requirements in New York City,
+      |  we require all vehicles to be registered with the TLC and retain adequate commercial liability insurance.
+      |  We can however, help you obtain these for your personal vehicle (TLC registration is ~$500 and insurance is ~$585/month).
+      |  Please contact us if you would like assistance with registration.
+
 
   section
-    h3 How do I sign up my car?
-    p It’s easy. Fill out this form, and once it’s approved, it’s live on our marketplace!
+    h3 What do you charge?
+    p
+      | We currently keep between 6-10% of each rental booked through Idle Cars.
+      |  All rental payments and registration is done through our online marketplace.
+      |  We only keep the % of a rental if it is completed. We do not charge for any incomplete or unsuccessful bookings.
 
   section
-    h3 How do you screen drivers?
-    p We take driver screening very seriously. All drivers are required to submit 4 pieces of documentation including their drivers license, professional license and evidence of completing defensive driving course. We also perform an independent review of the Motor Vehicle Record for each driver. Once the drivers have undergone our screening, they are allowed to complete their rental.
+    h3 Who sets the price of the rental?
+    p
+      | You do! As the owner of the vehicle, it is your decision of the price to list the vehicle.
+      |  We do often make suggested prices based on volume, seasonality, demand, make, model and year of vehicle,
+      |  but it is always up to the owner to determine the final price of the rental.
 
   section
-    h3 How much can my car earn me?
-    p An active idlecar can make up to $42,000 per year for a premium luxury SUV? The average weekly rate of vehicles listed on idlecars make $400 per week.
+    h3 Can I negotiate with the driver?
+    p
+      | No. We do not allow negotiations, haggling, or switching the price after it is listed.
+      |  You may however, contact us to inform us you would like to update your listings.
+      |  Users who are found to be haggling or negotiating are immediately removed from the marketplace.
 
   section
-    h3 What will I earn per rental?
-    p Idlecar vehicle owners will receive 100% of price they set.
+    h3 How do I pay taxes on the rental?
+    p
+      | Our payment solutions provider, Braintree, will generate 1099 forms for all market participants
+      |  and we will distribute these to you, as sellers on the marketplace, at the end of each year.
 
   section
-    h3 What cars do you accept?
-    p All vehicles must be registered and licensed as commercial vehicles. We accept all standard and luxury vehicles allowed to drive for Uber, Lyft, Via, Gett and the black car bases, etc. To get a sense of what is listed, you can visit our listing site here.
+    h3 What if a driver has tolls, tickets, or fines
+    p
+      | As part of our #[a(ui-sref='terms') terms of service], in the event an owner of the vehicle receives any tickets,
+      |  unpaid tolls, or fines, Idle Cars reserves the right to review and may immediately charge the driver’s
+      |  credit card account we have on file. In the event we are unable to collect the tolls, tickets, or fines,
+      |  we will perform an internal review to determine if are able to assist in the collections process.
 
   section
-    h3 How do I get paid?
-    p You can either set up direct deposit with your bank account or receive checks on a weekly basis from our automated system.
+    h3 How do I contact idlecars?
+    p
+      | You can always call us at 1-844-IDLECAR(#[a(href='tel:1-844-4353227') 1-844-435-3227]
+      | ) or email us at #[a(href='mailto: support@idlecars.com') support@idlecars.com].
 
   a.button(href='tel:1-844-4353227') Call us: 1-844-IDLECAR
