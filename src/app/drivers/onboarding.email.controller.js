@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('driver.onboarding.email.controller', function ($scope, $rootScope, $state, MyDriverService) {
+.controller('driver.onboarding.email.controller', function ($scope, $rootScope, $state, MyDriverService, RequireAuthService) {
   $scope.user = {};
 
   $scope.fields = [{
@@ -14,9 +14,7 @@ angular.module('idlecars')
   }];
 
   $rootScope.navGoNext = function() {
-    MyDriverService.patch($scope.user).then(function () {
-      $state.go('^.uploadDriverLicense');
-    })
+    MyDriverService.patch($scope.user).then(RequireAuthService.resolve)
   }
 
   $scope.validateForm = function() {

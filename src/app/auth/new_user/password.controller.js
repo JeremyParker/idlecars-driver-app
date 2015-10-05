@@ -37,9 +37,9 @@ angular.module('idlecars')
   var _saveUser = function() {
     var newDriver = new DriverService($scope.user);
 
-    newDriver.$save().then(function() {
-      return AuthService.login(_loginParams());
-    }).then(RequireAuthService.resolve);
+    newDriver.$save()
+    .then(function() { return AuthService.login(_loginParams()) })
+    .then(function () { $state.go('driverAccount.onboarding.email') });
   }
 
   var _loginParams = function() {
