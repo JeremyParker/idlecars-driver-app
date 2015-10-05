@@ -5,7 +5,6 @@ var UploadDocs = function() {
 
   self.firstName = element(by.css('input[name=first_name]'));
   self.lastName = element(by.css('input[name=last_name]'));
-  self.email = element(by.css('input[name=email]'));
   self.uploadButton = element(by.css('input[type=file]'));
   self.uploadTitle = element(by.css('.upload-title'));
   self.progressBar = element(by.css('progress-bar'));

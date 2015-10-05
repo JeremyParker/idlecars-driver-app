@@ -24,7 +24,7 @@ describe('Listing page', function () {
 
     navbar.menuButton.click();
     navbar.questionsButton.click();
-    expect(faq.title.getText()).toContain('Questions');
+    expect(faq.title.getText()).toContain('questions');
   });
 
   it('My account and My rental button should work', function () {

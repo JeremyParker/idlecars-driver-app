@@ -34,12 +34,8 @@ describe('As a driver, I can upload my docs', function () {
     var absolutePath = path.resolve(__dirname, fileToUpload);
 
     signup.signupProcess();
-    expect(navbar.title.getText()).toEqual('Email');
-
-    uploadDocs.email.sendKeys('test@gmail.com');
-    navbar.nextButton.click();
-
     expect(uploadDocs.progressBar.isDisplayed()).toBe(true);
+
     uploadDocs.skipButton.click();
     expect(docsOverview.documents.count()).toBe(4);
     docsOverview.driverLicense.click();
