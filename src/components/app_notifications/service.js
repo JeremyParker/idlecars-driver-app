@@ -6,7 +6,12 @@ angular.module('idlecars')
 
   service.push = function(message) {
     service.messages.push(message);
-    $timeout(function() { service.messages.shift(); }, 5000);
+  }
+
+  service.remove = function(message) {
+    var index = service.messages.indexOf(message);
+    if (index > -1) { service.messages.splice(index, 1) }
+    else { service.messages = [] }
   }
 
   return service;

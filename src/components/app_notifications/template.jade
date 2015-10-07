@@ -1,5 +1,8 @@
-.wrapper(ng-repeat="message in messages")
-  img(src='/assets/images/error.png', ng-if='!(message.success || message.warning)')
-  img(src='/assets/images/success.png', ng-if='message.success')
-  img(src='/assets/images/warning.png', ng-if='message.warning')
-  .message {{message.success || message.warning || message.error || message}}
+.container
+  .content
+    .content-row(ng-repeat="message in messages")
+      img(src='/assets/images/error.png', ng-if='!(message.success || message.warning)')
+      img(src='/assets/images/success.png', ng-if='message.success')
+      img(src='/assets/images/warning.png', ng-if='message.warning')
+      .message {{message.success || message.warning || message.error || message}}
+      button.close(ng-click='close(message)') X
