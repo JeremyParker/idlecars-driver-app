@@ -11,6 +11,10 @@ angular.module('idlecars')
     }
   }
 
+  var _validateToken = function () {
+    if (service.token) { MyDriverService.get().catch(service.logout) }
+  }
+
   var _cleanParams = function(params) {
     var clean = angular.copy(params);
     if (clean.username) {
@@ -43,6 +47,7 @@ angular.module('idlecars')
     delete $localStorage.authToken;
     service.token = $localStorage.authToken;
     MyDriverService.driver = null;
+    delete $http.defaults.headers.common['Authorization'];
   }
 
   service.isLoggedIn = function() {
@@ -52,6 +57,7 @@ angular.module('idlecars')
   service.initialize = function() {
     service.token = $localStorage.authToken;
     _setAuthHeader();
+    _validateToken();
   }
 
   return service;
