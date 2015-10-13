@@ -1,0 +1,16 @@
+.payment-method
+  a(href="https://www.braintreegateway.com/merchants/f5d9mhqcfxncy7nv/verified",
+    target="_blank",
+    style="margin-bottom: 2rem; display: block")
+
+    img(src="https://s3.amazonaws.com/braintree-badges/braintree-badge-wide-light.png",
+      width="280px",
+      height ="44px",
+      border="0",
+      style="margin: 0 auto")
+
+  div(id="dropin-container")
+  form(id="payment-form")
+    input.button(type="submit", value="{{actionButton}}")
+
+ic-loading(ng-if='isBusy')

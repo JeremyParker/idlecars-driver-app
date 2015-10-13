@@ -1,0 +1,10 @@
+.booking-content
+  car-image(car='booking.car')
+
+  .content-wording
+    h2 {{booking.car.name}}
+    .light {{booking.car.booked_features}}
+    .light {{booking.car.headline_features[2]}} #[span.d-orange.bold Upaid]
+    button.button(ng-click='uploadDocuments()') Upload Documents
+
+button.cancel-button(ng-click='doShowConfirm()') Cancel Reservation

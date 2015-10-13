@@ -147,7 +147,7 @@ ng-form.form-page(name="bankLinkForm")
       required,
       ng-model="params.tos_accepted")
     label(for="tos", ng-class="{invalid: bankLinkForm.tos.$invalid && showError}")
-      | I accept the #[a(ui-sref='terms' style='text-decoration: underline', ng-click='saveForm()') Terms of Service]
+      | I agree to the #[a(ui-sref='terms' style='text-decoration: underline', ng-click='saveForm()') Terms of Service]
 
   button.button(type="submit", ng-click="linkBankAccount()") Submit
 

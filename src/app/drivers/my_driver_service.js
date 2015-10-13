@@ -43,5 +43,9 @@ angular.module('idlecars')
     return promise;
   }
 
+  service.addPaymentMethod = function (nonce) {
+    return Restangular.one('drivers','me').all('payment_method').post(nonce);
+  }
+
   return service;
 });

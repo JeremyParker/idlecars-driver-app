@@ -9,7 +9,7 @@ var DocsOverview = function() {
   self.defensiveDriving = element.all(by.repeater('item in driverDocuments')).get(2);
   self.proofAddress = element.all(by.repeater('item in driverDocuments')).get(3);
 
-  self.accountButton = element(by.css('a.button'));
+  self.rentalButton = element(by.css('a.button'));
 
 };
 

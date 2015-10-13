@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('map.controller', function ($scope, mapService) {
+.controller('map.controller', function ($scope, $rootScope, mapService) {
 
   var setBounds = function() {
     // only when two locations are both ready
@@ -29,7 +29,7 @@ angular.module('idlecars')
     }
 
     // show zoom control if device is desktop
-    if (!mapService.isMobileDevice) {
+    if (!$rootScope.isMobileDevice) {
       map.setOptions({zoomControl: true});
     }
   };

@@ -19,18 +19,4 @@ angular.module('idlecars')
         },
       },
     })
-
-    .state('bookingSuccess', {
-      url: '/booking_success',
-      views: {
-        'navbar@': {
-          templateUrl: 'components/navbar/navbar_main.html',
-          controller: 'navbarMain.controller',
-        },
-        'content@': {
-          templateUrl: 'app/bookings/success.html',
-        },
-      },
-    })
-
 });

@@ -9,6 +9,7 @@ var startTest = function () {
 
   browser.get('http://localhost:3000/#/').then(function() {
     browser.executeScript('return localStorage.removeItem("ngStorage-authToken");')
+    browser.executeScript('return localStorage.setItem("ngStorage-tutorialClosed", "true");')
   })
 }
 

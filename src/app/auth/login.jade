@@ -28,7 +28,7 @@
 
   .lower-section
     .button-wrapper
-      button.button(ng-click='login()', ng-disabled='userForm.$invalid', ng-class='{"disabled-button": userForm.$invalid}')
+      button.button(ng-click='login()', ng-disabled='userForm.$invalid')
         span Log in
       button.white-boarder-button(ui-sref='newUser.phoneNumber')
         span Sign up

@@ -13,7 +13,7 @@ Run `npm install -g gulp`
 `gulp serve`
 
 ### Running end-to-end tests
-`gulp protractor && gulp config:reset`
+Run `gulp serve` to compile the latest client if you haven't run it recently. Then run `gulp protractor && gulp config:reset` to run the end-to-end tests.
 
 ### Build & Deploy
 Use direnv and get `.envrc` from another developer

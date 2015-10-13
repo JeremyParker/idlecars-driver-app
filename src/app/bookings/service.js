@@ -16,5 +16,17 @@ angular.module('idlecars')
     return Restangular.one('bookings', bookingId).patch(patchData);
   }
 
+  service.cancel = function (bookingId) {
+    return Restangular.one('bookings', bookingId).all('cancelation').post('');
+  }
+
+  service.checkout = function (bookingId) {
+    return Restangular.one('bookings', bookingId).all('checkout').post('');
+  }
+
+  service.pickup = function (bookingId) {
+    return Restangular.one('bookings', bookingId).all('pickup').post('');
+  }
+
   return service;
 });

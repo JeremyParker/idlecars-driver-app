@@ -1,11 +1,11 @@
-.settings-wrapper
+.settings-wrapper.docs-overview-wrapper
 
   .top-interlude
     .b-inter-content You must submit all documents to complete your rental.
 
   section
     .section-row
-      p.section-title.medium-gray Your Driver Documents
+      title Your Driver Documents
     .section-row(ng-repeat='item in driverDocuments')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref="{{item.sref}}")
         .left-flex-title {{item.title}}
@@ -20,4 +20,4 @@
       | This usually takes 24-48 hours. Then you can pick up your car and start earning.
 
   .button-section
-    a.button(ui-sref='driverAccount') My Account
+    a.button(ui-sref='driverAccount.bookings') My Rental
