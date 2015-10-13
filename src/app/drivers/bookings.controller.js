@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('bookings.controller', function ($scope, $state, BookingService, MyDriverService, DocRouterService, PaymentService) {
+.controller('bookings.controller', function ($scope, $state, BookingService, MyDriverService, DocRouterService, PaymentService, HistoryService) {
 
   var initScope = function (me) {
     $scope.username = me.client_display;
@@ -61,5 +61,9 @@ angular.module('idlecars')
     BookingService.pickup($scope.booking.id)
     .then(function () { $state.go('^.success') })
     .finally(function () { $scope.isBusy = false })
+  }
+
+  $scope.saveState = function () {
+    HistoryService.putInHistory();
   }
 })
