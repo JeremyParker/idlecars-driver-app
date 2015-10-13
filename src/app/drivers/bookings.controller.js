@@ -56,13 +56,11 @@ angular.module('idlecars')
   }
 
   $scope.pickUp = function () {
-    // $scope.isBusy = true;
+    $scope.isBusy = true;
 
-    // BookingService.pickup($scope.booking.id)
-    // .then(function () {
-     $state.go('^.success')
-   // })
-   //  .finally(function () { $scope.isBusy = false })
+    BookingService.pickup($scope.booking.id)
+    .then(function () { $state.go('^.success') })
+    .finally(function () { $scope.isBusy = false })
   }
 
   $scope.saveState = function () {
