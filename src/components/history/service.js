@@ -13,10 +13,6 @@ angular.module('idlecars')
     return -1;
   }
 
-  var _duplicatedStates = function (stateName) {
-    return states[states.length - 1] && stateName === states[states.length - 1].state;
-  }
-
   var _notInHistory = function () {
     return $state.current.data && $state.current.data.notInHistory;
   }
@@ -26,9 +22,12 @@ angular.module('idlecars')
       var stateName = toState.name;
 
       if (goBackTriggered) { goBackTriggered = false }
-      else if (_duplicatedStates(stateName)) { return; }
-      else if (_notInHistory()) { states.push({state: stateName, params: toParams, notInHistory: true}) }
-      else { states.push({state: stateName, params: toParams}) };
+      else { states.push({state: stateName, params: toParams, noInHistory: false}) };
+
+      if (_notInHistory() && states.length) {
+        states[states.length-1].notInHistory = true;
+      }
+
     })
   }
 
