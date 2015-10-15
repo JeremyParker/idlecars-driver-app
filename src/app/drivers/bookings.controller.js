@@ -9,9 +9,13 @@ angular.module('idlecars')
   }
 
   var _getBooking = function () {
-    BookingService.get().then(function (bookings) {
+    return BookingService.get().then(function (bookings) {
       $scope.booking = angular.copy(bookings[0]) || [];
     })
+  }
+
+  var _replaceBooking = function (booking) {
+    return $scope.booking = booking
   }
 
   MyDriverService.get().then(initScope);
@@ -23,7 +27,7 @@ angular.module('idlecars')
       $scope.isBusy = true;
 
       BookingService.patch($scope.booking.id, patchData)
-      .then(function (data) { $scope.booking.end_time_display = data.end_time_display })
+      .then(_replaceBooking)
       .finally(function () { $scope.isBusy = false })
     }
   }
@@ -32,7 +36,7 @@ angular.module('idlecars')
     $scope.isBusy = true;
 
     BookingService.cancel($scope.booking.id)
-    .then(_getBooking)
+    .then(_replaceBooking)
     .finally(function () { $scope.isBusy = false })
   }
 
@@ -50,7 +54,7 @@ angular.module('idlecars')
     $scope.isBusy = true;
 
     BookingService.checkout($scope.booking.id)
-    .then(_getBooking)
+    .then(_replaceBooking)
     .finally(function () { $scope.isBusy = false })
     // TODO: need server send Notification error
   }

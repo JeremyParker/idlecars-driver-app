@@ -3,6 +3,6 @@
   .no-image(ng-if="!car.image_url")
     p no image available
   .price-tag
-    span.currency $
-    span.cost {{car.cost}}
+    span ${{car.cost_str[0]}}
+    span.cost_dec.underline {{car.cost_str[1]}}
     span.per {{car.cost_time}}
