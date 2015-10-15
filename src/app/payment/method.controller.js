@@ -1,30 +1,30 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('paymentMethod.controller', function ($scope, $state, PaymentService, BookingService, MyDriverService) {
+.controller('paymentMethod.controller', function ($scope, $state, PaymentService, BookingService, MyDriverService, AppNotificationService) {
 
-  $scope.actionButton = 'Add this card';
-  if (PaymentService.pending) {
-    $scope.actionButton = 'Pay deposit ' + PaymentService.pending.car.deposit;
-  };
-
+  var _goBackState = function () {
+    if (PaymentService.pending) { $state.go('^.bookings') }
+    else { $state.go('^') }
+  }
   var addPaymentMethod = function (nonce) {
     return MyDriverService.addPaymentMethod({nonce: nonce});
   }
 
-  var onSuccess = function () {
+  var paymentSuccess = function (me) {
+    MyDriverService.driver = new_driver;
     if (PaymentService.pending) { return BookingService.checkout(PaymentService.pending.id) }
   }
 
-  var onFinal = function () {
-    if (PaymentService.pending) { $state.go('^.bookings') }
-    else { $state.go('^') }
-
+  var paymentFinal = function () {
+    _goBackState();
+    console.log('after go back')
     PaymentService.pending = null;
     $scope.isBusy = false;
   }
 
-  PaymentService.getToken().then(function (data) {
+  var tokenSuccess = function (data) {
+    $scope.isBusy = false;
     // TODO: we need our custom form
     braintree.setup(data.client_token, "dropin", {
       container: "dropin-container",
@@ -34,8 +34,24 @@ angular.module('idlecars')
       },
       onPaymentMethodReceived: function (obj) {
         $scope.isBusy = true;
-        addPaymentMethod(obj.nonce).then(onSuccess).finally(onFinal)
+        new_driver = addPaymentMethod(obj.nonce);
+        new_driver.then(paymentSuccess).finally(paymentFinal);
       }
     });
-  })
+  }
+
+  var tokenFailure = function () {
+    $scope.isBusy = false;
+    AppNotificationService.push('Sorry, we can not get your identity.');
+    _goBackState();
+  }
+
+  var new_driver;
+  $scope.isBusy = true;
+  $scope.actionButton = 'Add this card';
+  if (PaymentService.pending) {
+    $scope.actionButton = 'Pay deposit ' + PaymentService.pending.car.deposit;
+  };
+
+  PaymentService.getToken().then(tokenSuccess).catch(tokenFailure)
 });
