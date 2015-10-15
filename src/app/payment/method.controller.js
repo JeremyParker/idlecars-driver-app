@@ -11,14 +11,15 @@ angular.module('idlecars')
     return MyDriverService.addPaymentMethod({nonce: nonce});
   }
 
-  var paymentSuccess = function (me) {
+  var paymentSuccess = function () {
     MyDriverService.driver = new_driver;
+
     if (PaymentService.pending) { return BookingService.checkout(PaymentService.pending.id) }
   }
 
   var paymentFinal = function () {
     _goBackState();
-    console.log('after go back')
+
     PaymentService.pending = null;
     $scope.isBusy = false;
   }
@@ -43,6 +44,7 @@ angular.module('idlecars')
   var tokenFailure = function () {
     $scope.isBusy = false;
     AppNotificationService.push('Sorry, we can not get your identity.');
+
     _goBackState();
   }
 
