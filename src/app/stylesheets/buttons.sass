@@ -37,6 +37,20 @@
 
   font-weight: $bold_font_weight
 
+.circle-button
+  @extend %flex_container_center
+  font-weight: $bold_font_weight
+
+  border: none
+  border-radius: 50%
+
+  background: white
+  color: $ic-blue
+  opacity: 0.75
+
+  &:before
+    content: 'X'
+
 .white-boarder-button
   @extend %_general_button
   @extend %_center_first_child

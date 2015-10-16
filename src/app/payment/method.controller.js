@@ -4,6 +4,8 @@ angular.module('idlecars')
 .controller('paymentMethod.controller', function ($scope, $state, PaymentService, BookingService, MyDriverService) {
 
   var newDriver;
+  $scope.isBusy = true;
+
   $scope.actionButton = 'Add this card';
   if (PaymentService.pending) {
     $scope.actionButton = 'Pay deposit ' + PaymentService.pending.car.deposit;
@@ -27,6 +29,8 @@ angular.module('idlecars')
   }
 
   PaymentService.getToken().then(function (data) {
+    $scope.isBusy = false;
+
     // TODO: we need our custom form
     braintree.setup(data.client_token, "dropin", {
       container: "dropin-container",

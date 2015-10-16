@@ -18,8 +18,7 @@
         section
           .flex-row.bold
             .label Next Payment
-            //- TODO: August 8th should come from server
-            .content(style='flex: 5') ${{booking.car.cost * 7}} #[span.light &nbspon August 8th]
+            .content ${{booking.next_payment.amount}} #[span.light &nbspon {{booking.next_payment.start_time}}]
 
       car-image(car='booking.car')
 

@@ -4,12 +4,12 @@ angular.module('idlecars')
 .controller('navbarMain.controller', function ($scope, $rootScope, AuthService, NavbarService, config) {
   $rootScope.$on('$stateChangeSuccess', function() {
     $scope.menuOpen = false;
-    $scope.navbarInfo = NavbarService.getNavbarInfo();
+    $rootScope.navbarInfo = NavbarService.getNavbarInfo();
   });
 
   $scope.isLoggedIn = AuthService.isLoggedIn();
 
-  $scope.navbarInfo = NavbarService.getNavbarInfo();
+  $rootScope.navbarInfo = NavbarService.getNavbarInfo();
 
   $scope.goBack = function() {
     if (NavbarService.isAtRoot()) {

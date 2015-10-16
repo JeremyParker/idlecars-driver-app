@@ -21,4 +21,5 @@
         .login-link(ng-if='field.showLogin')
           | Already have an account? #[a(ui-sref='login') Log in]
 
-    button.slimer-button(ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
+    button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
+    button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next

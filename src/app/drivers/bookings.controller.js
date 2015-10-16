@@ -42,6 +42,8 @@ angular.module('idlecars')
 
   $scope.doShowConfirm = function () { $scope.showConfirm = true }
 
+  $scope.insuranceApproved = function () { return $scope.booking.car.plate }
+
   $scope.uploadDocuments = function () {
     DocRouterService.requiredDocState().then(function (state) { $state.go(state) });
   }

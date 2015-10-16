@@ -11,7 +11,8 @@
       .label.bold Next Payment
       .content.bold ${{booking.next_payment.amount}} #[span.light &nbspon pickup]
 
-    .tiny(ng-if='!booking.car.plate') We will notify you when your insurance has been approved. This can take 24 to 48 hours.
-    button.button(ng-disabled='!booking.car.plate', ui-sref='.pickup') Pick up your car
+    .tiny(ng-if='!insuranceApproved()') We will notify you when your insurance has been approved. This can take 24 to 48 hours.
+    button.button(ng-if='!insuranceApproved()', ng-disabled='true') Waiting for insurance
+    button.button(ng-if='insuranceApproved()', ng-disabled='false', ui-sref='.pickup') Arrange to pick up your car
 
 booking-cancel
