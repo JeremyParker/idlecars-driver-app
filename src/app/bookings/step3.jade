@@ -7,7 +7,7 @@
     section
       .flex-row
         .label.bold Rental Charges
-        .content.bold ${{booking.car.cost}} #[span.light &nbsp{{booking.car.cost_time}}]
+        .content.bold ${{booking.car.cost_str[0]}}.{{booking.car.cost_str[1]}} #[span.light &nbsp{{booking.car.cost_time}}]
       .tiny.warning Payment due on Pickup #[br] Insurance and Maintanance Included
     section
       booking-date
