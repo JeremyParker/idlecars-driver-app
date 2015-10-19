@@ -3,7 +3,7 @@
 angular.module('idlecars')
 .controller('newUser.phoneNumber.controller', function ($scope, $rootScope, $state, Restangular, NavbarService, AppNotificationService) {
   $scope.fields = [{
-    label: 'Your phone number',
+    label: 'Enter your phone number',
     placeholder: '(555) 555-5555',
     name: 'phone_number',
     type: 'tel',

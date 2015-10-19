@@ -1,6 +1,6 @@
 .tutorial-wrapper(ng-if='tutorialOn')
-  .tutorial-container(ng-class='{"mobile-arrow": isMobile}')
-    slick(dots='true', arrows='true', infinite='false')
+  .tutorial-container
+    slick(dots='true', arrows='{{!isMobile}}', infinite='false')
       div
         .tutorial-content
           .flex-cell
