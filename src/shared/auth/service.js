@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.factory('AuthService', function ($http, $q, $localStorage, TokenService, MyDriverService, BookingService, AppNotificationService) {
+.factory('AuthService', function ($http, $q, $localStorage, TokenService, AppNotificationService) {
   var service = {};
 
   var _setAuthHeader = function() {
@@ -27,12 +27,12 @@ angular.module('idlecars')
     _setAuthHeader();
   }
 
-  service.login = function(params) {
+  service.login = function(params, callback) {
     var newToken = new TokenService(_cleanParams(params));
     return newToken.$save()
     .then(function(data) {
       service.saveToken(data.token);
-      BookingService.get().then(BookingService.updateBookings);
+      callback();
     })
     .catch(function(error) {
       AppNotificationService.push("Sorry, that didn't work. Please double-check your phone number and password.");
@@ -40,12 +40,11 @@ angular.module('idlecars')
     });
   }
 
-  service.logout = function () {
+  service.logout = function (callback) {
     delete $localStorage.authToken;
     service.token = $localStorage.authToken;
-    MyDriverService.driver = null;
-    BookingService.bookings = [];
-    delete $http.defaults.headers.common['Authorization']
+    delete $http.defaults.headers.common['Authorization'];
+    callback();
   }
 
   service.isLoggedIn = function() {

@@ -1,0 +1,18 @@
+modal.welcome-modal(ng-if='welcomeModalOn;', action-click='closeModal()')
+  h1 Welcome to Idlecars!
+  p
+    | You set the price, we'll find the driver. Rental payments are automatically collected through
+    |  our online application.
+  br
+
+  p Need more info on pricing - we've got you covered! Checkout the prices of our latest bookings:
+  a.underline(href='http://bit.ly/RentalDets10_26') http://bit.ly/RentalDets10_26
+  br
+
+  p We keep 5% of each rental to cover marketing and administrative costs.
+  br
+
+  p Questions:
+
+  a(ui-sref='terms') Terms of Service
+  a(ui-sref='faq.owner') FAQs
