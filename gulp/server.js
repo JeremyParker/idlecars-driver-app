@@ -29,6 +29,7 @@ function browserSyncInit(baseDir, files, browser) {
     },
     open: false,
     browser: browser,
+    port: 3000,
   });
 }
 
