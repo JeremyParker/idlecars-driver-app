@@ -41,6 +41,7 @@ angular.module('idlecars')
       for (var i = 0; i < data._app_notifications.length; i++) {
         AppNotificationService.push(data._app_notifications[i]);
       }
+      // TODO: this should go to 'accout' sate, not 'driverAccount'
       $state.go('driverAccount');
     }).catch(function(data) {
       $state.go('login');

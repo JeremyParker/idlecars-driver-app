@@ -8,6 +8,6 @@ angular.module('idlecars')
       checked: '@',
     },
     transclude: true,
-    templateUrl: 'components/check_mark/check_mark.html',
+    templateUrl: 'shared/components/check_mark/check_mark.html',
   }
 })

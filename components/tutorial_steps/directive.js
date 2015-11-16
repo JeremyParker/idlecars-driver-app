@@ -8,7 +8,7 @@ angular.module('idlecars')
       step: '@'
     },
     transclude: true,
-    templateUrl: 'components/tutorial_steps/template.html',
+    templateUrl: 'shared/components/tutorial_steps/template.html',
     controller: function ($scope) {
       // this generates array [0,1,2,3,4,...] of length $scope.of
       $scope.stepsArray = Array.apply(null, {length: $scope.of}).map(Number.call, Number)

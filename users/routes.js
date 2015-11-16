@@ -11,7 +11,7 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Sign up', enableBack: true, enableNext: true}},
       views: {
         'navbar@': {
-          templateUrl: 'components/navbar/navbar_main.html',
+          templateUrl: 'shared/components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {
@@ -25,13 +25,13 @@ angular.module('idlecars')
 
     .state('newUser.phoneNumber', {
       url: '/phone_number',
-      templateUrl: 'app/users/form.html',
+      templateUrl: 'shared/users/form.html',
       controller: 'newUser.phoneNumber.controller',
     })
 
     .state('newUser.password', {
       url: '/password',
-      templateUrl: 'app/users/form.html',
+      templateUrl: 'shared//users/form.html',
       controller: 'newUser.password.controller',
     })
 

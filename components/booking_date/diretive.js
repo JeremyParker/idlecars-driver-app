@@ -3,7 +3,7 @@
 angular.module('idlecars')
 .directive('bookingDate', function () {
   return {
-    templateUrl: 'components/booking_date/template.html',
+    templateUrl: 'shared/components/booking_date/template.html',
     controller: function ($scope) {
       // TODO: needs to be more generic, could add a promise resovle
       $scope.options = {

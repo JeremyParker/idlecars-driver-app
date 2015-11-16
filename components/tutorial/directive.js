@@ -4,7 +4,7 @@ angular.module('idlecars')
 .directive('tutorial', function () {
   return {
     scope: {},
-    templateUrl: 'components/tutorial/template.html',
+    templateUrl: 'shared/components/tutorial/template.html',
     controller: function ($scope, $rootScope, $localStorage) {
       $scope.tutorialOn = !$localStorage.tutorialClosed;
       $scope.isMobile = $rootScope.isMobileDevice;

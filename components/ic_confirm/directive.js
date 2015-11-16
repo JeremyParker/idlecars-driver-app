@@ -7,6 +7,6 @@ angular.module('idlecars')
       result: '=',
       showModal: '=',
     },
-    templateUrl: 'components/ic_confirm/cancel_booking_confirm.html',
+    templateUrl: 'shared/components/ic_confirm/cancel_booking_confirm.html',
   }
 })
