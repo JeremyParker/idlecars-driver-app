@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('newUser.password.controller', function ($scope, $rootScope, $state, DriverService, AuthService, NavbarService, AppAuthService) {
+.controller('newUser.password.controller', function ($scope, $rootScope, DriverService, AuthService, NavbarService, AppAuthService) {
   var minPassword = 2;
 
   $scope.fields =  [{

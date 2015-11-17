@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('auth.changePassword.controller', function ($scope, $state, Restangular, UserService, AppNotificationService, AppAuthService) {
+.controller('auth.changePassword.controller', function ($scope, Restangular, UserService, AppNotificationService, AppAuthService) {
   $scope.label = 'We will send you instructions on how to change your password.';
   $scope.button = 'Send me instructions';
 
