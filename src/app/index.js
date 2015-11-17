@@ -19,7 +19,6 @@ angular.module('idlecars',
 )
 
 .constant('LANDING_STATE', 'cars')
-.constant('ACCOUNT_STATE', 'driverAccount')
 
 .config(function ($urlRouterProvider, $resourceProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/');
