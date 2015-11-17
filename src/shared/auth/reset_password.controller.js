@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('auth.resetPassword.controller', function ($scope, $rootScope, $state, $stateParams, Restangular, AuthService, AppNotificationService, ACCOUNT_STATE) {
+.controller('auth.resetPassword.controller', function ($scope, $rootScope, $state, $stateParams, Restangular, AuthService, AppNotificationService, AppAuthService) {
   var minPassword = 2;
 
   $scope.fields =  [{
@@ -41,7 +41,7 @@ angular.module('idlecars')
       for (var i = 0; i < data._app_notifications.length; i++) {
         AppNotificationService.push(data._app_notifications[i]);
       }
-      $state.go(ACCOUNT_STATE);
+      AppAuthService.passwordReset();
     }).catch(function(data) {
       $state.go('login');
     })
