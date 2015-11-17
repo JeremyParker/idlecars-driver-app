@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('newUser.password.controller', function ($scope, $rootScope, $state, DriverService, AuthService, NavbarService, RequireAuthService) {
+.controller('newUser.password.controller', function ($scope, $rootScope, $state, DriverService, AuthService, NavbarService, RequireAuthService, ACCOUNT_STATE) {
   var minPassword = 2;
 
   $scope.fields =  [{
@@ -43,7 +43,7 @@ angular.module('idlecars')
 
     newDriver.$save()
     .then(function() { return AuthService.login(_loginParams()) })
-    .then(function () { $state.go('driverAccount.onboarding.email') });
+    .then(function () { $state.go(ACCOUNT_STATE + '.onboarding.email') });
   }
 
   var _loginParams = function() {

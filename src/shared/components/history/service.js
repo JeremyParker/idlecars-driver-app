@@ -1,14 +1,14 @@
 angular.module('idlecars')
-.factory('HistoryService', function ($rootScope, $state) {
+.factory('HistoryService', function ($rootScope, $state, LANDING_STATE) {
   var history = {};
   var states = [];
   var goBackTriggered = false;
 
   var _prevOrDefault = function() {
     if (_notInHistory()) {
-      return states[states.length - 1] || {state: 'cars'};
+      return states[states.length - 1] || {state: LANDING_STATE};
     }
-    return states[states.length - 2] || {state: 'cars'};
+    return states[states.length - 2] || {state: LANDING_STATE};
   }
 
   var _duplicatedStates = function (stateName) {
