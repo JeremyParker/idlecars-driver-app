@@ -13,7 +13,7 @@ gulp.task('partials', ['markups'], function () {
     path.extname = '.html';
   }
 
-  return gulp.src(paths.src + '/{app,shared}/**/*.jade')
+  return gulp.src(paths.src + '/{app,shared,components}/**/*.jade')
     .pipe($.consolidate('jade', { pretty: '  ' }))
     .on('error', function handleError(err) {
       console.error(err.toString());
