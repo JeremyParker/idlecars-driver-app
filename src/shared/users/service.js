@@ -12,5 +12,9 @@ angular.module('idlecars')
     return Restangular.all('users').post(params);
   }
 
+  service.patch = function (patchData) {
+    return Restangular.one('users', 'me').patch(patchData);
+  }
+
   return service;
 })
