@@ -10,7 +10,7 @@ angular.module('idlecars')
     RequireAuthService.loginThenGo(toState, toParams);
   })
 })
-.factory('RequireAuthService', function ($q, $state, $stateParams, AuthService) {
+.factory('RequireAuthService', function ($q, $state, $stateParams, AuthService, LANDING_STATE) {
   var service = {};
   var destinationState = {};
 
@@ -34,7 +34,7 @@ angular.module('idlecars')
       $state.go(destinationState.toState, destinationState.toParams);
     } else {
       // NOTE: this shouldn't happen, but in case
-      $state.go('cars');
+      $state.go(LANDING_STATE);
     }
   }
 
