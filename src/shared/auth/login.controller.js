@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('auth.login.controller', function ($scope, $stateParams, Restangular, AppNotificationService, RequireAuthService, AuthService) {
+.controller('auth.login.controller', function ($scope, $stateParams, Restangular, AppNotificationService, RequireAuthService, MyAuthService) {
 
   // TODO: find a place to store stuff like this
   $scope.min_password = 2;
@@ -19,7 +19,7 @@ angular.module('idlecars')
   };
 
   var _login = function() {
-    AuthService.login($scope.user)
+    MyAuthService.login($scope.user)
     .then(function() {
       RequireAuthService.resolve();
     })
