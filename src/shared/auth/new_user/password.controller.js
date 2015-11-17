@@ -43,6 +43,7 @@ angular.module('idlecars')
 
     newDriver.$save()
     .then(function() { return AuthService.login(_loginParams()) })
+    // TODO: don't use ACCOUNT_STATE + '.onboarding.email'.
     .then(function () { $state.go(ACCOUNT_STATE + '.onboarding.email') });
   }
 
