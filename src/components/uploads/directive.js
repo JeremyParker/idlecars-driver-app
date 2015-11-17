@@ -3,7 +3,7 @@
 angular.module('idlecars')
 .directive('icUpload', function () {
   return {
-    templateUrl: 'shared/components/uploads/upload.html',
+    templateUrl: 'components/uploads/upload.html',
     controller: 'upload.controller',
     scope: {
       fieldName: "@",
