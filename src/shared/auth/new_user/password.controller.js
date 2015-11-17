@@ -39,7 +39,8 @@ angular.module('idlecars')
   }
 
   var _saveUser = function() {
-    UserService.post(_loginParams())
+    // TODO: we will get rid of this once user can create a driver or owner
+    AppAuthService.saveUser($scope.user)
     .then(function() { return AuthService.login(_loginParams()) })
     .then(AppAuthService.accountCreated);
   }

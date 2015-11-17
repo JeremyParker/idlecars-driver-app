@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.factory('AppAuthService', function ($state, MyDriverService, BookingService) {
+.factory('AppAuthService', function ($state, DriverService, MyDriverService, BookingService) {
   var service = {};
 
   service.loggedin = function () {
@@ -23,6 +23,12 @@ angular.module('idlecars')
 
   service.passwordReset = function () {
     $state.go('driverAccount');
+  }
+
+  // TODO: get rid of the this temporary solution
+  service.saveUser = function (user) {
+    var newDriver = new DriverService(user);
+    return newDriver.$save()
   }
 
   return service;
