@@ -25,8 +25,11 @@ angular.module('idlecars')
 
   $rootScope.navKeyPressed = function ($event) {
     if ($event.which !== 13) { return; }
-    if ($rootScope.navNextEnabled && $rootScope.navGoNext) {
+    if ($rootScope.navbarInfo.enableNext && $rootScope.navNextEnabled && $rootScope.navGoNext) {
       $rootScope.navGoNext();
+    }
+    else if ($rootScope.navbarInfo.enableSave && $rootScope.navNextEnabled && $rootScope.navSave) {
+      $rootScope.navSave();
     }
   }
 })
