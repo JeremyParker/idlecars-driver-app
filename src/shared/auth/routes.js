@@ -11,7 +11,7 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Log in', enableBack: true}},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {
@@ -25,7 +25,7 @@ angular.module('idlecars')
       abstract: true,
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {
