@@ -5,8 +5,8 @@
 
 // describe('Filtering cars', function () {
 //   var helpers = require('../spec_helper');
-//   var listing = require('../cars/list.po');
-//   var filterModal = require('../cars/filter_modal.po');
+//   var listing = require('../listings/list.po');
+//   var filterModal = require('../listings/filter_modal.po');
 
 //   beforeEach(function () {
 //     helpers.startTest();

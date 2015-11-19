@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.factory('CarFilterService', function() {
+.factory('ListingFilterService', function() {
   var service = {
     allCars: [],
     orFilters: {},

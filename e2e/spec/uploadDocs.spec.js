@@ -3,7 +3,7 @@
 describe('As a driver, I can upload my docs', function () {
   var path = require('path');
   var account = require('../driver/account.po');
-  var carDetail = require('../cars/detail.po');
+  var carDetail = require('../listings/detail.po');
   var navbar = require('../components/navbar.po');
   var signup = require('../auth/signup.po');
   var uploadDocs = require('../driver/uploadDocs.po');
@@ -24,7 +24,7 @@ describe('As a driver, I can upload my docs', function () {
 
   beforeEach(function () {
     helpers.startTest();
-    browser.get('http://localhost:3000/#/cars/1');
+    browser.get('http://localhost:3000/#/listings/1');
     carDetail.bookingLink.click();
   });
 

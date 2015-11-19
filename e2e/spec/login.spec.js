@@ -1,7 +1,7 @@
 'use strict';
 
 describe('log in page', function () {
-  var listing = require('../cars/list.po');
+  var listing = require('../listings/list.po');
   var navbar = require('../components/navbar.po');
   var login = require('../auth/login.po');
   var helpers = require('../spec_helper');

@@ -4,8 +4,8 @@ describe('Driver in booking page', function () {
   var helpers = require('../spec_helper');
   var navbar = require('../components/navbar.po');
   var login = require('../auth/login.po');
-  var listing = require('../cars/list.po');
-  var carDetail = require('../cars/detail.po');
+  var listing = require('../listings/list.po');
+  var carDetail = require('../listings/detail.po');
   var booking = require('../driver/booking.po');
   var uploadDocs = require('../driver/uploadDocs.po');
   var confirm = require(('../components/confirm.po'));

@@ -3,8 +3,8 @@
 describe('sign up page', function () {
   var navbar = require('../components/navbar.po');
   var signup = require('../auth/signup.po');
-  var carDetail = require('../cars/detail.po');
-  var listing = require('../cars/list.po');
+  var carDetail = require('../listings/detail.po');
+  var listing = require('../listings/list.po');
   var helpers = require('../spec_helper');
 
   describe('from menu button', function() {
@@ -27,7 +27,7 @@ describe('sign up page', function () {
 
     beforeEach(function () {
       helpers.startTest();
-      browser.get('http://localhost:3000/#/cars/1');
+      browser.get('http://localhost:3000/#/listings/1');
       carDetail.bookingLink.click();
     });
 

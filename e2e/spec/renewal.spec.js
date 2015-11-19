@@ -2,11 +2,11 @@
 
 describe('Renewing a car', function () {
   var helpers = require('../spec_helper');
-  var renewal = require('../cars/renewal.po');
+  var renewal = require('../listings/renewal.po');
 
   beforeEach(function () {
     helpers.startTest();
-    browser.get('http://localhost:3000/#/cars/1/renewals/faketoken');
+    browser.get('http://localhost:3000/#/listings/1/renewals/faketoken');
 
   });
 
