@@ -5,7 +5,7 @@ angular.module('idlecars')
 
   $stateProvider
 
-    .state('cars', {
+    .state('listings', {
       url: '/',
       views: {
         'navbar': {
@@ -13,39 +13,39 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content': {
-          templateUrl: 'app/cars/list.html',
-          controller: 'cars.list.controller',
+          templateUrl: 'app/listings/list.html',
+          controller: 'listings.controller',
         },
       },
     })
 
-    .state('cars.search', {
-      templateUrl: 'app/cars/search.html'
+    .state('listings.search', {
+      templateUrl: 'app/listings/search.html'
     })
 
-    .state('cars.detail', {
-      url: 'cars/:carId',
+    .state('listings.detail', {
+      url: 'listings/:carId',
       params: {car: null},
       views: {
         'content@': {
-          templateUrl: 'app/cars/detail.html',
-          controller: 'cars.detail.controller',
+          templateUrl: 'app/listings/detail.html',
+          controller: 'listings.detail.controller',
         },
       },
     })
 
-    .state('cars.detail.newBooking', {
+    .state('listings.detail.newBooking', {
       data: {notInHistory: true, requireAuth: true},
-      controller: 'cars.newBooking.controller',
+      controller: 'listings.newBooking.controller',
       template: "<ic-loading />"
     })
 
-    .state('cars.detail.renewal', {
+    .state('listings.detail.renewal', {
       data: {notInHistory: true},
       url: '/renewals/:renewalId',
       views: {
         'content@': {
-          templateUrl: 'app/cars/renewal.html',
+          templateUrl: 'app/listings/renewal.html',
           controller: 'renewal.showCtrl',
         },
       }

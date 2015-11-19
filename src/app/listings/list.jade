@@ -7,13 +7,13 @@ h1(hidden) Rent cars for rideshare
 
   a.add-filters(ui-sref=".search") add filters
 
-.no-results(ng-if="cars.length === 0")
+.no-results(ng-if="listings.length === 0")
   h3 No Matching Cars
   p Try a different search
 
 .listing-wrapper(save-scroll)
 
-  a.car(ng-repeat="car in cars", ui-sref=".detail({carId: car.id, car: car})")
+  a.car(ng-repeat="car in listings", ui-sref=".detail({carId: car.id, car: car})")
     car-image(car='car')
     .info
       h3 {{car.name}}

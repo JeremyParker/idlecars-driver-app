@@ -1,15 +1,15 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('cars.list.controller', function ($scope, $timeout, CarService, CarFilterService) {
+.controller('listings.controller', function ($scope, $timeout, CarService, CarFilterService) {
   $timeout(function() {
     $scope.orFilters = CarFilterService.orFilters || {};
     $scope.andFilters = CarFilterService.andFilters || {};
   });
 
-  CarService.query().$promise.then(function(cars) {
-    CarFilterService.allCars = cars;
-    $scope.cars = CarFilterService.filterCars();
+  CarService.query().$promise.then(function(listings) {
+    CarFilterService.allCars = listings;
+    $scope.listings = CarFilterService.filterCars();
   });
 
   $scope.addOrFilter = function(feature, setting, $event) {
@@ -23,6 +23,6 @@ angular.module('idlecars')
   }
 
   $scope.filter = function () {
-    $scope.cars = CarFilterService.filterCars();
+    $scope.listings = CarFilterService.filterCars();
   }
 })

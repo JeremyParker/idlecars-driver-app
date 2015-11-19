@@ -1,9 +1,9 @@
 'use strict';
 
 describe('Getting to a car detail page', function () {
-  var carDetail = require('../cars/detail.po');
+  var carDetail = require('../listings/detail.po');
   var helpers = require('../spec_helper');
-  var listing = require('../cars/list.po');
+  var listing = require('../listings/list.po');
   var login = require('../auth/login.po');
   var booking = require('../driver/booking.po');
 
@@ -24,7 +24,7 @@ describe('Getting to a car detail page', function () {
   describe('from deep linking', function () {
     beforeEach(function () {
       helpers.startTest();
-      browser.get('http://localhost:3000/#/cars/1');
+      browser.get('http://localhost:3000/#/listings/1');
     });
 
     it('includes a header', function() {

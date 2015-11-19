@@ -3,7 +3,7 @@
 describe('Listing page', function () {
   var helpers = require('../spec_helper');
   var faq = require('../components/faq.po');
-  var listing = require('../cars/list.po');
+  var listing = require('../listings/list.po');
   var login = require('../auth/login.po');
   var navbar = require('../components/navbar.po');
   var account = require('../driver/account.po');

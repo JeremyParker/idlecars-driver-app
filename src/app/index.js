@@ -18,7 +18,7 @@ angular.module('idlecars',
   ]
 )
 
-.constant('LANDING_STATE', 'cars')
+.constant('LANDING_STATE', 'listings')
 
 .config(function ($urlRouterProvider, $resourceProvider, $httpProvider) {
   $urlRouterProvider.otherwise('/');

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('cars.newBooking.controller', function($state, $stateParams, $timeout, BookingService, DocRouterService) {
+.controller('listings.newBooking.controller', function($state, $stateParams, $timeout, BookingService, DocRouterService, LANDING_STATE) {
 
   $timeout(function() {
     BookingService.post({car: $stateParams.carId})
@@ -9,7 +9,7 @@ angular.module('idlecars')
       BookingService.updateBookings(booking);
       _afterSaveAttempting('driverAccount.bookings');
     })
-    .catch(function(){$state.go('cars')})
+    .catch(function(){$state.go(LANDING_STATE)})
    });
 
   var _afterSaveAttempting = function(destination) {
