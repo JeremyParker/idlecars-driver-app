@@ -10,7 +10,7 @@ angular.module('idlecars')
       data: {requireAuth: true},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {
@@ -25,7 +25,7 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'My Rental', enableBack: true, enableMenu: true}},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {

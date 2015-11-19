@@ -10,7 +10,7 @@ angular.module('idlecars')
       data: {requireAuth: true, navbarInfo: {title: 'Driver Documents', enableMenu: true}},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {

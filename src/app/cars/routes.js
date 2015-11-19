@@ -9,7 +9,7 @@ angular.module('idlecars')
       url: '/',
       views: {
         'navbar': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content': {

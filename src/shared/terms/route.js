@@ -10,7 +10,7 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Terms of Service', enableBack: true}},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {

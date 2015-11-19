@@ -11,7 +11,7 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Sign up', enableBack: true, enableNext: true}},
       views: {
         'navbar@': {
-          templateUrl: 'shared/components/navbar/navbar_main.html',
+          templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
         'content@': {
