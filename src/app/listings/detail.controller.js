@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('listings.detail.controller', function ($scope, $state, $stateParams, CarService, BookingService, LANDING_STATE) {
+.controller('listings.detail.controller', function ($scope, $state, $stateParams, ListingService, BookingService, LANDING_STATE) {
   if (!$stateParams.car) {
-    CarService.get({carId: $stateParams.carId}).$promise.then(
+    ListingService.get({carId: $stateParams.carId}).$promise.then(
       function(car) {
         $scope.car = car;
         heap.track('carDetail', {carId: car.id});

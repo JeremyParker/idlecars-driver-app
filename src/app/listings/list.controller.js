@@ -1,28 +1,28 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('listings.controller', function ($scope, $timeout, CarService, CarFilterService) {
+.controller('listings.controller', function ($scope, $timeout, ListingService, ListingFilterService) {
   $timeout(function() {
-    $scope.orFilters = CarFilterService.orFilters || {};
-    $scope.andFilters = CarFilterService.andFilters || {};
+    $scope.orFilters = ListingFilterService.orFilters || {};
+    $scope.andFilters = ListingFilterService.andFilters || {};
   });
 
-  CarService.query().$promise.then(function(listings) {
-    CarFilterService.allCars = listings;
-    $scope.listings = CarFilterService.filterCars();
+  ListingService.query().$promise.then(function(listings) {
+    ListingFilterService.allCars = listings;
+    $scope.listings = ListingFilterService.filterCars();
   });
 
   $scope.addOrFilter = function(feature, setting, $event) {
     if ($event) { $event.stopPropagation(); }
-    CarFilterService.orFilter(feature, setting);
+    ListingFilterService.orFilter(feature, setting);
   }
 
   $scope.addAndFilter = function(feature, setting, $event) {
     if ($event) { $event.stopPropagation(); }
-    CarFilterService.andFilter(feature, setting);
+    ListingFilterService.andFilter(feature, setting);
   }
 
   $scope.filter = function () {
-    $scope.listings = CarFilterService.filterCars();
+    $scope.listings = ListingFilterService.filterCars();
   }
 })
