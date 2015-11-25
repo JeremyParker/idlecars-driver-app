@@ -1,13 +1,14 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('driver.update.controller', function ($scope, $timeout, $rootScope, $state, MyDriverService, NavbarService) {
+.controller('driver.update.controller', function ($scope, $timeout, $rootScope, $state, MyDriverService) {
   $scope.showSkipLink = false;
   $scope.showProgressBar = false;
   $scope.afterUploadSref = 'driverAccount';
 
   MyDriverService.get().then(function (me) {
     $scope.user = angular.copy(me);
+    $scope.validateForm();
   })
 
   $rootScope.navSave = function() {
@@ -19,8 +20,6 @@ angular.module('idlecars')
   $scope.validateForm = function() {
     $timeout(function () { $rootScope.navNextEnabled = $scope.$$childHead.fieldForm.$valid; })
   }
-
-  NavbarService.validateInit($scope, true);
 })
 
 .controller('driver.update.driverlicense.controller', function ($scope) {
