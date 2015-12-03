@@ -1,5 +1,85 @@
-//- TODO: tabs should be a directive
-.tabs
-  .tab(ng-class='{"inactive": !driverView, "curve-right": !driverView}', ui-sref='faq.driver') Driver
-  .tab(ng-class='{"inactive": !ownerView, "curve-left": !ownerView}', ui-sref='faq.owner') Owner
-ui-view.faq-view
+.faq-container
+  h2 Driver questions
+  section
+    h3 How do I rent a car?
+    p 4 Simple Steps:
+    ul
+      li Pick a car, any car: Find the car that fits your style and budget
+      li Start your account: Use your smartphone to upload your driving documents
+      li Reserve your car: Use your credit card or bank account to reserve your car
+      li Drive: Once you are added to the insurance, you’re ready to go. Go pick up your car!
+    br
+    p Future Payments will be processed automatically at the beginning of each week of your rental, until it is returned.
+
+  section
+    h3 How do I sign up?
+    p Easy!
+    p
+      | Find the car you want, tap "Rent this car", follow the steps to sign up, then upload 4 required documents.
+      |  Or you can just sign up by clicking #[a(ui-sref='newUser.phoneNumber') here] and creating an account
+      |  - you will be notified about our latest deals going forward.
+
+
+  section
+    h3 How does insurance work?
+    p All vehicles on idlecars maintain commercial insurance coverage -- compliant with state and local regulatory requirements.
+    p As a driver, you will be added to the commercial insurance policy and removed at the end of the rental.
+
+  section
+    h3 How much does a rental cost?
+    p
+      | You decide -- just pick the car that has a price that works with your budget.
+      |  Take a look at our listings #[a(ui-sref='listings') here].
+      |  All rental prices include the cost of insurance and maintenance.
+
+  section
+    h3 What if I damage the car?
+    p
+      | While we would really hate for this to happen, we understand accidents do happen.
+      |  As part of our terms of service, in the event damage is reported to the vehicle,
+      |  Idle Cars may immediately charge the account you have on file up to the amount of a 7 day rental (your deposit).
+      |  After conducting an investigation, if we find that you are liable for more damage.
+      |  Additionally, we require that owners agree that the vehicle insurance associated with
+      |  the rental vehicle will be the sole source of funds for the liabilities of any damage or losses,
+      |  in excess of the 7 day deposit, will be the liability insurance policy associated with the rental vehicle.
+
+  section
+    h3 When can I negotiate with the owner?
+    p
+      | Never. We do not allow negotiations, haggling, or switching the price from what it is listed.
+      |  To keep our marketplace, safe and reliable we encourage you to report any users (owners or drivers)
+      |  who attempt to change the terms from the listed price. You may however,
+      |  contact us to inform us you would like to update your listings.
+      |  Users who are found to be haggling or negotiating are immediately removed from the marketplace.
+
+  section
+    h3 How do I pay tolls and tickets?
+    p
+      | As part of our #[a(ui-sref='terms') terms of service],
+      |  in the event the owner of the vehicle receives any tickets, unpaid tolls,
+      |  or fines, Idle Cars reserves the right to review and may immediately charge the account you have on file.
+
+  section
+    h3 What are my terms?
+    p
+      | No membership fee or weekly fee. You pay for what you use.
+      |  Please check out our #[a(ui-sref='terms') terms of service] for more detail.
+
+  section
+    h3 Are the cars registered with TLC/TCP/Other for-hire-vehicle regulators?
+    p Yes. Every car on our marketplace is ready to drive for professional for-hire drivers.
+
+  section
+    h3 What are the requirements to drive?
+    p
+      | We verify every driver has appropriate documents to ensure safety and security.
+      |  Drivers are required to provide the following documents: a Driver License, Professional (FHV) License,
+      |  Defensive Driving Certificate, and a Proof of Address. We also conduct a review of the motor vehicle history.
+
+  section
+    h3 How do I contact idlecars?
+    p
+      | You can always call us at 1-844-IDLECAR(#[a(href='tel:1-844-4353227') 1-844-435-3227]
+      | ) or email us at #[a(href='mailto: support@idlecars.com') support@idlecars.com].
+
+  a.button(href='tel:1-844-4353227') Call us: 1-844-IDLECAR
