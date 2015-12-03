@@ -5,7 +5,7 @@ angular.module('idlecars')
 
   $stateProvider
     .state('faq', {
-      abstract: true,
+      url: '/faq',
       views: {
         'navbar@': {
           templateUrl: 'components/navbar/navbar_main.html',
@@ -16,15 +16,4 @@ angular.module('idlecars')
         },
       },
     })
-
-    .state('faq.driver', {
-      url: '/driver_faq',
-      templateUrl: 'app/faq/driver_faq.html',
-    })
-
-    .state('faq.owner', {
-      url: '/owner_faq',
-      templateUrl: 'app/faq/owner_faq.html',
-    })
-
 })
