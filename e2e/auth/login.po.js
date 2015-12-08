@@ -5,6 +5,7 @@ var Login = function() {
 
   self.phone = element(by.css('input[name=phone]'));
   self.password = element(by.css('input[name=password]'));
+  self.forgotButton = element(by.css('.forgot-wrapper a'));
   self.loginButton = element(by.cssContainingText('span', 'Log in'));
   self.signupButton = element(by.cssContainingText('span', 'Sign up'));
 
