@@ -18,7 +18,7 @@ describe('sign up page', function () {
 
     it('should create an account', function() {
       signup.signupProcess();
-      expect(listing.carEls.count()).toBe(4);
+      expect(listing.carEls.count()).toBe(2);
     });
 
   })
