@@ -3,7 +3,7 @@
 angular.module('idlecars')
 .directive('onOffButton', function () {
   return {
-    templateUrl: 'components/on_off_button/template.html',
+    templateUrl: 'shared/components/on_off_button/template.html',
     scope: {
       status: '=',
       action: '&',

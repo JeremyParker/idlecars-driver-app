@@ -3,7 +3,7 @@
 angular.module('idlecars')
 .directive('icLoading', function () {
   return {
-    templateUrl: 'components/loading/loading.html',
+    templateUrl: 'shared/components/loading/loading.html',
     transclude: true,
   };
 });

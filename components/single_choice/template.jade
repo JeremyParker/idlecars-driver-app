@@ -1,0 +1,6 @@
+.single-choice(ng-style="{'max-height': {{maxHeight}}}")
+  .section-row(ng-repeat="choice in choices track by $index", ng-click="click($index)")
+    .row-content(ng-class='{"has-border": selectedIndex == $index}')
+      .checked
+        img(ng-class='{invisible: selectedIndex != $index}', ng-src='/assets/images/checkmark.svg')
+      .choice {{choice.value}}

@@ -1,4 +1,24 @@
 .form-container
   .text-wrapper
-    label(for="{label}}") {{label}}
-    button.button(ng-click='buttonClick()') {{button}}
+    section
+      label(for="{{label}}") {{label}}
+
+    section.content-container
+      .content-row(ng-repeat="content in contents track by $index")
+        .title(ng-show='content.title') {{content.title}}:
+        .content {{content.content}}
+
+    section
+      div(ng-repeat="button in buttons track by $index")
+        button.slimer-button(ng-show="!button.dateOptions", ng-click="button['click']()") {{button.value}}
+
+        button.slimer-button(
+          ng-show="button.dateOptions"
+          pick-a-date="date",
+          pick-a-date-options="button.dateOptions",
+          ng-model='date',
+        ) {{button.value}}
+
+    section
+      button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
+      button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next

@@ -14,7 +14,7 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content@': {
-          templateUrl: 'app/terms/terms_of_service.html',
+          templateUrl: 'shared/terms/terms_of_service.html',
         }
       },
     })

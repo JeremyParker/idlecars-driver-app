@@ -1,8 +1,8 @@
 .container
   .content
-    .content-row(ng-repeat="message in messages track by $index", ng-click='close(message)')
-      img(src='/assets/images/error.png', ng-if='!(message.success || message.warning)')
-      img(src='/assets/images/success.png', ng-if='message.success')
-      img(src='/assets/images/warning.png', ng-if='message.warning')
-      .message {{message.success || message.warning || message.error || message}}
+    .content-row(ng-repeat="message in messages track by $index", ng-click='close($index)')
+      img(src='/assets/images/error.png', ng-if='!(message.content.success || message.content.warning)')
+      img(src='/assets/images/success.png', ng-if='message.content.success')
+      img(src='/assets/images/warning.png', ng-if='message.content.warning')
+      .message {{message.content.success || message.content.warning || message.content.error || message.content}}
       .close X

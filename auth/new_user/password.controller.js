@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('newUser.password.controller', function ($scope, $rootScope, $state, DriverService, AuthService, NavbarService, RequireAuthService) {
+.controller('newUser.password.controller', function ($scope, $rootScope, UserService, AuthService, NavbarService, AppAuthService) {
   var minPassword = 2;
 
   $scope.fields =  [{
@@ -39,11 +39,10 @@ angular.module('idlecars')
   }
 
   var _saveUser = function() {
-    var newDriver = new DriverService($scope.user);
-
-    newDriver.$save()
+    // TODO: we will get rid of this once user can create a driver or owner
+    AppAuthService.saveUser($scope.user)
     .then(function() { return AuthService.login(_loginParams()) })
-    .then(function () { $state.go('driverAccount.onboarding.email') });
+    .then(AppAuthService.accountCreated);
   }
 
   var _loginParams = function() {

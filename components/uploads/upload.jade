@@ -1,9 +1,0 @@
-.image-wrapper
-  a(href='{{fileUrl}}')
-    img(ng-src='{{fileUrl}}')
-
-.button
-  span Take a Photo
-  input.upload-button(type='file', name='upload', accept='image/*', onchange="angular.element(this).scope().upload(this.files)", ng-disabled='isBusy')
-
-ic-loading(ng-show="isBusy")

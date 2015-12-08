@@ -15,7 +15,7 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content@': {
-          templateUrl: 'app/auth/login.html',
+          templateUrl: 'shared/auth/login.html',
           controller: 'auth.login.controller',
         }
       }
@@ -38,21 +38,21 @@ angular.module('idlecars')
       url: '/forgot_password',
       data: {navbarInfo: {title: 'I forgot my password', enableBack: true, enableNext: true}},
       params: {phone_number: null},
-      templateUrl: 'app/users/form.html',
+      templateUrl: 'shared/users/form.html',
       controller: 'auth.forgotPassword.controller',
     })
 
     .state('password.reset', {
       url: '/reset_password/:resetToken',
       data: {navbarInfo: {title: 'Reset password', enableBack: false, enableSave: true}},
-      templateUrl: 'app/users/form.html',
+      templateUrl: 'shared/users/form.html',
       controller: 'auth.resetPassword.controller',
     })
 
     .state('password.change', {
       url: '/change_password',
       data: {navbarInfo: {title: 'Change password', enableBack: true}},
-      templateUrl: 'app/users/notice.html',
+      templateUrl: 'shared/users/notice.html',
       controller: 'auth.changePassword.controller',
     })
 })
