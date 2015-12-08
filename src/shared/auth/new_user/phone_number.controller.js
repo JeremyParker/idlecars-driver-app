@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('newUser.phoneNumber.controller', function ($scope, $rootScope, $state, Restangular, NavbarService, AppNotificationService) {
+.controller('newUser.phoneNumber.controller', function ($scope, $rootScope, $state, $timeout, Restangular, NavbarService, AppNotificationService) {
   $scope.fields = [{
     label: 'Enter your phone number',
     placeholder: '(555) 555-5555',
@@ -11,8 +11,12 @@ angular.module('idlecars')
     maxlength: '14',
     autoFocus: true,
     showLogin: true,
-    formatTel: true,
+    formatInput: 'tel',
   }];
+
+  $scope.validateForm = function() {
+    $timeout(function () { $rootScope.navNextEnabled = $scope.fieldForm.$valid });
+  }
 
   $rootScope.navGoNext = function() {
     var phoneNumber = Restangular.one('phone_numbers', $scope.user.phone_number);
@@ -26,10 +30,6 @@ angular.module('idlecars')
       // Phone not found found, continue creating account
       $state.go('^.password');
     });
-  }
-
-  $scope.validateForm = function() {
-    $rootScope.navNextEnabled = $scope.fieldForm.$valid;
   }
 
   NavbarService.validateInit($scope);

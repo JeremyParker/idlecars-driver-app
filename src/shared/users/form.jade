@@ -1,31 +1,44 @@
 .form-container
   .text-wrapper
-    ng-form(name='fieldForm', novalidate)
-      div(ng-repeat='field in fields')
-        label(for="{{field.name}}") {{field.label}}
-        input.no-box(
-          format-tel='{{field.formatTel}}',
-          type='{{field.type}}',
-          name='{{field.name}}',
-          placeholder='{{field.placeholder}}',
-          maxlength='{{field.maxlength}}',
-          ng-minlength='{{field.minlength}}',
-          ng-pattern='field.pattern',
-          ng-model='user[field.name]',
-          ng-change='validateForm()',
-          ng-keypress='navKeyPressed($event)',
-          auto-focus='{{field.autoFocus}}',
-          required,
-          autocomplete='off')
+    section
+      label(ng-show='formTitle') {{formTitle}}
 
-        .login-link(ng-if='field.showLogin')
-          | Already have an account? #[a(ui-sref='login') Log in]
+    section
+      ng-form(name='fieldForm', novalidate)
+        div(ng-repeat='field in fields')
+          label(for="{{field.name}}") {{field.label}}
+          input.no-box(
+            format-input='{{field.formatInput}}',
+            type='{{field.type}}',
+            name='{{field.name}}',
+            placeholder='{{field.placeholder}}',
+            maxlength='{{field.maxlength}}',
+            ng-minlength='{{field.minlength}}',
+            ng-pattern='field.pattern',
+            ng-model='user[field.name]',
+            ng-change='validateForm()',
+            ng-keypress='navKeyPressed($event)',
+            auto-focus='{{field.autoFocus}}',
+            ng-required='field.required==undefined || field.required==true',
+            autocomplete='off')
 
-        .password-match(ng-if='field.showPasswordMatch && showMatchError')
-          .image-wrapper
-            img(src='/assets/images/error.png')
-          p.color-red password doesn't match
+          .login-link(ng-if='field.showLogin')
+            | Already have an account? #[a(ui-sref='login') Log in]
 
-    button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
-    button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
+          .password-match(ng-if='field.showPasswordMatch && showMatchError')
+            .image-wrapper
+              img(src='/assets/images/error.png')
+            p.color-red password doesn't match
 
+    section
+      single-choice(
+        choices='singleChoice.choices',
+        ng-model='user[singleChoice.key]',
+        max-height='3.5',
+      )
+
+    section
+      button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
+      button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
+
+ic-loading(ng-if='isBusy')

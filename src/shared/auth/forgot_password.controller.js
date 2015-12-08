@@ -12,7 +12,7 @@ angular.module('idlecars')
     pattern: '[^\\d]*\\d{3}[^\\d]*\\d{3}[^\\d]*\\d{4}$',
     maxlength: '14',
     autoFocus: true,
-    formatTel: true,
+    formatInput: 'tel',
   }];
 
   if ($stateParams.phone_number) {

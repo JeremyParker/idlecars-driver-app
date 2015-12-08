@@ -1,0 +1,23 @@
+.single-choice
+  @extend %flex_container_column
+  @extend %flex_scrollable
+
+  .section-row
+    padding: 0 1rem
+    display: table
+    width: 100%
+
+    .row-content
+      display: flex
+      padding: 1rem 0
+
+    .choice
+      flex: 1
+      text-align: left
+
+    .checked
+      @extend %flex_container_center
+      margin: 0 1rem
+
+      img
+        height: 1rem
