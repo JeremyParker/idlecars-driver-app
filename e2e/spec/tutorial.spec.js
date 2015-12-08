@@ -16,6 +16,6 @@ describe('Listing page', function () {
     browser.wait(function () { return tutorial.closeButton.isDisplayed() })
     tutorial.closeButton.click();
 
-    expect(listing.carEls.count()).toBe(4);
+    expect(listing.carEls.count()).toBe(2);
   })
 });

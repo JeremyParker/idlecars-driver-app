@@ -2,10 +2,8 @@
 
 angular.module('idlecars')
 .controller('auth.changePassword.controller', function ($scope, Restangular, UserService, AppNotificationService, AppAuthService) {
-  $scope.label = 'We will send you instructions on how to change your password.';
-  $scope.button = 'Send me instructions';
 
-  $scope.buttonClick = function () {
+  var buttonClick = function () {
     UserService.get().then(function (me) {
       var postParams = { phone_number: me.phone_number };
       var passwordReset = Restangular.all('password').all('reset_setups');
@@ -16,4 +14,11 @@ angular.module('idlecars')
       .then(AppAuthService.passwordChanged);
     })
   }
+
+  $scope.label = 'We will send you instructions on how to change your password.';
+
+  $scope.buttons = [{
+    value: 'Send me instructions',
+    click: buttonClick,
+  }]
 })

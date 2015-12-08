@@ -16,5 +16,11 @@ angular.module('idlecars')
     return Restangular.one('users', 'me').patch(patchData);
   }
 
+  service.requiredDocs = {
+    email: {dislike: '', state: 'user.onboarding.email'},
+    first_name: {dislike: '', state: 'user.onboarding.firstname'},
+    last_name: {dislike: '', state: 'user.onboarding.lastname'},
+  }
+
   return service;
 })

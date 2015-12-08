@@ -1,17 +1,17 @@
 'use strict';
 
 angular.module('idlecars')
-.factory('AppNotificationService', function ($timeout) {
+.factory('AppNotificationService', function ($interval) {
   var service = { messages: [] };
 
   service.push = function(message) {
-    service.messages.push(message);
+    var new_timer = $interval(function () { service.messages.pop() }, 15000, [1]);
+    service.messages.unshift({timer: new_timer, content: message});
   }
 
-  service.remove = function(message) {
-    var index = service.messages.indexOf(message);
-    if (index > -1) { service.messages.splice(index, 1) }
-    else { service.messages = [] }
+  service.remove = function(index) {
+    $interval.cancel(service.messages[index].timer);
+    service.messages.splice(index, 1);
   }
 
   return service;
