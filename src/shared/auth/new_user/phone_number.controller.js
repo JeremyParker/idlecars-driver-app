@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('newUser.phoneNumber.controller', function ($scope, $rootScope, $state, $timeout, Restangular, NavbarService, AppNotificationService) {
+.controller('newUser.phoneNumber.controller', function ($scope, $rootScope, $location, $state, $timeout, Restangular, NavbarService, AppNotificationService) {
   $scope.fields = [{
     label: 'Enter your phone number',
     placeholder: '(555) 555-5555',
@@ -13,6 +13,13 @@ angular.module('idlecars')
     showLogin: true,
     formatInput: 'tel',
   }];
+
+  if ($location.url().indexOf('utm_content=50') > -1) {
+    heap.track('referral', {credit: '50'});
+  }
+  if ($location.url().indexOf('utm_content=75') > -1) {
+    heap.track('referral', {credit: '75'});
+  }
 
   $scope.validateForm = function() {
     $timeout(function () { $rootScope.navNextEnabled = $scope.fieldForm.$valid });
