@@ -18,7 +18,10 @@ angular.module('idlecars')
   }
 
   $scope.validateForm = function() {
-    $timeout(function () { $rootScope.navNextEnabled = $scope.$$childHead.fieldForm.$valid; })
+    $timeout(function () {
+      if (!$scope.$$childHead.fieldForm) { return }
+      $rootScope.navNextEnabled = $scope.$$childHead.fieldForm.$valid;
+    })
   }
 })
 

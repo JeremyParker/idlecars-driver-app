@@ -4,6 +4,7 @@ angular.module('idlecars')
 .controller('account.controller', function ($scope, $state, MyDriverService, AuthService, LANDING_STATE) {
 
   // TODO: we should move it to a presenter.
+  // TODO: we should use shared code user update
   $scope.accountInfo = [
     {title: 'First Name', link: '.update.firstname', content: 'first_name'},
     {title: 'Last Name', link: '.update.lastname', content: 'last_name'},
