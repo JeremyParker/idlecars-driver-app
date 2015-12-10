@@ -3,23 +3,23 @@
     .section-row(ng-repeat='item in accountInfo')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
         label.m-gray {{item.title}}
-        .content-main {{me[item.content]}}
+        .content-main {{user[item.content]}}
         .next-pointer
 
-  .section-interlude(ng-if='!me.all_docs_uploaded')
+  .section-interlude(ng-if='!driver.all_docs_uploaded')
     .b-inter-content All driver documents are required
     .s-inter-content.m-gray to complete a rental
 
-  section(ng-if='me.payment_method')
+  section(ng-if='driver.payment_method')
     .section-row
       title Payment
     .section-row
       a.row-content(ui-sref='.paymentMethod')
         .flex-column
-          label Card ending in {{me.payment_method.suffix}}
+          label Card ending in {{driver.payment_method.suffix}}
           .flex
             .flex-cell
-              img.small-image(ng-src='{{me.payment_method.card_logo}}')
+              img.small-image(ng-src='{{driver.payment_method.card_logo}}')
             .ic-blue.next-pointer Replace
 
   section
@@ -31,7 +31,7 @@
           .flex
             .flex-cell
               label SMS
-            on-off-button(status='me.sms_enabled')
+            on-off-button(status='driver.sms_enabled')
 
   section
     .section-row
@@ -42,12 +42,12 @@
           label {{item.title}}
           .flex
             .flex-cell
-              img.big-image(ng-if='me[item.image]', ng-src='{{me[item.image]}}')
-              .dashed-box-border(ng-if='!me[item.image]')
+              img.big-image(ng-if='driver[item.image]', ng-src='{{driver[item.image]}}')
+              .dashed-box-border(ng-if='!driver[item.image]')
                 .box-content
                   .box-text Upload now
-            p.ic-blue.next-pointer(ng-if='me[item.image]') Change
-            p.color-red.next-pointer(ng-if='!me[item.image]') Upload
+            p.ic-blue.next-pointer(ng-if='driver[item.image]') Change
+            p.color-red.next-pointer(ng-if='!driver[item.image]') Upload
 
   button.alert-button(ng-click='logout()') Log out
 
