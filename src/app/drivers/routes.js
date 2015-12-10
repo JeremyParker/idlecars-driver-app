@@ -78,6 +78,17 @@ angular.module('idlecars')
       },
     })
 
+    .state('driverAccount.onboarding.referral', {
+      url: '/referral',
+      data: {navbarInfo: {title: 'Referral', enableBack: true, enableNext: true}},
+      views: {
+        'content@': {
+          controller: 'driver.onboarding.referral.controller',
+          templateUrl: 'shared/users/form.html',
+        }
+      },
+    })
+
     .state('driverAccount.onboarding.uploadDriverLicense', {
       url: '/driver-license',
       templateUrl: 'app/drivers/upload.html',
