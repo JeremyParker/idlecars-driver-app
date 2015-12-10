@@ -30,8 +30,8 @@ angular.module('idlecars')
   $scope.uploadTitle = 'a bill with your address on it';
 })
 
-.controller('driver.onboarding.referral.controller', function ($scope, $rootScope, $timeout, MyDriverService, RequireAuthService) {
-  if (!$scope.user) { $scope.user = {} }
+.controller('driver.onboarding.referral.controller', function ($scope, $rootScope, $state, MyDriverService, BookingService) {
+  $scope.user = {};
 
   $scope.fields = [{
     label: 'Enter your referral code (optional)',
@@ -39,13 +39,15 @@ angular.module('idlecars')
     type: 'text',
     maxlength: '254',
     autoFocus: true,
+    required: false,
   }];
 
   $rootScope.navGoNext = function() {
-    MyDriverService.patch($scope.user).then(RequireAuthService.resolve)
+    MyDriverService.patch($scope.user).then(function () {
+      if (BookingService.bookings.length) { $state.go('driverAccount.bookings') }
+      else { $state.go('driverAccount.onboarding.success') }
+    })
   }
 
-  $scope.validateForm = function() {
-    $timeout(function () { $rootScope.navNextEnabled = $scope.fieldForm.$valid })
-  }
+  $rootScope.navNextEnabled = true;
 })
