@@ -44,8 +44,8 @@ angular.module('idlecars')
 
   $rootScope.navGoNext = function() {
     MyDriverService.patch($scope.user).then(function () {
-      if (BookingService.bookings.length) { $state.go('driverAccount.bookings') }
-      else { $state.go('driverAccount.onboarding.success') }
+      if (BookingService.bookings.length) { $state.go('^.uploadDriverLicense') }
+      else { $state.go('^.success') }
     })
   }
 
