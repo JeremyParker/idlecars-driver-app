@@ -12,17 +12,6 @@
 
   section
     .section-row
-      title App credit
-    .section-row
-      .row-content
-        .flex-cell
-          .flex
-            .flex-cell
-              label Your idlecars credit
-            .ic-blue ${{me.app_credit}}
-
-  section
-    .section-row
       title Payment
     .section-row
       a.row-content(ui-sref='.paymentMethod')
@@ -38,6 +27,11 @@
             label No payment method
           .ic-blue.next-pointer Add
 
+      a.row-content
+        .flex
+          .flex-cell
+            label App credit
+          .ic-blue {{driver.app_credit}}
   section
     .section-row
       title Notification method
