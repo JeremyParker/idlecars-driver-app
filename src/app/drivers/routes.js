@@ -67,15 +67,17 @@ angular.module('idlecars')
       }
     })
 
-    .state('driverAccount.onboarding.email', {
-      url: '/email',
-      data: {navbarInfo: {title: 'Email', enableBack: true, enableNext: true}},
-      views: {
-        'content@': {
-          controller: 'driver.onboarding.email.controller',
-          templateUrl: 'shared/users/form.html',
-        }
-      },
+    .state('driverAccount.onboarding.referral', {
+      url: '/referral',
+      data: {navbarInfo: {title: 'Referral', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'driver.onboarding.referral.controller',
+    })
+
+    .state('driverAccount.onboarding.success', {
+      url: '/success',
+      data: {navbarInfo: {title: ''}},
+      templateUrl: 'app/drivers/onboarding_success.html',
     })
 
     .state('driverAccount.onboarding.uploadDriverLicense', {

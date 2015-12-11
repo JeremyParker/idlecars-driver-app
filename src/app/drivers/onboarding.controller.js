@@ -29,3 +29,25 @@ angular.module('idlecars')
   $scope.fieldName = 'address_proof_image';
   $scope.uploadTitle = 'a bill with your address on it';
 })
+
+.controller('driver.onboarding.referral.controller', function ($scope, $rootScope, $state, MyDriverService, BookingService) {
+  $scope.user = {};
+
+  $scope.fields = [{
+    label: 'Enter your referral code (optional)',
+    name: 'invitor_code',
+    type: 'text',
+    maxlength: '254',
+    autoFocus: true,
+    required: false,
+  }];
+
+  $rootScope.navGoNext = function() {
+    MyDriverService.patch($scope.user).then(function () {
+      if (BookingService.bookings.length) { $state.go('^.uploadDriverLicense') }
+      else { $state.go('^.success') }
+    })
+  }
+
+  $rootScope.navNextEnabled = true;
+})

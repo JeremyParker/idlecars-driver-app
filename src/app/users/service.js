@@ -4,6 +4,14 @@ angular.module('idlecars')
 .factory('AppUserService', function ($state) {
   var service = {};
 
+  service.emailEntered = function () {
+    $state.go('driverAccount.onboarding.referral');
+  }
+
+  service.firstnameEntered = function () {}
+
+  service.lastnameEntered = function () {}
+
   service.userUpdated = function () {
     $state.go('driverAccount');
   }
