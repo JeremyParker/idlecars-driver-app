@@ -48,4 +48,15 @@ angular.module('idlecars')
   }
 
   return service;
+})
+
+.run(function (AuthService, MyDriverService, AppNotificationService) {
+  if (AuthService.isLoggedIn()) {
+    MyDriverService.get().then(function (driver) {
+      if (driver.app_credit > 0) {
+        var message = 'You\'ve got ' + driver.app_credit + ' idlecars credit!';
+        AppNotificationService.push({success: message});
+      }
+    })
+  }
 });
