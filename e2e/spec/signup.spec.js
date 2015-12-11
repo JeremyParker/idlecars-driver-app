@@ -3,6 +3,7 @@
 describe('sign up page', function () {
   var navbar = require('../components/navbar.po');
   var signup = require('../auth/signup.po');
+  var success = require('../auth/success.po');
   var carDetail = require('../listings/detail.po');
   var listing = require('../listings/list.po');
   var helpers = require('../spec_helper');
@@ -18,7 +19,7 @@ describe('sign up page', function () {
 
     it('should create an account', function() {
       signup.signupProcess();
-      expect(listing.carEls.count()).toBe(2);
+      expect(success.title.getText()).toEqual('Success!');
     });
 
   })

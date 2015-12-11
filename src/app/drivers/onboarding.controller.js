@@ -32,7 +32,7 @@ angular.module('idlecars')
   $scope.uploadTitle = 'a bill with your address on it';
 })
 
-.controller('driver.onboarding.referral.controller', function ($scope, $rootScope, $state, MyDriverService, BookingService) {
+.controller('driver.onboarding.referral.controller', function ($scope, $rootScope, $state, MyDriverService, RequireAuthService) {
   $scope.user = {};
 
   $scope.fields = [{
@@ -46,8 +46,7 @@ angular.module('idlecars')
 
   $rootScope.navGoNext = function() {
     MyDriverService.patch($scope.user).then(function () {
-      if (BookingService.bookings.length) { $state.go('^.uploadDriverLicense') }
-      else { $state.go('^.success') }
+      RequireAuthService.resolve('driverAccount.onboarding.success')
     })
   }
 
