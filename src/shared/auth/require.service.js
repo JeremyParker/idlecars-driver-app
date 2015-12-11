@@ -21,20 +21,20 @@ angular.module('idlecars')
     service.resolve();
   }
 
-  service.resolve = function() {
+  service.resolve = function (state) {
     if (AuthService.isLoggedIn()) {
-      _goToDestination();
+      _goToDestination(state);
     } else {
       $state.go('newUser.phoneNumber');
     }
   }
 
-  var _goToDestination = function() {
+  var _goToDestination = function (state) {
     if (destinationState.toState) {
       $state.go(destinationState.toState, destinationState.toParams);
     } else {
       // NOTE: this shouldn't happen, but in case
-      $state.go(LANDING_STATE);
+      $state.go(state || LANDING_STATE);
     }
   }
 

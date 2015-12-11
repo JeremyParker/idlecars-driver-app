@@ -9,6 +9,7 @@ var Signup = function() {
   self.password1 = element(by.css('input[name=password'));
   self.password2 = element(by.css('input[name=re_password'));
   self.email = element(by.css('input[name=email]'));
+  self.referral = element(by.css('input[name=invitor_code'));
 
   self.signupProcess = function () {
     self.phone.sendKeys('1234567890');
@@ -17,6 +18,9 @@ var Signup = function() {
     self.password2.sendKeys('12');
     navbar.nextButton.click();
     self.email.sendKeys('test@gmail.com');
+    navbar.nextButton.click();
+    // TODO: we need to add referral test
+    // self.referral.sendKeys('REFERRAL');
     navbar.nextButton.click();
   }
 };
