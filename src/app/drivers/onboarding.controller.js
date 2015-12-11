@@ -1,10 +1,12 @@
 'use strict';
 
 angular.module('idlecars')
-.controller('driver.onboarding.controller', function ($scope) {
+.controller('driver.onboarding.controller', function ($scope, MyDriverService) {
   $scope.showSkipLink = true;
   $scope.showProgressBar = true;
-
+  MyDriverService.get().then(function (driver) {
+    $scope.driver = driver;
+  })
   $scope.$on('completion', function (event, completion) {
     $scope.completion = completion;
   })

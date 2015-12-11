@@ -5,8 +5,8 @@
 
   section.insurance-approval
     p
-      | You have created your account!
-      | Now you can check out idle cars, we wish you find your ideal car!
-
+      | Welcome to idlecars.
+      | Your account is complete.
+    p(ng-if='driver.app_credit') You have {{driver.app_credit}} free app credit to spend on your first week's rent.
     br
-    button.button(ui-sref='listings') Car listing
+    button.button(ui-sref='listings') Find your car
