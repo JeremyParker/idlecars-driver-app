@@ -8,16 +8,12 @@ angular.module('idlecars')
     $state.go('driverAccount.onboarding.referral');
   }
 
-  service.firstnameEntered = function () {
-    $state.go('^.lastname');
-  }
+  service.firstnameEntered = function () {}
 
-  service.lastnameEntered = function () {
-    $state.go('ownerAccount.onboarding.company');
-  }
+  service.lastnameEntered = function () {}
 
   service.userUpdated = function () {
-    $state.go('ownerAccount');
+    $state.go('driverAccount');
   }
 
   return service;
