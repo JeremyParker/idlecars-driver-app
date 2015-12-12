@@ -7,9 +7,25 @@
     section
       booking-date
     hr
-    .flex-row
+    .flex-row(ng-if='!booking.next_payment.credit')
       .label.bold Next Payment
+      .content.light on pickup
+    .flex-row(ng-if='!booking.next_payment.credit')
       .content.bold ${{booking.next_payment.amount}} #[span.light &nbspon pickup]
+
+    .flex-row(ng-if='booking.next_payment.credit')
+      .label.bold Next Payment
+      .content.bold on pickup
+    .flex-row(ng-if='booking.next_payment.credit')
+      .label.bold #[span.light &nbsp Rent]
+      .content.light &nbsp ${{booking.next_payment.amount + booking.next_payment.credit}}
+    .flex-row(ng-if='booking.next_payment.credit')
+      .label.bold #[span.light &nbsp App Credit]
+      .content.light &nbsp ${{booking.next_payment.credit}}
+    .flex-row(ng-if='booking.next_payment.credit')
+      .label #[span.bold &nbsp Total]
+      .content.bold &nbsp ${{booking.next_payment.amount}}
+
 
     .tiny(ng-if='!insuranceApproved()') We will notify you when your insurance has been approved. This can take 24 to 48 hours.
     button.button(ng-if='!insuranceApproved()', ng-disabled='true') Waiting for insurance
