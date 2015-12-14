@@ -23,10 +23,10 @@
       .flex-row.bold
         .label Next Payment
         .content {{booking.next_payment.start_time}}
-      .flex-row.light
+      .flex-row
         .label &nbsp Rent
         .content &nbsp ${{booking.next_payment.amount + booking.next_payment.credit}}
-      .flex-row.light
+      .flex-row
         .label &nbsp App Credit
         .content &nbsp ${{booking.next_payment.credit}}
       .flex-row.bold
