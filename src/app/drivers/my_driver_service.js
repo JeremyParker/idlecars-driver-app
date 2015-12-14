@@ -53,8 +53,9 @@ angular.module('idlecars')
 .run(function (AuthService, MyDriverService, AppNotificationService) {
   if (AuthService.isLoggedIn()) {
     MyDriverService.get().then(function (driver) {
-      if (driver.app_credit > 0) {
-        var message = 'You\'ve got ' + driver.app_credit + ' idlecars credit!';
+      var credit = parseFloat(driver.app_credit.replace(/\$|,/g, ''))
+      if (credit > 0) {
+        var message = 'You have ' + driver.app_credit + ' app credit to spend on rent.';
         AppNotificationService.push({success: message});
       }
     })

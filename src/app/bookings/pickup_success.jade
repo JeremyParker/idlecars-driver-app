@@ -4,17 +4,34 @@
       .content-wording
         section
           h3 Success!
-        section
-          .flex-row.bold
-            .label First week payment
-            //- TODO: let server send weekly cost
-            .content ${{booking.paid_payments[0].amount}}
-              span.m-green &nbsp${{booking.paid_payments[0].status}}
-        section
-          .light
-            | Your credit card has been charged ${{booking.paid_payments[0].amount}}.
-            |  The owner has been emailed to confirm the funds have been transferred.
-            |  You should now get the keys and start driving.
+        div(ng-if='!booking.paid_payments[0].credit_amount')
+          section
+            .flex-row.bold
+              .label First payment
+              .content ${{booking.paid_payments[0].amount}}
+                span.m-green &nbsp{{booking.paid_payments[0].status}}
+          section
+            .light
+              | Your credit card ending in {{booking.paid_payments[0].payment_method.suffix}}
+              | has been charged ${{booking.paid_payments[0].amount}}.
+              | The owner has been notified to confirm the funds have been transferred.
+              | You should now get the keys and start driving.
+
+        div(ng-if='booking.paid_payments[0].credit_amount')
+          section
+            .flex-row.bold
+              .label Credit card charge
+              .content ${{booking.paid_payments[0].amount}}
+                span.m-green &nbsp{{booking.paid_payments[0].status}}
+            .flex-row.bold
+              .label App credit
+              .content ${{booking.paid_payments[0].credit_amount}} Spent
+          section
+            .light
+              | Your credit card has been charged ${{booking.paid_payments[0].amount}},
+              | and you used ${{booking.paid_payments[0].credit_amount}} in app credit.
+              | The owner has been notified to confirm the funds have been transferred.
+              | You should now get the keys and start driving.
         hr
         section
           .flex-row.bold
