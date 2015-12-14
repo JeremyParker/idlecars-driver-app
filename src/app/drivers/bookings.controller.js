@@ -6,6 +6,7 @@ angular.module('idlecars')
   var initScope = function (me) {
     $scope.username = me.client_display;
     $scope.paymentMethod = me.payment_method;
+    $scope.driver = me;
   }
 
   var _getBooking = function () {
