@@ -2,7 +2,7 @@
   img(ng-if="car.image_url" ng-src="{{car.image_url}}")
   .no-image(ng-if="!car.image_url")
     p no image available
-  .price-tag
+  .price-tag(ng-class='{"shift-tag": car.shift.split_shift}')
     span ${{car.cost_str[0]}}
     span.cost_dec.underline {{car.cost_str[1]}}
     span.per {{car.cost_time}}

@@ -6,6 +6,7 @@ h1(hidden) {{car.name}} for rent
   section.headline-features
     h2 {{car.name}}
     .feature-content
+      p.ic-blue.bold(ng-if='car.shift.split_shift') {{car.shift.description}}
       p(ng-repeat='subhead in car.headline_features', ng-class='{"medium_font_weight": $last}') {{subhead}}
 
   section.certifications

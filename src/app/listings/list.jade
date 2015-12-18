@@ -17,6 +17,7 @@ h1(hidden) Rent cars for rideshare
     car-image(car='car')
     .info
       h3 {{car.name}}
+      p.ic-blue.bold(ng-if='car.shift.split_shift') {{car.shift.description}}
       p {{car.deposit}} deposit ∙ {{car.listing_features}}
 
 ui-view
