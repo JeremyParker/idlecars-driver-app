@@ -14,9 +14,9 @@ angular.module('idlecars')
   ]
 
   service.get = function() {
-    if (service.driver) { return service.driver; }
-
-    service.driver = Restangular.one('drivers', 'me').get();
+    if (!service.driver) {
+      service.driver = Restangular.one('drivers', 'me').get();
+    }
     return service.driver;
   }
 
@@ -32,19 +32,17 @@ angular.module('idlecars')
   }
 
   service.patch = function(patchData) {
-    var promise = service.get().then(function(me) {
-      return me.patch(patchData);
-    });
-
-    promise.then(function() {
-      service.driver = promise;
-    });
-
-    return promise;
+    service.driver = Restangular.one('drivers', 'me').patch(patchData);
+    return service.driver;
   }
 
   service.addPaymentMethod = function (nonce) {
-    return Restangular.one('drivers','me').all('payment_method').post(nonce);
+    service.driver = Restangular.one('drivers','me').all('payment_method').post(nonce);
+    return service.driver;
+  }
+
+  service.clearCache = function () {
+    service.driver = null;
   }
 
   return service;
