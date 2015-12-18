@@ -11,13 +11,7 @@ angular.module('idlecars')
     $scope.actionButton = 'Pay deposit ' + $rootScope.braintree.pendingBooking.car.deposit;
   };
 
-  var addPaymentMethod = function (nonce) {
-    return MyDriverService.addPaymentMethod({nonce: nonce});
-  }
-
   var onSuccess = function () {
-    MyDriverService.driver = $rootScope.braintree.newDriver;
-
     if ($rootScope.braintree.pendingBooking) {
       // TODO: move this BookingService.checkout to booking page
       return BookingService.checkout($rootScope.braintree.pendingBooking.id)
@@ -47,8 +41,8 @@ angular.module('idlecars')
           $rootScope.braintree.nonce = obj.nonce;
           $rootScope.braintree.isBusy = true;
 
-          $rootScope.braintree.newDriver = addPaymentMethod(obj.nonce);
-          $rootScope.braintree.newDriver.then(onSuccess).finally(onFinal);
+          MyDriverService.addPaymentMethod({nonce: obj.nonce})
+          .then(onSuccess).finally(onFinal);
         };
       }
     });
