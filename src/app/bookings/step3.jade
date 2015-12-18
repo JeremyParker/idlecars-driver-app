@@ -9,7 +9,7 @@
         .label Rental Charges
         .content ${{booking.car.cost_str[0]}}.{{booking.car.cost_str[1]}} #[span.light &nbsp{{booking.car.cost_time}}]
       .flex-row(ng-if='driver.app_credit')
-        .content.light.m-green You have #[span.bold{{driver.app_credit}}] app credit to spend on rent.
+        .content.light.m-green You have #[span.bold {{driver.app_credit}}] app credit to spend on rent.
       .tiny.warning Payment due on Pickup #[br] Insurance and Maintanance Included
     section
       booking-date
