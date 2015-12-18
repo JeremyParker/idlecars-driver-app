@@ -15,7 +15,7 @@ angular.module('idlecars')
   }
 
   var docOrder = {
-    email: 'driverAccount.onboarding.email',
+    email: 'user.onboarding.email',
     driver_license_image: 'driverAccount.onboarding.uploadDriverLicense',
     fhv_license_image: 'driverAccount.onboarding.uploadFhvLicense',
     defensive_cert_image: 'driverAccount.onboarding.uploadDefensiveCert',
