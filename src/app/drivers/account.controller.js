@@ -30,6 +30,7 @@ angular.module('idlecars')
   $scope.logout = function () {
     AuthService.logout();
     MyDriverService.clearCache();
+    UserService.clearCache();
     $scope.isLoggedIn = AuthService.isLoggedIn();
     $state.go(LANDING_STATE);
   };
