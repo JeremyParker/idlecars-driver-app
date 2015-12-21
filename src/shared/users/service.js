@@ -5,15 +5,24 @@ angular.module('idlecars')
   var service = {};
 
   service.get = function () {
-    return Restangular.one('users', 'me').get();
+    if (!service.user) {
+      service.user = Restangular.one('users', 'me').get();
+    }
+    return service.user;
   }
 
   service.post = function (params) {
-    return Restangular.all('users').post(params);
+    service.user = Restangular.all('users').post(params);
+    return service.user;
   }
 
   service.patch = function (patchData) {
-    return Restangular.one('users', 'me').patch(patchData);
+    service.user = Restangular.one('users', 'me').patch(patchData);
+    return service.user;
+  }
+
+  service.clearCache = function () {
+    service.user = null;
   }
 
   service.requiredDocs = {
