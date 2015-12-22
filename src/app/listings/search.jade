@@ -11,6 +11,26 @@ modal.search-modal(action-sref='^', action-click='filter()')
     .filter-row
       .flex-row.has-bar
         .filter-label
+          label Lyft
+        on-off-button(status='andFilters.work_with.Lyft', action="addAndFilter('work_with', 'Lyft', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Lyft Plus
+        on-off-button(status='andFilters.work_with.LyftPlus', action="addAndFilter('work_with', 'LyftPlus', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Via
+        on-off-button(status='andFilters.work_with.Via', action="addAndFilter('work_with', 'Via', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
+          label Gett
+        on-off-button(status='andFilters.work_with.Gett', action="addAndFilter('work_with', 'Gett', $event)")
+    .filter-row
+      .flex-row.has-bar
+        .filter-label
           label Uber X
         on-off-button(status='andFilters.work_with.UberX', action="addAndFilter('work_with', 'UberX', $event)")
     .filter-row
@@ -24,27 +44,7 @@ modal.search-modal(action-sref='^', action-click='filter()')
           label Uber SUV
         on-off-button(status='andFilters.work_with.UberSUV', action="addAndFilter('work_with', 'UberSUV', $event)")
     .filter-row
-      .flex-row.has-bar
+      .flex-row
         .filter-label
           label Uber Black
         on-off-button(status='andFilters.work_with.UberBlack', action="addAndFilter('work_with', 'UberBlack', $event)")
-    .filter-row
-      .flex-row.has-bar
-        .filter-label
-          label Lyft
-        on-off-button(status='andFilters.work_with.Lyft', action="addAndFilter('work_with', 'Lyft', $event)")
-    .filter-row
-      .flex-row.has-bar
-        .filter-label
-          label Lyft Plus
-        on-off-button(status='andFilters.work_with.LyftPlus', action="addAndFilter('work_with', 'LyftPlus', $event)")
-    .filter-row
-      .flex-row.has-bar
-        .filter-label
-          label Gett
-        on-off-button(status='andFilters.work_with.Gett', action="addAndFilter('work_with', 'Gett', $event)")
-    .filter-row
-      .flex-row
-        .filter-label
-          label Via
-        on-off-button(status='andFilters.work_with.Via', action="addAndFilter('work_with', 'Via', $event)")
