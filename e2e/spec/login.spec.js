@@ -16,7 +16,7 @@ describe('log in page', function () {
 
   it('can log in', function() {
     login.loginProcess('1234567892');
-    expect(listing.carEls.count()).toBe(2);
+    expect(listing.carEls.count()).toBe(1);
   });
 
   it('can go to sign up page', function() {

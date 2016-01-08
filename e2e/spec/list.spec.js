@@ -15,11 +15,11 @@ describe('Listing page', function () {
   });
 
   it('lists 4 cars and menu buttons should work', function () {
-    expect(listing.carEls.count()).toBe(2);
+    expect(listing.carEls.count()).toBe(1);
 
     navbar.menuButton.click();
     navbar.homeButton.click();
-    expect(listing.carEls.count()).toBe(2);
+    expect(listing.carEls.count()).toBe(1);
 
     navbar.menuButton.click();
     navbar.questionsButton.click();
