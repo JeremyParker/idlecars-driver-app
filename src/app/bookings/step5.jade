@@ -32,3 +32,9 @@
       .flex-row.bold
         .label &nbsp Total
         .content &nbsp ${{booking.next_payment.amount}}
+
+    .tiny(ng-if='!insuranceApproved()')
+      | At the time you return this car, please make sure to click the button below to let us refund
+      |  your deposit.
+    button.button(ui-sref='.return') Arrange to return your car
+

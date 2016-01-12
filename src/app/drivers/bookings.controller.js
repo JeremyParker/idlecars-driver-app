@@ -74,4 +74,16 @@ angular.module('idlecars')
     })
     .finally(function () { $scope.isBusy = false })
   }
+
+  $scope.bookingReturn = function () {
+    $scope.isBusy = true;
+
+    BookingService.bookingReturn($scope.booking.id)
+    .then(function () {
+      BookingService.bookings = [];
+      $scope.booking = {};
+      $state.go('^');
+    })
+    .finally(function () { $scope.isBusy = false })
+  }
 })

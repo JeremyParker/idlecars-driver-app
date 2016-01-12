@@ -30,6 +30,10 @@ angular.module('idlecars')
     return Restangular.one('bookings', bookingId).all('pickup').post('');
   }
 
+  service.bookingReturn = function (bookingId) {
+    return Restangular.one('bookings', bookingId).all('booking_return').post('');
+  }
+
   service.updateBookings = function (bookingResponse) {
     if (bookingResponse.constructor == Array) {
       service.bookings = bookingResponse;
