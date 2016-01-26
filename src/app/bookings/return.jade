@@ -14,11 +14,7 @@
   .booking-container(style='padding-top: 0')
     .booking-content
       .content-wording
-        section.light
-          check-mark(status='isChecked0', checked) I have confirmed that the license plate is {{booking.car.plate}}
-
         section
-          .tiny.m-gray Do NOT pay cash
           button.button(
             ng-click='bookingReturn()',
           ) I have returned the car
