@@ -45,6 +45,10 @@ angular.module('idlecars')
 
   $scope.doShowConfirm = function () { $scope.showConfirm = true }
 
+  // we agree that server sends the plate number when insurance aprroved
+  // front end take this as a flag to enable arrange pick button and so on.
+  $scope.insuranceApproved = function () { return $scope.booking.car.plate }
+
   $scope.uploadDocuments = function () {
     DocRouterService.requiredDocState().then(function (state) { $state.go(state) });
   }
