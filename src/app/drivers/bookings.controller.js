@@ -45,8 +45,6 @@ angular.module('idlecars')
 
   $scope.doShowConfirm = function () { $scope.showConfirm = true }
 
-  $scope.insuranceApproved = function () { return $scope.booking.car.plate }
-
   $scope.uploadDocuments = function () {
     DocRouterService.requiredDocState().then(function (state) { $state.go(state) });
   }
@@ -71,6 +69,18 @@ angular.module('idlecars')
     .then(function (booking) {
       _replaceBooking(booking);
       $state.go('^.success');
+    })
+    .finally(function () { $scope.isBusy = false })
+  }
+
+  $scope.bookingReturn = function () {
+    $scope.isBusy = true;
+
+    BookingService.bookingReturn($scope.booking.id)
+    .then(function () {
+      BookingService.bookings = [];
+      $scope.booking = {};
+      $state.go('^');
     })
     .finally(function () { $scope.isBusy = false })
   }

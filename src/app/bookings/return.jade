@@ -1,0 +1,22 @@
+.bookings-wrapper
+  .booking-header(style='padding: 1rem')
+    .bold RETURN YOUR CAR
+    .light Please contact the owner to arrange return.
+    .flex-row
+      .label.bold {{booking.car.owner.name}}
+      //- TODO: phone number should be interactive
+      a.content.bold.ic-blue {{booking.car.owner.phone_number}}
+    .flex-row
+      .bold {{booking.car.owner.address}}
+
+  map(address='{{booking.car.zipcode}}', ng-if='booking.car')
+
+  .booking-container(style='padding-top: 0')
+    .booking-content
+      .content-wording
+        section
+          button.button(
+            ng-click='bookingReturn()',
+          ) I have returned the car
+
+ic-loading(ng-show='isBusy')
