@@ -88,6 +88,7 @@ angular.module('idlecars')
       url: '/success',
       data: {navbarInfo: {title: ''}},
       templateUrl: 'app/drivers/onboarding_success.html',
+      controller: 'driver.onboarding.controller',
     })
 
     .state('driverAccount.onboarding.uploadDriverLicense', {
