@@ -10,6 +10,7 @@ gulp.task('environment', function() {
     deploy_bucket: 'app.alltaxi.com',
     template_vars: {
       heap_app_id: '3053705704',
+      google_api_key: 'AIzaSyC6h1mi3XtUIfy-_uKe6jDrAILlDVTfAdc',
     },
   };
 
@@ -17,12 +18,14 @@ gulp.task('environment', function() {
     deploy_bucket: 'app.staging.alltaxi.com',
     template_vars: {
       heap_app_id: '1900221263',
+      google_api_key: 'AIzaSyC6h1mi3XtUIfy-_uKe6jDrAILlDVTfAdc',
     },
   };
 
   var dev = {
     template_vars: {
       heap_app_id: '655181858',
+      google_api_key: 'AIzaSyC6h1mi3XtUIfy-_uKe6jDrAILlDVTfAdc',
     },
   }
 
