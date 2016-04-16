@@ -5,7 +5,7 @@ angular.module('idlecars')
   var service = {};
 
   service.emailEntered = function () {
-    $state.go('driverAccount.onboarding.referral');
+    $state.go('driverAccount.onboarding.success');
   }
 
   service.firstnameEntered = function () {}
