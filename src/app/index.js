@@ -1,7 +1,5 @@
 'use strict';
 
-angular.module('icFilters', []);
-
 angular.module('idlecars',
   [
     // TODO: remove ngResource
@@ -12,7 +10,6 @@ angular.module('idlecars',
     'uiGmapgoogle-maps',
     'ct.ui.router.extras.previous',
     'ngStorage',
-    'icFilters',
     'slick',
     'angular-datepicker',
   ]

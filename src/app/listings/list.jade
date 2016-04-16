@@ -1,12 +1,5 @@
 h1(hidden) Rent cars for rideshare
 
-.listing-filters
-  .box(ng-click="addOrFilter('cost_bucket', 'cheap'); filter()", ng-class="{active: orFilters.cost_bucket.cheap}") $
-  .box(ng-click="addOrFilter('cost_bucket', 'medium'); filter()", ng-class="{active: orFilters.cost_bucket.medium}") $$
-  .box(ng-click="addOrFilter('cost_bucket', 'pricey'); filter()", ng-class="{active: orFilters.cost_bucket.pricey}") $$$
-
-  a.add-filters(ui-sref=".search") add filters
-
 .no-results(ng-if="listings.length === 0")
   h3 No Matching Cars
   p Try a different search

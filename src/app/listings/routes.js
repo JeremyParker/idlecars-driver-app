@@ -19,10 +19,6 @@ angular.module('idlecars')
       },
     })
 
-    .state('listings.search', {
-      templateUrl: 'app/listings/search.html'
-    })
-
     .state('listings.detail', {
       url: 'listings/:carId',
       params: {car: null},
