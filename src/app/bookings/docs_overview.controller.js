@@ -12,17 +12,17 @@ angular.module('idlecars')
         isUploaded: me.driver_license_image,
       },
       {
-        title: 'FHV License',
+        title: 'Hack License',
         sref: 'driverAccount.onboarding.uploadFhvLicense',
         isUploaded: me.fhv_license_image,
       },
       {
-        title: 'Defensive Driving',
+        title: 'Social Security Card',
         sref: 'driverAccount.onboarding.uploadDefensiveCert',
         isUploaded: me.defensive_cert_image,
       },
       {
-        title: 'Proof of Address',
+        title: 'MVR (optional)',
         sref: 'driverAccount.onboarding.uploadAddressProof',
         isUploaded: me.address_proof_image,
       },

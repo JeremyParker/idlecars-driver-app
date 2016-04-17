@@ -14,15 +14,15 @@ angular.module('idlecars')
 
 .controller('driver.update.fhvlicense.controller', function ($scope) {
   $scope.fieldName = 'fhv_license_image';
-  $scope.uploadTitle = 'your TLC License';
+  $scope.uploadTitle = 'your Hack License';
 })
 
 .controller('driver.update.defensivedriving.controller', function ($scope) {
   $scope.fieldName = 'defensive_cert_image';
-  $scope.uploadTitle = 'your Defensive Driving certificate';
+  $scope.uploadTitle = 'your Social Security Card';
 })
 
 .controller('driver.update.proofaddress.controller', function ($scope) {
   $scope.fieldName = 'address_proof_image';
-  $scope.uploadTitle = 'a bill with your address on it';
+  $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
 })

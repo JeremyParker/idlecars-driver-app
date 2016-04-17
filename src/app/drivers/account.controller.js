@@ -14,9 +14,9 @@ angular.module('idlecars')
 
   $scope.driverDocuments = [
     {title: 'Driver License', link: '.update.uploadDriverLicense', image:'driver_license_image'},
-    {title: 'FHV License', link: '.update.uploadFhvLicense', image: 'fhv_license_image'},
-    {title: 'Defensive Driving', link: '.update.uploadDefensiveCert', image: 'defensive_cert_image'},
-    {title: 'Proof of Address', link: '.update.uploadAddressProof', image: 'address_proof_image'}
+    {title: 'Hack License', link: '.update.uploadFhvLicense', image: 'fhv_license_image'},
+    {title: 'Social Security Card', link: '.update.uploadDefensiveCert', image: 'defensive_cert_image'},
+    {title: 'MVR (optional)', link: '.update.uploadAddressProof', image: 'address_proof_image'}
   ];
 
   UserService.get().then(function (user) {
