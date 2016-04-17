@@ -12,8 +12,6 @@ h1(hidden) {{car.name}} for rent
   section.certifications
     ul
       li(ng-repeat='cert in car.certifications') {{cert}}
-      .image-certified
-        img(src='/assets/images/idlecars_certified.png')
 
   section(ng-if="car.compatibility && car.compatibility.length")
     h3 Works with
