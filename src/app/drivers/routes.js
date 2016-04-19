@@ -142,14 +142,14 @@ angular.module('idlecars')
 
     .state('driverAccount.update.uploadDefensiveCert', {
       url: '/defensive-driving-certificate',
-      data: {navbarInfo: {title: 'Defensive Driving', enableBack: true}},
+      data: {navbarInfo: {title: 'Social Security Card', enableBack: true}},
       templateUrl: 'app/drivers/upload.html',
       controller: 'driver.update.defensivedriving.controller',
     })
 
     .state('driverAccount.update.uploadAddressProof', {
       url: '/proof-of-address',
-      data: {navbarInfo: {title: 'Proof of Address', enableBack: true}},
+      data: {navbarInfo: {title: 'MVR (optional)', enableBack: true}},
       templateUrl: 'app/drivers/upload.html',
       controller: 'driver.update.proofaddress.controller',
     })

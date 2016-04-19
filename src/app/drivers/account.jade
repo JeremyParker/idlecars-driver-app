@@ -7,41 +7,19 @@
         .next-pointer
 
   .section-interlude(ng-if='!driver.all_docs_uploaded')
-    .b-inter-content All driver documents are required
-    .s-inter-content.m-gray to complete a rental
+    .b-inter-content Drivers licence, Hack license, and Soc Sec Card are required
+    .s-inter-content.m-gray to be added to this car.
 
-  section
-    .section-row
-      title Payment
-    .section-row
-      a.row-content(ui-sref='.paymentMethod')
-        .flex-column(ng-if='driver.payment_method')
-          label Card ending in {{driver.payment_method.suffix}}
-          .flex
-            .flex-cell
-              img.small-image(ng-src='{{driver.payment_method.card_logo}}')
-            .ic-blue.next-pointer Replace
-
-        .flex(ng-if='!driver.payment_method')
-          .flex-cell
-            label No payment method
-          .ic-blue.next-pointer Add
-
-      a.row-content
-        .flex
-          .flex-cell
-            label App credit
-          .ic-blue {{driver.app_credit}}
-  section
-    .section-row
-      title Notification method
-    .section-row
-      a.row-content(ng-click="toggleSMS()")
-        .flex-cell
-          .flex
-            .flex-cell
-              label SMS
-            on-off-button(status='driver.sms_enabled')
+  //- section
+  //-   .section-row
+  //-     title Notification method
+  //-   .section-row
+  //-     a.row-content(ng-click="toggleSMS()")
+  //-       .flex-cell
+  //-         .flex
+  //-           .flex-cell
+  //-             label SMS
+  //-           on-off-button(status='driver.sms_enabled')
 
   section
     .section-row
