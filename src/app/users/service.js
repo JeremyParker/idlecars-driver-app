@@ -5,7 +5,7 @@ angular.module('idlecars')
   var service = {};
 
   service.emailEntered = function () {
-    RequireAuthService.resolve('driverAccount.onboarding.success')
+    RequireAuthService.resolve('driverAccount.onboarding.success');
   }
 
   service.firstnameEntered = function () {}
