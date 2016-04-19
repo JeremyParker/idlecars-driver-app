@@ -1,11 +1,11 @@
 'use strict';
 
 angular.module('idlecars')
-.factory('AppUserService', function ($state) {
+.factory('AppUserService', function ($state, RequireAuthService) {
   var service = {};
 
   service.emailEntered = function () {
-    $state.go('driverAccount.onboarding.success');
+    RequireAuthService.resolve('driverAccount.onboarding.success')
   }
 
   service.firstnameEntered = function () {}
