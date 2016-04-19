@@ -19,7 +19,7 @@ angular.module('idlecars')
     driver_license_image: 'driverAccount.onboarding.uploadDriverLicense',
     fhv_license_image: 'driverAccount.onboarding.uploadFhvLicense',
     defensive_cert_image: 'driverAccount.onboarding.uploadDefensiveCert',
-    address_proof_image: 'driverAccount.onboarding.uploadAddressProof',
+    // address_proof_image: 'driverAccount.onboarding.uploadAddressProof', <-- optional
   }
 
   service.requiredDocState = function() {
