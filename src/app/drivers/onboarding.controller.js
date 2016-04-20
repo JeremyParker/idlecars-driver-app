@@ -22,11 +22,6 @@ angular.module('idlecars')
   $scope.uploadTitle = 'your Hack License';
 })
 
-.controller('driver.onboarding.defensivedriving.controller', function ($scope) {
-  $scope.fieldName = 'defensive_cert_image';
-  $scope.uploadTitle = 'your Social Security Card';
-})
-
 .controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService) {
   $scope.fieldName = 'address_proof_image';
   $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
@@ -66,3 +61,30 @@ angular.module('idlecars')
 
   $rootScope.navNextEnabled = true;
 })
+
+.controller('driver.onboarding.ssn.controller', function ($scope, $rootScope, $timeout, NavbarService, MyDriverService, RequireAuthService) {
+  $scope.user = {};
+
+  $scope.fields = [{
+    label: 'Please enter the your social security number',
+    placeholder: 'ssn',
+    name: 'ssn',
+    type: 'text',
+    maxlength: '9',
+    pattern: '^\\d{9}$',
+    autoFocus: true,
+  }];
+
+  $scope.validateForm = function() {
+    $timeout(function () { $rootScope.navNextEnabled = $scope.fieldForm.$valid; })
+  }
+
+  $rootScope.navGoNext = function() {
+    MyDriverService.patch($scope.user).then(function () {
+      RequireAuthService.resolve('driverAccount.onboarding.success')
+    })
+  }
+
+  NavbarService.validateInit($scope);
+})
+

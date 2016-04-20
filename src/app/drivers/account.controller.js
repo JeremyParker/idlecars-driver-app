@@ -8,6 +8,7 @@ angular.module('idlecars')
     {title: 'First Name', link: 'user.update.firstname', content: 'first_name'},
     {title: 'Last Name', link: 'user.update.lastname', content: 'last_name'},
     {title: 'Email', link: 'user.update.email', content: 'email'},
+    {title: 'SSN', link: '.update.ssn', content: 'ssn'},
     {title: 'Phone number', link: 'user.update.phonenumber', content: 'phone_number'},
     {title: 'Password', link: 'password.change', content: ''},
   ];
@@ -15,7 +16,6 @@ angular.module('idlecars')
   $scope.driverDocuments = [
     {title: 'Driver License', link: '.update.uploadDriverLicense', image:'driver_license_image'},
     {title: 'Hack License', link: '.update.uploadFhvLicense', image: 'fhv_license_image'},
-    {title: 'Social Security Card', link: '.update.uploadDefensiveCert', image: 'defensive_cert_image'},
     {title: 'MVR (optional)', link: '.update.uploadAddressProof', image: 'address_proof_image'}
   ];
 
