@@ -84,6 +84,13 @@ angular.module('idlecars')
       controller: 'driver.onboarding.referral.controller',
     })
 
+    .state('driverAccount.onboarding.ssn', {
+      url: '/ssn',
+      data: {navbarInfo: {title: 'SSN', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'driver.onboarding.ssn.controller',
+    })
+
     .state('driverAccount.onboarding.success', {
       url: '/success',
       data: {navbarInfo: {title: ''}},
@@ -103,12 +110,6 @@ angular.module('idlecars')
       controller: 'driver.onboarding.fhvlicense.controller',
     })
 
-    .state('driverAccount.onboarding.uploadDefensiveCert', {
-      url: '/defensive-driving-certificate',
-      templateUrl: 'app/drivers/upload.html',
-      controller: 'driver.onboarding.defensivedriving.controller',
-    })
-
     .state('driverAccount.onboarding.uploadAddressProof', {
       url: '/proof-of-address',
       templateUrl: 'app/drivers/upload.html',
@@ -126,6 +127,13 @@ angular.module('idlecars')
       }
     })
 
+    .state('driverAccount.update.ssn', {
+      url: '/ssn',
+      data: {navbarInfo: {title: 'SSN', enableBack: true, enableSave: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'driver.update.ssn.controller',
+    })
+
     .state('driverAccount.update.uploadDriverLicense', {
       url: '/driver-license',
       data: {navbarInfo: {title: 'Driver License', enableBack: true}},
@@ -138,13 +146,6 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Hack License', enableBack: true}},
       templateUrl: 'app/drivers/upload.html',
       controller: 'driver.update.fhvlicense.controller',
-    })
-
-    .state('driverAccount.update.uploadDefensiveCert', {
-      url: '/defensive-driving-certificate',
-      data: {navbarInfo: {title: 'Social Security Card', enableBack: true}},
-      templateUrl: 'app/drivers/upload.html',
-      controller: 'driver.update.defensivedriving.controller',
     })
 
     .state('driverAccount.update.uploadAddressProof', {

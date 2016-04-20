@@ -9,7 +9,6 @@ angular.module('idlecars')
   var requiredItems = [
     'driver_license_image',
     'fhv_license_image',
-    'defensive_cert_image',
     // 'address_proof_image' <-- optional
   ]
 

@@ -17,11 +17,6 @@ angular.module('idlecars')
         isUploaded: me.fhv_license_image,
       },
       {
-        title: 'Social Security Card',
-        sref: 'driverAccount.onboarding.uploadDefensiveCert',
-        isUploaded: me.defensive_cert_image,
-      },
-      {
         title: 'MVR (optional)',
         sref: 'driverAccount.onboarding.uploadAddressProof',
         isUploaded: me.address_proof_image,
