@@ -16,7 +16,7 @@ angular.module('idlecars')
 
   var docOrder = {
     email: 'user.onboarding.email',
-    ssn: 'user.onboarding.ssn',
+    ssn: 'driverAccount.onboarding.ssn',
     driver_license_image: 'driverAccount.onboarding.uploadDriverLicense',
     fhv_license_image: 'driverAccount.onboarding.uploadFhvLicense',
     // address_proof_image: 'driverAccount.onboarding.uploadAddressProof', <-- optional
