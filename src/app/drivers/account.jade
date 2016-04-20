@@ -3,7 +3,7 @@
     .section-row(ng-repeat='item in accountInfo')
       a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
         label.m-gray {{item.title}}
-        .content-main {{user[item.content]}}
+        .content-main {{user[item.content] || driver[item.content]}}
         .next-pointer
 
   .section-interlude(ng-if='!driver.all_docs_uploaded')
