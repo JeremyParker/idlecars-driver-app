@@ -9,9 +9,9 @@ h1(hidden) {{car.name}} for rent
       p.ic-blue.bold(ng-if='car.shift.split_shift') {{car.shift.description}}
       p(ng-repeat='subhead in car.headline_features', ng-class='{"medium_font_weight": $last}') {{subhead}}
 
-  section.certifications
-    ul
-      li(ng-repeat='cert in car.certifications') {{cert}}
+  //- section.certifications
+  //-   ul
+  //-     li(ng-repeat='cert in car.certifications') {{cert}}
 
   section(ng-if="car.compatibility && car.compatibility.length")
     h3 Works with
@@ -30,6 +30,5 @@ h1(hidden) {{car.name}} for rent
   .floater
     a.button.request(ng-if='!booking()', ui-sref='.newBooking') Reserve this car
     a.button.request(ng-if='booking()', ui-sref='driverAccount.bookings') My rental details
-    a.button.help(ui-sref='faq') Help
 
 ui-view
