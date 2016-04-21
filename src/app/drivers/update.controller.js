@@ -22,9 +22,15 @@ angular.module('idlecars')
   $scope.uploadTitle = 'your Hack License';
 })
 
-.controller('driver.update.proofaddress.controller', function ($scope) {
+.controller('driver.update.proofaddress.controller', function ($scope, $state, MyDriverService) {
   $scope.fieldName = 'address_proof_image';
-  $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
+  $scope.uploadTitle = 'your Motor Vehicle Record';
+
+  $scope.noMVR = function () {
+    MyDriverService.patch({'no_mvr': true}).then(function (driver) {
+      $state.go('driverAccount');
+    })
+  }
 })
 
 .controller('driver.update.ssn.controller', function ($scope, $rootScope, $state, $stateParams, $timeout, NavbarService, MyDriverService) {

@@ -10,5 +10,8 @@
       a(ng-if='showSkipLink && skipOptionalDoc', ng-click="skipOptionalDoc()") skip for now
       a(ng-if='showSkipLink && !skipOptionalDoc', ui-sref="bookingDetail") skip for now
 
+    .skip-link
+      a(ng-if='noMVR', ng-click="noMVR()") I don't have an MVR
+
   .progress-bar(ng-if='completion != null && showProgressBar')
     progress-bar(progress='{{completion}}')

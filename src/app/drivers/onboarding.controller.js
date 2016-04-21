@@ -15,16 +15,18 @@ angular.module('idlecars')
 .controller('driver.onboarding.driverlicense.controller', function ($scope) {
   $scope.fieldName = 'driver_license_image';
   $scope.uploadTitle = 'your Drivers License';
+  $scope.afterUploadSref = '^.uploadFhvLicense';
 })
 
 .controller('driver.onboarding.fhvlicense.controller', function ($scope) {
   $scope.fieldName = 'fhv_license_image';
   $scope.uploadTitle = 'your Hack License';
+  $scope.afterUploadSref = '^.uploadAddressProof';
 })
 
-.controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService) {
+.controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService, MyDriverService) {
   $scope.fieldName = 'address_proof_image';
-  $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
+  $scope.uploadTitle = 'your Motor Vehicle Record';
 
   $scope.skipOptionalDoc = function () {
     DocRouterService.requiredDocState().then(function (state) {
@@ -37,6 +39,12 @@ angular.module('idlecars')
       else {
         $state.go('driverAccount.onboarding.success');
       }
+    })
+  }
+
+  $scope.noMVR = function () {
+    MyDriverService.patch({'no_mvr': true}).then(function (driver) {
+      $scope.skipOptionalDoc();
     })
   }
 })
