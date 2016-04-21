@@ -50,7 +50,14 @@ angular.module('idlecars')
   $scope.insuranceApproved = function () { return $scope.booking.car.plate }
 
   $scope.uploadDocuments = function () {
-    DocRouterService.requiredDocState().then(function (state) { $state.go(state) });
+    DocRouterService.requiredDocState().then(function (state) {
+      if (state) {
+        $state.go(state);
+      }
+      else {
+        $state.go('driverAccount.onboarding.uploadAddressProof');
+      }
+    });
   }
 
   $scope.checkOut = function () {
