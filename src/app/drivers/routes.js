@@ -150,7 +150,7 @@ angular.module('idlecars')
 
     .state('driverAccount.update.uploadAddressProof', {
       url: '/proof-of-address',
-      data: {navbarInfo: {title: 'MVR (optional)', enableBack: true}},
+      data: {navbarInfo: {title: 'MVR', enableBack: true}},
       templateUrl: 'app/drivers/upload.html',
       controller: 'driver.update.proofaddress.controller',
     })

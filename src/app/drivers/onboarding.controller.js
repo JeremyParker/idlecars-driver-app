@@ -24,7 +24,7 @@ angular.module('idlecars')
 
 .controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService) {
   $scope.fieldName = 'address_proof_image';
-  $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
+  $scope.uploadTitle = 'your Motor Vehicle Record';
 
   $scope.skipOptionalDoc = function () {
     DocRouterService.requiredDocState().then(function (state) {

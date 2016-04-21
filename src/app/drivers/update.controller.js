@@ -24,7 +24,7 @@ angular.module('idlecars')
 
 .controller('driver.update.proofaddress.controller', function ($scope) {
   $scope.fieldName = 'address_proof_image';
-  $scope.uploadTitle = 'your Motor Vehicle Record (optional)';
+  $scope.uploadTitle = 'your Motor Vehicle Record';
 })
 
 .controller('driver.update.ssn.controller', function ($scope, $rootScope, $state, $stateParams, $timeout, NavbarService, MyDriverService) {
