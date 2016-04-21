@@ -7,8 +7,8 @@
         .next-pointer
 
   .section-interlude(ng-if='!driver.all_docs_uploaded')
-    .b-inter-content Drivers licence, Hack license, and Soc Sec Card are required
-    .s-inter-content.m-gray to be added to this car.
+    .b-inter-content To be added to a car you must upload your Drivers licence and
+    | Hack license. You must upload an MVR or indicate that you don't have one available.
 
   //- section
   //-   .section-row
@@ -25,7 +25,8 @@
     .section-row
       title Driver Documents
     .section-row(ng-repeat='item in driverDocuments')
-      a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}')
+      //- regular case for docs
+      a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}', ng-if='item.image != "address_proof_image"')
         .flex-column
           label {{item.title}}
           .flex
@@ -35,7 +36,21 @@
                 .box-content
                   .box-text Upload now
             p.ic-blue.next-pointer(ng-if='driver[item.image]') Change
-            p.color-red.next-pointer(ng-if='!driver[item.image]') Complete
+            p.color-red.next-pointer(ng-if='!driver[item.image]') Upload
+
+      //- special case for address_proof_image, which can be uploaded or "Skipped"
+      a.row-content(ng-class='{"has-bar": !$last}', ui-sref='{{item.link}}', ng-if='item.image == "address_proof_image"')
+        .flex-column
+          label {{item.title}}
+          .flex
+            .flex-cell
+              img.big-image(ng-if='driver[item.image]', ng-src='{{driver[item.image]}}')
+              .dashed-box-border(ng-if='!driver[item.image]')
+                .box-content
+                  .box-text(ng-if='driver.no_mvr') Skipped
+                  .box-text(ng-if='!driver.no_mvr') Upload or Skip
+            p.ic-blue.next-pointer(ng-if='driver[item.image] || driver.no_mvr') Change
+            p.color-red.next-pointer(ng-if='!driver[item.image] && !driver.no_mvr') Complete
 
   button.alert-button(ng-click='logout()') Log out
 
