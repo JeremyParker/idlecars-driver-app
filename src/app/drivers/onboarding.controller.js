@@ -15,11 +15,13 @@ angular.module('idlecars')
 .controller('driver.onboarding.driverlicense.controller', function ($scope) {
   $scope.fieldName = 'driver_license_image';
   $scope.uploadTitle = 'your Drivers License';
+  $scope.afterUploadSref = '^.uploadFhvLicense';
 })
 
 .controller('driver.onboarding.fhvlicense.controller', function ($scope) {
   $scope.fieldName = 'fhv_license_image';
   $scope.uploadTitle = 'your Hack License';
+  $scope.afterUploadSref = '^.uploadAddressProof';
 })
 
 .controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService, MyDriverService) {
