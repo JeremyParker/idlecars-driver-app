@@ -22,7 +22,7 @@ angular.module('idlecars')
   $scope.uploadTitle = 'your Hack License';
 })
 
-.controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService) {
+.controller('driver.onboarding.proofaddress.controller', function ($scope, $state, DocRouterService, BookingService, MyDriverService) {
   $scope.fieldName = 'address_proof_image';
   $scope.uploadTitle = 'your Motor Vehicle Record';
 
@@ -37,6 +37,12 @@ angular.module('idlecars')
       else {
         $state.go('driverAccount.onboarding.success');
       }
+    })
+  }
+
+  $scope.noMVR = function () {
+    MyDriverService.patch({'no_mvr': true}).then(function (driver) {
+      $scope.skipOptionalDoc();
     })
   }
 })
