@@ -17,7 +17,7 @@ angular.module('idlecars')
         isUploaded: me.fhv_license_image,
       },
       {
-        title: 'MVR',
+        title: 'MVR (upload or skip)',
         sref: 'driverAccount.onboarding.uploadAddressProof',
         isUploaded: me.address_proof_image,
       },
