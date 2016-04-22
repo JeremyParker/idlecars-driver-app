@@ -9,7 +9,7 @@ angular.module('idlecars')
       var passwordReset = Restangular.all('password').all('reset_setups');
       passwordReset.post(postParams)
       .then(function() {
-        AppNotificationService.push({success: 'A text message has been sent. If you disabled SMS texting, check your email.'});
+        AppNotificationService.push({success: 'An email has been sent.'});
       })
       .then(AppAuthService.passwordChanged);
     })

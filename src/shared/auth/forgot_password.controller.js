@@ -33,7 +33,7 @@ angular.module('idlecars')
       return $state.go('login', {username: $scope.user.phone_number});
     })
     .then(function() {
-      AppNotificationService.push({success: 'A text message has been sent. If you disabled SMS texting, check your email.'});
+      AppNotificationService.push({success: 'An email has been sent.'});
     });
   };
 });
