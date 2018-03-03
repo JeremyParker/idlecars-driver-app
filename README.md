@@ -1,3 +1,5 @@
+This is the codebase for the "Driver App" for the Idlecars product. For a demo of all features, see https://www.youtube.com/watch?v=dQi7ZiM23jg
+
 # idlecars web client
 An angularjs single page application
 
